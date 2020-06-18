@@ -1,209 +1,150 @@
 import Head from 'next/head'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
-export default function Home() {
+function Home({ followers }) {
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <div>
+      <div>
+        <Head>
+          <title>Benjamin J. Carlson</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <div className="bg">
+          <div className="centered">
+            <h1>Benjamin J. Carlson</h1>
+            <p>Computer Science student building cool things with code. Documenting the journey on Medium and YouTube.</p>
+            <div>
+              <span>
+                YouTube: 0 Medium: 0
+              </span>
+            </div>
+          </div>
         </div>
-      </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
-        </a>
-      </footer>
-
+        <div id='about'>
+          <div className="container padding-bottom">
+            <h2 style={{
+              padding: '30px 0',
+              textTransform: 'uppercase',
+              fontSize: '25px',
+            }}>About Me</h2>
+            <p style={{ paddingBottom: '25px' }}>I am a computer science student, building cool things with technology.
+            Currently interested in Mobile app development with Flutter and building API's with Python and Django REST. Uploading to YouTube and posting to Medium reguarly,
+            documenting the process as well as posting tutorials! Below are some of the places I've been fortunate to work at
+            and impove on my skills.</p>
+            <Row>
+              <Col>
+                <h6>Middletown City Hall - Summer 2018</h6>
+                <ul>
+                  <li>Interned with the I.T. Department</li>
+                  <li>Answered various I.T. related questions from city hall workers’</li>
+                  <li>Disposed of hard drives and other electronics securely</li>
+                  <li>Security camera, printer, and other electronic inventory</li>
+                </ul>
+              </Col>
+              <Col>
+                <h6>Law Forum LLC - Summer 2019, 2020</h6>
+                <ul>
+                  <li>Worked in C# and .NET to generate internal reports</li>
+                  <li>Worked closely with client database writing SQL and C# LINQ queries</li>
+                  <li>Updated and added pages to internal website</li>
+                </ul>
+              </Col>
+            </Row>
+          </div>
+        </div>
+        <div id='tech-stack'>
+          <div className="container">
+            <h2 style={{
+              padding: '30px 0 0 0'
+            }}>Tech Stack</h2>
+            <p style={{
+              paddingBottom: '40px',
+            }}>THIS WEBSITES ARCHITECTURE</p>
+            <Row>
+              <Col md>
+                <div className="center">
+                  <h6>Frontend</h6>
+                  <ul>
+                    <li>Next JS + React</li>
+                  </ul>
+                </div>
+              </Col>
+              <Col md>
+                <div className="center">
+                  <h6>Contact Form Logic</h6>
+                  <ul>
+                    <li>Nodemailer + Node.js</li>
+                  </ul>
+                </div>
+              </Col>
+              <Col md>
+                <div className="center">
+                  <h6>Deployment</h6>
+                  <ul>
+                    <li>Vercel</li>
+                  </ul>
+                </div>
+              </Col>
+            </Row>
+            <Row style={{paddingTop: '100px'}}>
+              <Col sm>
+                <div className="center">
+                  <a href="/projects">
+                    <input type="submit" className="btn btn-primary" value="PROJECTS"></input>
+                  </a>
+                </div>
+              </Col>
+              <Col sm>
+                <div className="center">
+                  <a href="/gear">
+                    <input type="submit" className="btn btn-primary" value="GEAR" href="/gear"></input>
+                  </a>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </div>
+      </div>
       <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        .bg {
+          height: 95vh;
+          background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/bg.jpg');
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
         }
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
+        #about {
+          background-color: #212529;
+          color: #fff;
+        }
+        
+        #tech-stack {
+          background-color: #fff;
+          padding: 20px 0;
         }
 
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
+        .padding-bottom {
+          padding-bottom: 20px;
         }
 
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
+        .center {
           text-align: center;
         }
 
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
-          }
-        }
-      `}</style>
-
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
+        .btn {
+          background-color: #212529;
+          border: none;
         }
       `}</style>
     </div>
   )
 }
+
+// Home.getInitialProps = async () => {
+
+//   return { followers: followers }
+// }
+
+export default Home

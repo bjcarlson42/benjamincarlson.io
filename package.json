@@ -8,8 +8,12 @@
     "start": "next start"
   },
   "dependencies": {
+    "bootstrap": "^4.5.0",
     "next": "9.4.4",
     "react": "16.13.1",
+    "react-bootstrap": "^1.0.1",
+    "react-bootstrap-table-next": "^4.0.3",
+    "react-bootstrap-table2-paginator": "^2.1.2",
     "react-dom": "16.13.1"
   }
 }
