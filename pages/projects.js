@@ -1,11 +1,12 @@
 import Head from 'next/head'
 import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator'
+import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 function Projects({ p }) {
     const columns = [{
         dataField: 'name',
-        text: 'Title',
+        text: 'Title'
     },
     {
         dataField: 'description',
@@ -39,14 +40,16 @@ function Projects({ p }) {
                 <title>Projects | Benjamin J. Carlson</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="container">
-                <h1 style={{fontWeight: '300'}}>Projects Repository</h1>
-                <BootstrapTable 
-                keyField='id' 
-                data={projects} 
-                columns={columns} 
-                pagination={paginationFactory()} 
-                />
+            <div className="container" style={{marginBottom: '100px'}}>
+                <h1 style={{ fontWeight: '300' }}>Projects Repository</h1>
+                <div className="table-responsive">
+                    <BootstrapTable
+                        keyField='id'
+                        data={projects}
+                        columns={columns}
+                        bordered={false}
+                    />
+                </div>
             </div>
         </div>
     )

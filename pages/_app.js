@@ -1,5 +1,6 @@
 // import App from 'next/app'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css';
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
 import Row from 'react-bootstrap/Row'
