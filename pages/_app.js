@@ -15,16 +15,16 @@ function MyApp({ Component, pageProps }) {
             <div className="container">
                 <div className='navbar-container'>
                     <Navbar expand="md" style={{ paddingLeft: '0', marginLeft: '0' }}>
-                        <Navbar.Brand className={router.pathname == "/" ? "active" : ""} href="/" style={{ paddingLeft: '0', marginLeft: '0' }}>Benjamin J. Carlson</Navbar.Brand>
+                        <Navbar.Brand className={router.pathname == "/" ? "active nav-text" : "nav-text"} href="/" style={{ paddingLeft: '0', marginLeft: '0' }}>Benjamin J. Carlson</Navbar.Brand>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="mr-auto">
-                                <Nav.Link className={router.pathname == "/gear" ? "active nav-padding" : "nav-padding"} href="/gear">Gear</Nav.Link>
-                                <Nav.Link className={router.pathname == "/blog" ? "active" : ""} href="/blog">Blog</Nav.Link>
-                                <Nav.Link className={router.pathname == "/projects" ? "active" : ""} href="/projects">Projects</Nav.Link>
+                                <Nav.Link className={router.pathname == "/gear" ? "active nav-padding nav-text" : "nav-text"} href="/gear">Gear</Nav.Link>
+                                <Nav.Link className={router.pathname == "/blog" ? "active nav-text" : "nav-text"} href="/blog">Blog</Nav.Link>
+                                <Nav.Link className={router.pathname == "/projects" ? "active nav-text" : "nav-text"} href="/projects">Projects</Nav.Link>
                             </Nav>
                             <Nav className="ml-auto">
-                                <Nav.Link className={router.pathname == "/contact" ? "active" : ""} href="/contact">Contact</Nav.Link>
+                                <Nav.Link className={router.pathname == "/contact" ? "active nav-text" : "nav-text"} href="/contact">Contact</Nav.Link>
                             </Nav>
                         </Navbar.Collapse>
                     </Navbar>
@@ -74,6 +74,10 @@ function MyApp({ Component, pageProps }) {
             <style jsx>{`
         .social-footer-logo {
             width: 50px;
+        }
+
+        .nav-text {
+            font-size: 20px;
         }
       `}</style>
         </div>
