@@ -4,13 +4,44 @@ import paginationFactory from 'react-bootstrap-table2-paginator'
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 function Projects({ p }) {
+
+    function descFormat(cell) {
+        if (cell.length < 50) {
+            return cell + '.'
+        } else {
+            return cell.substr(0, 50) + '...'
+        }
+    }
+
+    function dateFormat(cell) {
+        return cell.substr(0, 10)
+    }
+
+    function projName(cell) {
+        return capital_letter(cell.split('-').join(' '))
+    }
+
+    function capital_letter(str) {
+        str = str.split(' ');
+
+        for (let i = 0, x = str.length; i < x; i++) {
+            str[i] = str[i][0].toUpperCase() + str[i].substr(1);
+        }
+
+        return str.join(' ');
+    }
+
     const columns = [{
         dataField: 'name',
-        text: 'Title'
+        text: 'Title',
+        style: { 'white-space': 'nowrap' },
+        formatter: projName,
     },
     {
         dataField: 'description',
-        text: 'Description'
+        text: 'Description',
+        style: { 'white-space': 'nowrap' },
+        formatter: descFormat
     },
     {
         dataField: 'language',
@@ -18,11 +49,15 @@ function Projects({ p }) {
     },
     {
         dataField: 'created_at',
-        text: 'Date Created'
+        text: 'Date Created',
+        style: { 'white-space': 'nowrap' },
+        formatter: dateFormat
     },
     {
         dataField: 'updated_at',
-        text: 'Last Updated'
+        text: 'Last Updated',
+        style: { 'white-space': 'nowrap' },
+        formatter: dateFormat
     },
     {
         dataField: 'forks_count',
@@ -40,7 +75,7 @@ function Projects({ p }) {
                 <title>Projects | Benjamin J. Carlson</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <div className="container" style={{marginBottom: '100px'}}>
+            <div className="container" style={{ marginBottom: '100px' }}>
                 <h1 style={{ fontWeight: '300' }}>Projects Repository</h1>
                 <div className="table-responsive">
                     <BootstrapTable

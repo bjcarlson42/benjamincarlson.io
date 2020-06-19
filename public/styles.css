@@ -43,3 +43,67 @@ li {
     font-size: 25px;
     font-weight: 300;
 }
+
+/* Nav bar */
+
+.navbar-brand, .nav-text {
+    font-size: 18px;
+    color: #000 !important;
+    font-weight: 300;
+}
+
+.active {
+    font-weight: bold;
+}
+
+/* Home Screen media query */
+
+@media only screen and (max-width: 767px) {
+    .padding-top {
+        padding-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .centered {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .centered {
+        width: 80%;
+    }
+}
+
+/* adding links.js to this query */
+
+@media only screen and (max-width: 425px) {
+    .centered {
+        width: 90%;
+    }
+    .centered h1 {
+        font-size: 40px;
+    }
+    .link-row {
+        width: 95% !important;
+    }
+}
+
+/* links.js */
+
+.link-row:hover {
+    background-color: transparent !important;
+}
+
+.link-row:hover p {
+    color: #fff !important;
+}
+
+.link-row p:hover {
+    text-decoration: none !important;
+}
+
+.link-row p {
+    text-decoration: none !important;
+}

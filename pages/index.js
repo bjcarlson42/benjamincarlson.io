@@ -33,7 +33,7 @@ function Home({ followers }) {
             documenting the process as well as posting tutorials! Below are some of the places I've been fortunate to work at
             and impove on my skills.</p>
             <Row>
-              <Col>
+              <Col md>
                 <h6>Middletown City Hall - Summer 2018</h6>
                 <ul>
                   <li>Interned with the I.T. Department</li>
@@ -42,8 +42,8 @@ function Home({ followers }) {
                   <li>Security camera, printer, and other electronic inventory</li>
                 </ul>
               </Col>
-              <Col>
-                <h6>Law Forum LLC - Summer 2019, 2020</h6>
+              <Col md>
+                <h6 className="padding-top">Law Forum LLC - Summer 2019, 2020</h6>
                 <ul>
                   <li>Worked in C# and .NET to generate internal reports</li>
                   <li>Worked closely with client database writing SQL and C# LINQ queries</li>
@@ -87,7 +87,7 @@ function Home({ followers }) {
                 </div>
               </Col>
             </Row>
-            <Row style={{paddingTop: '100px'}}>
+            <Row className="padding-top">
               <Col sm>
                 <div className="center">
                   <a href="/projects">
@@ -136,6 +136,12 @@ function Home({ followers }) {
         .btn {
           background-color: #212529;
           border: none;
+          width: 150px;
+          margin: 15px;
+        }
+
+        .padding-top {
+          padding-top: 50px;
         }
       `}</style>
     </div>
