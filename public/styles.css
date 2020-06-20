@@ -100,10 +100,6 @@ li {
     color: #fff !important;
 }
 
-.link-row p:hover {
-    text-decoration: none !important;
-}
-
-.link-row p {
-    text-decoration: none !important;
+.links-container a {
+    text-decoration: none;
 }

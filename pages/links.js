@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 function Links() {
     return (
         <div className="bg">
-            <div className='container'>
+            <div className='container links-container'>
                 <Head>
                     <title>Links | Benjamin J. Carlson</title>
                 </Head>
@@ -13,16 +13,23 @@ function Links() {
                         <img src="/portrait.jpeg" className="profile-img"></img>
                     </div>
                 </Row>
-                <a href="https://twitter.com/benscstutorials" target="_blank">
+                <a href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw" target="_blank">
                     <Row className="link-row" style={{
                         color: '#000',
                         backgroundColor: '#fff',
-                        textAlign: 'center',
                         display: 'block',
-                        margin: 'auto',
+                        margin: '10px auto 10px auto',
                         width: '80%',
                         borderRadius: '10px',
+                        textAlign: 'center',
                     }}>
+                        <img src="/youtube.png" style={{
+                            width: '50px',
+                            height: '50px',
+                            padding: '5px',
+                            borderRadius: '50%',
+                            margin: '0',
+                        }}></img>
                         <p style={{
                             padding: '10px',
                             fontSize: '22px',
@@ -33,12 +40,19 @@ function Links() {
                     <Row className="link-row" style={{
                         color: '#000',
                         backgroundColor: '#fff',
-                        textAlign: 'center',
                         display: 'block',
-                        margin: 'auto',
+                        margin: '10px auto 10px auto',
                         width: '80%',
                         borderRadius: '10px',
+                        textAlign: 'center',
                     }}>
+                        <img src="/favicon.ico" style={{
+                            width: '50px',
+                            height: '50px',
+                            padding: '5px',
+                            borderRadius: '50%',
+                            margin: '0',
+                        }}></img>
                         <p style={{
                             padding: '10px',
                             fontSize: '22px',
@@ -49,12 +63,19 @@ function Links() {
                     <Row className="link-row" style={{
                         color: '#000',
                         backgroundColor: '#fff',
-                        textAlign: 'center',
                         display: 'block',
-                        margin: 'auto',
+                        margin: '10px auto 10px auto',
                         width: '80%',
                         borderRadius: '10px',
+                        textAlign: 'center',
                     }}>
+                        <img src="/twitter.png" style={{
+                            width: '50px',
+                            height: '50px',
+                            padding: '5px',
+                            borderRadius: '50%',
+                            margin: '0',
+                        }}></img>
                         <p style={{
                             padding: '10px',
                             fontSize: '22px',
