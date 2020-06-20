@@ -13,7 +13,7 @@ function Links() {
                         <img src="/portrait.jpeg" className="profile-img"></img>
                     </div>
                 </Row>
-                <a href="/">
+                <a href="https://twitter.com/benscstutorials" target="_blank">
                     <Row className="link-row" style={{
                         color: '#000',
                         backgroundColor: '#fff',
@@ -29,7 +29,7 @@ function Links() {
                         }}>Youtube</p>
                     </Row>
                 </a>
-                <a href="/">
+                <a href="/" target="_blank">
                     <Row className="link-row" style={{
                         color: '#000',
                         backgroundColor: '#fff',
@@ -45,7 +45,7 @@ function Links() {
                         }}>Website</p>
                     </Row>
                 </a>
-                <a href="/">
+                <a href="https://twitter.com/benscstutorials" target="_blank">
                     <Row className="link-row" style={{
                         color: '#000',
                         backgroundColor: '#fff',
