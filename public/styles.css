@@ -76,7 +76,7 @@ li {
     }
 }
 
-/* adding links.js to this query */
+/* adding links.js and about padding to this query */
 
 @media only screen and (max-width: 425px) {
     .centered {
@@ -87,6 +87,9 @@ li {
     }
     .link-row {
         width: 95% !important;
+    }
+    .padding-top {
+        padding-top: 50px;
     }
 }
 
@@ -102,4 +105,8 @@ li {
 
 .links-container a {
     text-decoration: none;
+}
+
+.fa:hover {
+    opacity: .4;
 }

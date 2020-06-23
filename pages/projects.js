@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import BootstrapTable from 'react-bootstrap-table-next'
-import paginationFactory from 'react-bootstrap-table2-paginator'
-import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
+// import paginationFactory from 'react-bootstrap-table2-paginator'
+// import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 function Projects({ p }) {
 
@@ -35,7 +35,7 @@ function Projects({ p }) {
         dataField: 'name',
         text: 'Title',
         style: { 'white-space': 'nowrap' },
-        formatter: projName,
+        formatter: projName
     },
     {
         dataField: 'description',

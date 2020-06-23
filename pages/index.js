@@ -139,10 +139,6 @@ function Home({ followers }) {
           width: 150px;
           margin: 15px;
         }
-
-        .padding-top {
-          padding-top: 50px;
-        }
       `}</style>
     </div>
   )

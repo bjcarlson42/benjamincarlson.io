@@ -7,7 +7,9 @@ function Contact() {
                 <title>Contact | Benjamin J. Carlson</title>
             </Head>
             <h1>Contact</h1>
-            <p>bjcarlson42@gmail.com</p>
+            <p>Business Email: <a href="mailto:bjcarlson42@gmail.com" style={{
+                color: "#000"
+            }}>bjcarlson42@gmail.com</a></p>
         </div>
     )
 }
