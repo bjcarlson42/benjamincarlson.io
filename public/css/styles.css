@@ -1,0 +1,251 @@
+/* Main Stylesheet */
+
+/***** 
+** Global Styles **
+*****/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    scroll-behavior: smooth;
+}
+
+li {
+    list-style-position: inside;
+}
+
+.main {
+    min-height: 100vh;
+}
+
+.hide {
+    display: none;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    position: relative;
+    color: rgb(0, 98, 128);
+    text-decoration: none !important;
+}
+
+a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+    text-decoration: none !important;
+}
+
+a:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+    color: rgb(0, 98, 128);
+    text-decoration: none !important;
+}
+
+/***** 
+** Index.js **
+*****/
+
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: left;
+}
+
+.centered h1 {
+    font-size: 50px;
+    font-weight: 300;
+}
+
+.centered p {
+    font-size: 25px;
+    font-weight: 300;
+}
+
+.centered-arrow {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+    .padding-top {
+        padding-top: 30px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    #about {
+        padding: 0px !important;
+    }
+    .p-left {
+        width: 100% !important;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .centered {
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .centered {
+        width: 80%;
+    }
+}
+
+/* adding links.js and about padding to this query */
+
+@media only screen and (max-width: 425px) {
+    .centered {
+        width: 90%;
+    }
+    .centered h1 {
+        font-size: 40px;
+    }
+    .link-row {
+        width: 95% !important;
+    }
+    .padding-top {
+        padding-top: 50px;
+    }
+    .input-todo {
+        width: 100% !important;
+    }
+}
+
+.odometer-num {
+    font-size: 35px;
+}
+
+/***** 
+** Nav bar **
+*****/
+
+.navbar-brand, .nav-text {
+    position: relative;
+    font-size: 18px;
+    color: #000 !important;
+    font-weight: 300;
+}
+
+.navbar-brand::before, .nav-text::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+    margin-bottom: 5px;
+}
+
+.navbar-brand:hover::before, .nav-text:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* .active {
+    background-color: #fcfcfc;
+} */
+
+#global-nav {
+    height: 120px;
+    -webkit-transition: height .5s, line-height .5s;
+    -webkit-transition: height .5s, line-height .5s;
+    transition: height .5s, line-height .5s;
+}
+
+.nav-scrolled-box-shadow {
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+
+.scrolled-nav {
+    background-color: white;
+    height: 60px !important;
+    line-height: 60px;
+    padding: 0px;
+}
+
+.scrolledLink {
+    color: rgb(16, 16, 16) !important;
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+}
+
+.unscrolledLink {
+    color: #fff !important;
+    padding-bottom: 10px !important;
+    padding-top: 10px !important;
+}
+
+@media only screen and (max-width: 425px) {
+    #global-nav {
+        padding: 0 5px !important;
+    }
+}
+
+/***** 
+** Links.js **
+*****/
+
+.link-row:hover {
+    background-color: transparent !important;
+}
+
+.link-row:hover p {
+    color: #fff !important;
+}
+
+.links-container a {
+    text-decoration: none;
+}
+
+.fa:hover {
+    opacity: .4;
+}
+
+.links-container {
+    min-height: 100vh;
+}
+
+/***** 
+** Blog.js **
+*****/
+
+.blog-post {
+    border-top: 1px solid rgba(230, 230, 230, 1);
+}
+
+.blog-post-title {
+    color: #000;
+    font-size: 22px;
+    padding: 5px 0;
+}
+
+.blog-post-description {
+    color: #000;
+    font-size: 18px;
+}

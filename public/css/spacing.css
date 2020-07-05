@@ -1,0 +1,30 @@
+/* This file contains css relating to padding and margin */
+
+.title-padding {
+    padding-top: 80px;
+}
+
+.h3-padding {
+    padding: 20px 0;
+}
+
+.p-left {
+    width: 70%;
+}
+
+.h2-padding {
+    padding: 75px 0 25px 0;
+}
+
+/* If the device is larger than laptop, give margin above the page title */
+
+@media only screen and (min-width: 769px) {
+    .container h1 {
+        margin-top: 75px;
+    }
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    font-weight: 300;
+}

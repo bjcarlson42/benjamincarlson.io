@@ -1,15 +1,15 @@
 import Head from 'next/head'
 import BootstrapTable from 'react-bootstrap-table-next'
-// import paginationFactory from 'react-bootstrap-table2-paginator'
+import paginationFactory from 'react-bootstrap-table2-paginator'
 // import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 function Projects({ p }) {
 
     function descFormat(cell) {
-        if (cell.length < 50) {
+        if (cell.length < 40) {
             return cell + '.'
         } else {
-            return cell.substr(0, 50) + '...'
+            return cell.substr(0, 40) + '...'
         }
     }
 
@@ -35,54 +35,63 @@ function Projects({ p }) {
         dataField: 'name',
         text: 'Title',
         style: { 'white-space': 'nowrap' },
-        formatter: projName
+        formatter: projName,
+        sort: true
     },
     {
         dataField: 'description',
         text: 'Description',
         style: { 'white-space': 'nowrap' },
-        formatter: descFormat
+        formatter: descFormat,
+        sort: true
     },
     {
         dataField: 'language',
-        text: 'Main Language'
+        text: 'Main Language',
+        sort: true
     },
     {
         dataField: 'created_at',
         text: 'Date Created',
         style: { 'white-space': 'nowrap' },
-        formatter: dateFormat
+        formatter: dateFormat,
+        sort: true
     },
     {
         dataField: 'updated_at',
         text: 'Last Updated',
         style: { 'white-space': 'nowrap' },
-        formatter: dateFormat
+        formatter: dateFormat,
+        sort: true
     },
     {
         dataField: 'forks_count',
-        text: 'Forks'
+        text: 'Forks',
+        sort: true
     },
     {
         dataField: 'stargazers_count',
-        text: 'Stars'
+        text: 'Stars',
+        sort: true
     },];
     const projects = p
 
     return (
-        <div>
-            <Head>
-                <title>Projects | Benjamin J. Carlson</title>
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-            <div className="container" style={{ marginBottom: '100px' }}>
-                <h1 style={{ fontWeight: '300' }}>Projects Repository</h1>
+        <div className='main'>
+            <div className="container">
+                <Head>
+                    <title>Projects | Benjamin J. Carlson</title>
+                    <link rel="icon" href="/favicon.ico" />
+                </Head>
+                <h1 className="title-padding">Projects Repository</h1>
+                <p style={{ color: 'lightgrey', fontSize: '14px' }}>Click on a header to sort the columns</p>
                 <div className="table-responsive">
                     <BootstrapTable
-                        keyField='id'
+                        keyField='name'
                         data={projects}
                         columns={columns}
                         bordered={false}
+                    // pagination={paginationFactory()}
                     />
                 </div>
             </div>

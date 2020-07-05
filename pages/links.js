@@ -10,7 +10,7 @@ function Links() {
                 </Head>
                 <Row>
                     <div style={{ display: 'block', margin: 'auto', padding: '50px' }}>
-                        <img src="/portrait.jpeg" className="profile-img"></img>
+                        <img src="/images/portrait.jpeg" className="profile-img"></img>
                     </div>
                 </Row>
                 <a href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw" target="_blank">
@@ -23,7 +23,7 @@ function Links() {
                         borderRadius: '10px',
                         textAlign: 'center',
                     }}>
-                        <img src="/youtube.png" style={{
+                        <img src="/images/youtube.png" style={{
                             width: '50px',
                             height: '50px',
                             padding: '5px',
@@ -46,7 +46,7 @@ function Links() {
                         borderRadius: '10px',
                         textAlign: 'center',
                     }}>
-                        <img src="/favicon.ico" style={{
+                        <img src="/images/logo.jpg" style={{
                             width: '50px',
                             height: '50px',
                             padding: '5px',
@@ -69,7 +69,7 @@ function Links() {
                         borderRadius: '10px',
                         textAlign: 'center',
                     }}>
-                        <img src="/twitter.png" style={{
+                        <img src="/images/twitter.png" style={{
                             width: '50px',
                             height: '50px',
                             padding: '5px',
@@ -85,8 +85,8 @@ function Links() {
             </div>
             <style jsx>{`
             .bg {
-                    height: 95vh;
-                    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/linkbg.jpg');
+                    height: 100vh;
+                    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/images/linkbg.jpg');
                     background-size: cover;
                     background-position: center center;
                     background-repeat: no-repeat;
