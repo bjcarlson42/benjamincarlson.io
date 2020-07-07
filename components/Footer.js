@@ -6,7 +6,8 @@ import {
     faInstagram,
     faPinterest,
     faYoutube,
-    faMedium
+    faMedium,
+    faLinkedin
 } from '@fortawesome/free-brands-svg-icons'
 library.add(
     faGithub,
@@ -14,7 +15,8 @@ library.add(
     faInstagram,
     faPinterest,
     faYoutube,
-    faMedium
+    faMedium,
+    faLinkedin
 )
 
 export default function Footer() {
@@ -46,6 +48,9 @@ export default function Footer() {
                         </a>
                         <a href="https://www.pinterest.com/benscstutorials/" target="_blank">
                             <FontAwesomeIcon id="pinterest" icon={faPinterest} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
+                        </a>
+                        <a href="https://www.linkedin.com/in/bjcarlson42/" target="_blank">
+                            <FontAwesomeIcon id="linkedin" icon={faLinkedin} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
                         </a>
                     </div>
                 </div>

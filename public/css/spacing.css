@@ -16,6 +16,10 @@
     padding: 75px 0 25px 0;
 }
 
+.padding-bottom-xl {
+    padding-bottom: 50px;
+}
+
 /* If the device is larger than laptop, give margin above the page title */
 
 @media only screen and (min-width: 769px) {

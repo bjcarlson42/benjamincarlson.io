@@ -54,6 +54,16 @@ a:hover::before {
     text-decoration: none !important;
 }
 
+.btn1 {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+.btn1:hover {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
 /***** 
 ** Index.js **
 *****/
@@ -131,10 +141,24 @@ a:hover::before {
     .input-todo {
         width: 100% !important;
     }
+    .padding-bottom {
+        padding-bottom: 25px;
+    }
 }
 
 .odometer-num {
     font-size: 35px;
+}
+
+.about-img {
+    max-width: 300px;
+    max-height: 300px;
+    display: block;
+    margin: auto;
+}
+
+.img-container {
+    padding: 5%;
 }
 
 /***** 
@@ -167,9 +191,9 @@ a:hover::before {
     transform: scaleX(1);
 }
 
-/* .active {
-    background-color: #fcfcfc;
-} */
+.active {
+    font-weight: 600;
+}
 
 #global-nav {
     height: 120px;

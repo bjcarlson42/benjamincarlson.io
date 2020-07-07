@@ -7,7 +7,7 @@ function Blog({ posts }) {
         return (d).toDateString()
     }
     return (
-        <div className='main'>
+        <div className='main' style={{ minHeight: '100vh' }}>
             <div className='container'>
                 <Head>
                     <title>Blog | Benjamin J. Carlson</title>
