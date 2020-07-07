@@ -81,6 +81,7 @@ function Projects({ p }) {
             <div className="container">
                 <Head>
                     <title>Projects | Benjamin J. Carlson</title>
+                    <meta name="description" content="TODO" />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <h1 className="title-padding">Projects Repository</h1>
@@ -100,7 +101,11 @@ function Projects({ p }) {
 }
 
 Projects.getInitialProps = async () => {
-    const res = await fetch('https://api.github.com/users/bjcarlson42/repos')
+    const headers = {
+        "Authorization": "Token " + process.env.GITHUB_KEY
+    }
+    const url = "https://api.github.com/users/bjcarlson42/repos"
+    const res = await fetch(url, { "headers": headers })
     const json = await res.json()
     const p = json
     return { p: p }

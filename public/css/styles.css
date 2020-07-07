@@ -57,6 +57,7 @@ a:hover::before {
 .btn1 {
     background-color: #fff !important;
     color: #000 !important;
+    border: 1px solid #000;
 }
 
 .btn1:hover {
@@ -225,11 +226,15 @@ a:hover::before {
     padding-top: 10px !important;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 600px) {
     #global-nav {
-        padding: 0 5px !important;
+        padding: 0 15px !important;
     }
 }
+
+/* .navbar-collapse {
+    background-color: #fff;
+} */
 
 /***** 
 ** Links.js **

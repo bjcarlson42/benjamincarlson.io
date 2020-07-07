@@ -11,6 +11,7 @@ function Blog({ posts }) {
             <div className='container'>
                 <Head>
                     <title>Blog | Benjamin J. Carlson</title>
+                    <meta name="description" content="Ben's Blog. I write for medium about various computer science topics." />
                 </Head>
                 <h1 className="title-padding">Blog</h1>
                 <p style={{

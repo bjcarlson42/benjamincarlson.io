@@ -37,7 +37,7 @@ export default class extends Component {
     handleClick() {
         if (document.getElementById('todo-title').value == '') {
             const todo_list = this.state.todo_list
-            console.log(todo_list)
+            // console.log(todo_list)
             alert('Please enter an item!')
         } else {
             const todo_list = this.state.todo_list
@@ -57,7 +57,7 @@ export default class extends Component {
                 <div className="form-group">
                     <Row>
                         <input style={{ width: '80%' }} className="form-control input-todo" type="text" placeholder="Learn NextJS!" id="todo-title" />
-                        <button type="submit" className="btn btn-primary input-todo" onClick={this.handleClick}>Submit</button>
+                        <button type="submit" className="btn btn-primary input-todo btn1" onClick={this.handleClick}>Submit</button>
                     </Row>
                 </div>
 

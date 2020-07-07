@@ -9,8 +9,8 @@ const fetcher = (url) => fetch(url).then((res) => res.json())
 export default function Index() {
     const { data, error } = useSWR('/api/gear', fetcher)
 
-    if (error) return <div className="container">Failed to load</div>
-    if (!data) return <div className="container">Loading...</div>
+    if (error) return <div className="container main center">Failed to load</div>
+    if (!data) return <div className="container main center">Loading...</div>
 
     // filter for software vs hardware
     var software = data.filter(function (g) {
@@ -26,6 +26,7 @@ export default function Index() {
             <div className="container">
                 <Head>
                     <title>Gear | Benjamin J. Carlson</title>
+                    <meta name="description" content="When you are programming, the gear you use is important. This is a list of the software and hardware I use often." />
                 </Head>
                 <h1 className="title-padding">Gear Repository</h1>
                 <p style={{ fontSize: '20px' }}>Productivity is directly associated with selecting the right software and hardware. Here is a list of all the gear I use on a day to day basis.</p>

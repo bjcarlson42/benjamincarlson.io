@@ -23,15 +23,22 @@ export default function NavBar() {
     const handleScroll = () => {
         var scrollTop = 0
         scrollTop = scrollY
-        if (scrollTop > 100) {
+        var x = 100 //  pixel value when navbar annimates on scroll
+        if (screen.width > 768) {
+            // nothing, keep x at 100
+        } else if (screen.width <= 768) {
+            x = 10
+        }
+
+        if (scrollTop > x) {
             document.getElementById('global-nav').classList.add('scrolled-nav')
             document.getElementById('global-nav').classList.add('nav-scrolled-box-shadow')
-        } else if (scrollTop < 100) {
+        } else if (scrollTop < x) {
             document.getElementById('global-nav').classList.remove('scrolled-nav')
             document.getElementById('global-nav').classList.remove('nav-scrolled-box-shadow')
         }
         if (router.pathname == '/') {
-            if (scrollTop > 100) {
+            if (scrollTop > x) {
                 document.getElementById('home').classList.add('scrolledLink')
                 document.getElementById('home').classList.remove('unscrolledLink')
                 document.getElementById('gear').classList.add('scrolledLink')
@@ -42,7 +49,7 @@ export default function NavBar() {
                 document.getElementById('projects').classList.remove('unscrolledLink')
                 document.getElementById('contact').classList.add('scrolledLink')
                 document.getElementById('contact').classList.remove('unscrolledLink')
-            } else if (scrollTop < 100) {
+            } else if (scrollTop < x) {
                 document.getElementById('home').classList.remove('scrolledLink')
                 document.getElementById('home').classList.add('unscrolledLink')
                 document.getElementById('gear').classList.remove('scrolledLink')

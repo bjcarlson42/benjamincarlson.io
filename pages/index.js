@@ -3,8 +3,8 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import dynamic from 'next/dynamic'
 import TodoList from '../components/Todo'
-import { faArrowDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 function Home({ youtubeData }) {
   const Odometer = dynamic(import('react-odometerjs'), {
@@ -15,6 +15,7 @@ function Home({ youtubeData }) {
     <div className='main'>
       <Head>
         <title>Benjamin J. Carlson</title>
+        <meta name="description" content="Personal portfolio website for Benjamin Carlson. I am a computer science student when writes for medium and teaches programming on YouTube." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg">
@@ -30,30 +31,19 @@ function Home({ youtubeData }) {
 
         <div className="centered-arrow">
           <a href="#about">
-            <p className="center" style={{fontSize: '20px', color: '#fff'}}>EXPLORE MORE</p>
+            <p className="center" style={{ fontSize: '20px', color: '#fff' }}>EXPLORE MORE</p>
             <FontAwesomeIcon style={{ width: '35px', height: '35px', color: '#fff' }} icon={faArrowDown} />
           </a>
         </div>
       </div>
 
       <section id="about">
-        <div className="container">
-          <Row>
+        <Row>
+          <div className="container" style={{padding: '10px'}}>
             <h3 className="h3-padding">About</h3>
             <p>Welcome to my personal website. I am a rising junior at Central Connecticut State University where I am studying computer science and mathmatics. I enjoy learning about programming and technology and have a passion for teaching others. I started a <a href="#">YouTube channel</a> to document my coding journey and make tutorial videos. On this site you will find my projects, job experience, tutorials and much more.</p>
-            {/* <Col lg>
-              <div className="img-container">
-                <img className='about-img' src="/images/about.jpg"></img>
-              </div>
-            </Col>
-            <Col lg>
-              <h3 className="h3-padding">About</h3>
-              <div className="p-left">
-                <p>Welcome to my personal website. I am a rising junior at Central Connecticut State University where I am studying computer science and mathmatics. I enjoy learning about programming and technology and have a passion for teaching others. I started a <a href="#">YouTube channel</a> to document my coding journey and make tutorial videos. On this site you will find my projects, job experience, tutorials and much more.</p>
-              </div>
-            </Col> */}
-          </Row>
-        </div>
+          </div>
+        </Row>
       </section>
 
       <section id="projects">
@@ -227,7 +217,7 @@ function Home({ youtubeData }) {
           margin: 15px;
         }
       `}</style>
-    </div>
+    </div >
   )
 }
 
