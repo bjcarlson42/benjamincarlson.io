@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import 'react-bootstrap-table2-paginator/dist/react-bootstrap-table2-paginator.min.css'
 import '../public/css/styles.css'
 import '../public/css/spacing.css'
+import '../public/css/projects.css'
 import "odometer/themes/odometer-theme-default.css"
 // ***** Components ***** //
 import Footer from "../components/Footer"

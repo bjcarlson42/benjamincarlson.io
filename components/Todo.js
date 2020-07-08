@@ -57,7 +57,7 @@ export default class extends Component {
                 <div className="form-group">
                     <Row>
                         <input style={{ width: '80%' }} className="form-control input-todo" type="text" placeholder="Learn NextJS!" id="todo-title" />
-                        <button type="submit" className="btn btn-primary input-todo btn1" onClick={this.handleClick}>Submit</button>
+                        <input type="submit" onClick={this.handleClick} className="btn btn-primary"></input>
                     </Row>
                 </div>
 

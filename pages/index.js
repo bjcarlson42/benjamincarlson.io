@@ -43,14 +43,14 @@ function Home({ youtubeData }) {
             <Col>
               <div className="padding-all">
                 <h3 className="h3-padding">About</h3>
-                <p>Welcome to my personal website. I am a rising junior at Central Connecticut State University where I am studying computer science and mathmatics. I enjoy learning about programming and technology and have a passion for teaching others. I started a <a href="https://www.youtube.com/benjamincarlson" target="_blank" className="annimate-underline">YouTube channel</a> to document my coding journey and make tutorial videos. On this site you will find my projects, job experience, tutorials and much more.</p>
+                <p>Welcome to my personal website. I am a rising junior at Central Connecticut State University where I am studying computer science and mathmatics. I enjoy learning about programming and technology and have a passion for teaching others. I started a <a href="https://www.youtube.com/benjamincarlson" target="_blank" className="animate-underline">YouTube channel</a> to document my coding journey and make tutorial videos. On this site you will find my projects, job experience, tutorials and much more.</p>
               </div>
             </Col>
           </Row>
         </div>
       </section>
 
-      <section id="projects">
+      <section id="projects-section">
         <div className="container">
           <h3 className="h3-padding center" style={{paddingBottom: '50px', fontSize: '35px'}}>Projects</h3>
           <Row className="center">
@@ -135,10 +135,10 @@ function Home({ youtubeData }) {
         </div>
       </section>
 
-      <section id='youtube'>
+      <section id='youtube-section'>
         <div className='container'>
           <h2 className='h2-padding center'>YouTube</h2>
-          <p className='center' style={{ color: '#fff' }}>I started a YouTube channel to teach others how to code and to document my programming journey. Here are some of my stats.</p>
+          <p className='center' style={{ color: '#fff' }}>I started a <a href="https://youtube.com/benjamincarlson" target="_blank" className="animate-underline">YouTube channel</a> to teach others how to code and to document my programming journey. Here are some of my stats.</p>
           <Row style={{ textAlign: 'center', color: '#fff' }}>
             <Col lg>
               <span className="odometer-num"><Odometer format="(,ddd)" duration={1000} value={youtubeData.subscriberCount} /></span>
@@ -164,62 +164,6 @@ function Home({ youtubeData }) {
           <small>Try the TODO list out! Add an item in the input box and mark an item as complete by clicking it!</small>
         </div>
       </section>
-
-      <style jsx>{`
-        .bg {
-          height: 100vh;
-          background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/images/bg-min.jpg');
-          background-size: cover;
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-attachment: fixed;
-        }
-
-        #about {
-          background-color: #fff;
-        }
-
-        #tech-stack {
-          background-color: #fff;
-          padding: 100px;
-          color: #000;
-        }
-
-        #projects {
-          background-color: rgb(33, 37, 41);
-          color: #fff;
-          padding: 100px;
-        }
-
-        #goals {
-          background-color: #fff;
-          padding: 20px 0;
-        }
-
-        #youtube {
-          background-color: #FF0000;
-          padding-bottom: 75px;
-        }
-
-        #youtube h2 {
-          color: #fff;
-        }
-        
-        .padding-bottom {
-          padding-bottom: 20px;
-        }
-
-        .center {
-          text-align: center;
-        }
-
-        .btn {
-          background-color: #212529;
-          border: none;
-          width: 150px;
-          margin: 15px;
-        }
-      `}</style>
     </div >
   )
 }
