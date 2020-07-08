@@ -15,10 +15,6 @@ li {
     list-style-position: inside;
 }
 
-.main {
-    min-height: 100vh;
-}
-
 .hide {
     display: none;
 }
