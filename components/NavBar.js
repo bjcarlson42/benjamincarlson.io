@@ -72,7 +72,7 @@ export default function NavBar() {
         }
     })
     return (
-        <Navbar id="global-nav" expand="md" fixed="top" style={{ paddingLeft: '0', marginLeft: '0' }}>
+        <Navbar id="global-nav" expand="md" fixed="top">
             <div className="container">
                 <Navbar.Brand id="home" className={router.pathname == "/" ? "active nav-text" : "nav-text"} href="/" style={{ paddingLeft: '0', marginLeft: '0' }}>Benjamin J. Carlson</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
