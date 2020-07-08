@@ -7,7 +7,7 @@ function Links() {
             <div className='container links-container'>
                 <Head>
                     <title>Links | Benjamin J. Carlson</title>
-                    <meta name="description" content="TODO" />
+                    <meta name="description" content="Benjamin Carlson links to YouTube, Medium, personal website and more. Connect with Ben" />
                 </Head>
                 <Row>
                     <div style={{ display: 'block', margin: 'auto', padding: '50px' }}>
