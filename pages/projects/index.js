@@ -3,7 +3,7 @@ import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator'
 // import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
-function Projects({ p }) {
+function Index({ p }) {
 
     function descFormat(cell) {
         if (cell.length < 40) {
@@ -100,7 +100,7 @@ function Projects({ p }) {
     )
 }
 
-Projects.getInitialProps = async () => {
+Index.getInitialProps = async () => {
     const headers = {
         "Authorization": "Token " + process.env.GITHUB_KEY
     }
@@ -111,4 +111,4 @@ Projects.getInitialProps = async () => {
     return { p: p }
 }
 
-export default Projects
+export default Index

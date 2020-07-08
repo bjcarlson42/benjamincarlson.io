@@ -23,13 +23,13 @@ li {
     text-align: center;
 }
 
-a {
+.annimate-underline {
     position: relative;
     color: rgb(0, 98, 128);
     text-decoration: none !important;
 }
 
-a::before {
+.annimate-underline::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -43,7 +43,7 @@ a::before {
     text-decoration: none !important;
 }
 
-a:hover::before {
+.annimate-underline:hover::before {
     visibility: visible;
     transform: scaleX(1);
     color: rgb(0, 98, 128);
@@ -267,7 +267,11 @@ a:hover::before {
 .blog-post-title {
     color: #000;
     font-size: 22px;
-    padding: 5px 0;
+    padding: 15px 0 5px 0;
+}
+
+.blog-post-title:hover {
+    text-decoration: underline;
 }
 
 .blog-post-description {

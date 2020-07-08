@@ -38,17 +38,21 @@ function Home({ youtubeData }) {
       </div>
 
       <section id="about">
-        <Row>
-          <div className="container" style={{padding: '10px'}}>
-            <h3 className="h3-padding">About</h3>
-            <p>Welcome to my personal website. I am a rising junior at Central Connecticut State University where I am studying computer science and mathmatics. I enjoy learning about programming and technology and have a passion for teaching others. I started a <a href="#">YouTube channel</a> to document my coding journey and make tutorial videos. On this site you will find my projects, job experience, tutorials and much more.</p>
-          </div>
-        </Row>
+        <div className="container">
+          <Row>
+            <Col>
+              <div className="padding-all">
+                <h3 className="h3-padding">About</h3>
+                <p>Welcome to my personal website. I am a rising junior at Central Connecticut State University where I am studying computer science and mathmatics. I enjoy learning about programming and technology and have a passion for teaching others. I started a <a href="https://www.youtube.com/benjamincarlson" target="_blank" className="annimate-underline">YouTube channel</a> to document my coding journey and make tutorial videos. On this site you will find my projects, job experience, tutorials and much more.</p>
+              </div>
+            </Col>
+          </Row>
+        </div>
       </section>
 
       <section id="projects">
         <div className="container">
-          <h3 className="h3-padding center">Projects</h3>
+          <h3 className="h3-padding center" style={{paddingBottom: '50px', fontSize: '35px'}}>Projects</h3>
           <Row className="center">
             <Col md>
               <h3>WOTD</h3>
@@ -173,7 +177,6 @@ function Home({ youtubeData }) {
 
         #about {
           background-color: #fff;
-          padding: 100px;
         }
 
         #tech-stack {
