@@ -14,6 +14,7 @@ export default function NavBar() {
             document.getElementById('blog').classList.add('unscrolledLink')
             document.getElementById('projects').classList.add('unscrolledLink')
             document.getElementById('contact').classList.add('unscrolledLink')
+            document.getElementById('tutorials').classList.add('unscrolledLink')
         }
         // remove navbar on the links page
         if (router.pathname == '/links') {
@@ -49,6 +50,8 @@ export default function NavBar() {
                 document.getElementById('projects').classList.remove('unscrolledLink')
                 document.getElementById('contact').classList.add('scrolledLink')
                 document.getElementById('contact').classList.remove('unscrolledLink')
+                document.getElementById('tutorials').classList.add('scrolledLink')
+                document.getElementById('tutorials').classList.remove('unscrolledLink')
             } else if (scrollTop < x) {
                 document.getElementById('home').classList.remove('scrolledLink')
                 document.getElementById('home').classList.add('unscrolledLink')
@@ -60,6 +63,8 @@ export default function NavBar() {
                 document.getElementById('projects').classList.add('unscrolledLink')
                 document.getElementById('contact').classList.remove('scrolledLink')
                 document.getElementById('contact').classList.add('unscrolledLink')
+                document.getElementById('tutorials').classList.remove('scrolledLink')
+                document.getElementById('tutorials').classList.add('unscrolledLink')
             }
         }
     }
@@ -84,6 +89,7 @@ export default function NavBar() {
                     </Nav>
                     <Nav className="ml-auto">
                         <Nav.Link id="contact" className={router.pathname == "/contact" ? "active nav-text" : "nav-text"} href="/contact">Contact</Nav.Link>
+                        <Nav.Link id="tutorials" className={router.pathname == "/tutorials" ? "active nav-text tutorial-nav" : "nav-text tutorial-nav"} href="/tutorials">Tutorials</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
             </div>

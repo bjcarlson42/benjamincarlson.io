@@ -11,6 +11,11 @@
     scroll-behavior: smooth;
 }
 
+pre {
+    background-color: #f0f0f0;
+    padding: 10px;
+}
+
 li {
     list-style-position: inside;
 }
@@ -59,6 +64,10 @@ li {
 .btn1:hover {
     background-color: #000 !important;
     color: #fff !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 300;
 }
 
 /***** 
