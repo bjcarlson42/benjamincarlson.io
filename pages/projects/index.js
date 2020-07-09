@@ -81,7 +81,7 @@ function Index({ p }) {
             <div className="container">
                 <Head>
                     <title>Projects | Benjamin J. Carlson</title>
-                    <meta name="description" content="TODO" />
+                    <meta name="description" content="View all programming projects for Benjamin Carlson." />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
                 <h1 className="title-padding">Projects Repository</h1>

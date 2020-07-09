@@ -5,6 +5,7 @@ function WordCounter() {
         <div style={{ minHeight: '100vh' }}>
             <Head>
                 <title>Word Counter Detail Project | Benjamin J. Carlson</title>
+                <meta name="description" content="The detail view of Benjamin Carlson's word counter project." />
             </Head>
             <div className="container">
                 <div style={{ paddingTop: '100px' }}>

@@ -24,7 +24,7 @@ export default function NavBar() {
     const handleScroll = () => {
         var scrollTop = 0
         scrollTop = scrollY
-        var x = 100 //  pixel value when navbar annimates on scroll
+        var x = 100 //  pixel value when navbar animates on scroll
         if (screen.width > 768) {
             // nothing, keep x at 100
         } else if (screen.width <= 768) {

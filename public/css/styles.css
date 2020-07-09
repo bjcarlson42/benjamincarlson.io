@@ -28,13 +28,13 @@ li {
     text-align: center;
 }
 
-.annimate-underline {
+.animate-underline {
     position: relative;
     color: rgb(0, 98, 128);
     text-decoration: none !important;
 }
 
-.annimate-underline::before {
+.animate-underline::before {
     content: "";
     position: absolute;
     width: 100%;
@@ -48,7 +48,7 @@ li {
     text-decoration: none !important;
 }
 
-.annimate-underline:hover::before {
+.animate-underline:hover::before {
     visibility: visible;
     transform: scaleX(1);
     color: rgb(0, 98, 128);
@@ -73,6 +73,58 @@ h1, h2, h3, h4, h5, h6 {
 /***** 
 ** Index.js **
 *****/
+
+.bg {
+    height: 100vh;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/images/bg-min.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+#about {
+    background-color: #fff;
+}
+
+#tech-stack {
+    background-color: #fff;
+    padding: 100px;
+    color: #000;
+}
+
+#projects-section {
+    background-color: rgb(33, 37, 41);
+    color: #fff;
+    padding: 100px;
+}
+
+#goals {
+    background-color: #fff;
+    padding: 20px 0;
+}
+
+#youtube-section {
+    background-color: #FF0000;
+    padding-bottom: 75px;
+}
+
+#youtube-section h2 {
+    color: #fff;
+}
+
+.padding-bottom {
+    padding-bottom: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+.btn {
+    background-color: #212529;
+    border: none;
+}
 
 .centered {
     position: absolute;

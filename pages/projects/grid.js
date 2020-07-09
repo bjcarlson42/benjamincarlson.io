@@ -5,6 +5,7 @@ function Grid() {
         <div style={{ minHeight: '100vh' }}>
             <Head>
                 <title>Grid Detail Project | Benjamin J. Carlson</title>
+                <meta name="description" content="The detail view of Benjamin Carlson's grid project." />
             </Head>
             <div className="container">
                 <div style={{paddingTop: '100px'}}>
