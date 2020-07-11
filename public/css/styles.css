@@ -299,31 +299,6 @@ h1, h2, h3, h4, h5, h6 {
 } */
 
 /***** 
-** Links.js **
-*****/
-
-
-.link-row:hover {
-    background-color: transparent !important;
-}
-
-.link-row:hover p {
-    color: #fff !important;
-}
-
-.links-container a {
-    text-decoration: none;
-}
-
-.fa:hover {
-    opacity: .4;
-}
-
-.links-container {
-    min-height: 100vh;
-}
-
-/***** 
 ** Blog.js **
 *****/
 

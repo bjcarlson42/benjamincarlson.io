@@ -1,5 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { useRouter } from "next/router"
+import React, { useEffect } from 'react';
 import {
     faGithub,
     faTwitter,
@@ -20,8 +22,21 @@ library.add(
 )
 
 export default function Footer() {
+    const router = useRouter();
+    const handleState = () => {
+        // remove footer on the links page
+        if (router.pathname == '/links') {
+            document.getElementById('footer').classList.add('hide')
+        }
+    }
+    useEffect(() => {
+        window.addEventListener('load', handleState)
+        return () => {
+            window.removeEventListener('load', handleState)
+        }
+    })
     return (
-        <footer>
+        <footer id="footer">
             <div style={{
                 backgroundColor: '#191919',
             }}>
@@ -34,7 +49,7 @@ export default function Footer() {
                         <a href="https://twitter.com/benscstutorials" target="_blank">
                             <FontAwesomeIcon id="twitter" icon={faTwitter} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
                         </a>
-                        <a href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw" target="_blank">
+                        <a href="https://www.youtube.com/benjamincarlson" target="_blank">
                             <FontAwesomeIcon id="youtube" icon={faYoutube} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
                         </a>
                         <a href="https://github.com/bjcarlson42" target="_blank">
