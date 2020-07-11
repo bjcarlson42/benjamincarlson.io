@@ -15,7 +15,7 @@ function Home({ youtubeData }) {
     <div className='main'>
       <Head>
         <title>Benjamin J. Carlson</title>
-        <meta name="description" content="Personal portfolio website for Benjamin Carlson. I am a computer science student when writes for medium and teaches programming on YouTube." />
+        <meta name="description" content="Personal portfolio website for Benjamin Carlson. I am a computer science student who writes for medium and teaches programming on YouTube." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="bg">

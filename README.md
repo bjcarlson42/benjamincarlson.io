@@ -1,30 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# benjamincarlson.io
 
-## Getting Started
+My portfolio has changed over the years - from a static HTML site to Wordpress to Jekyll to Gatsby and finally to Next.js/React. This site has my writing, latest work, programming tutorials, and much more. Feel free to submit a pull request with your implementation to any of the issues or project boards.
 
-First, run the development server:
+## Overview
 
-```bash
-npm run dev
-# or
+- `pages/tutorials/blog/content/*` - Static pre-rendered blog posts
+- `pages/api/gear` - Gear API route for [/gear](https://benjamincarlson.io/gear)
+- `pages/index` - Index page with YouTube data
+- `pages/blog` - Blog with data from Medium
+- `links` - My own "linktree"
+- `pages/*` - All other static pages
+
+## Running Locally
+
+```cmd
+git clone https://github.com/bjcarlson42/personal-website.git
+cd personal-website
+yarn
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Create a `.env` file.
 
-## Learn More
+```
+YOUTUBE_KEY=
+GITHUB_KEY=
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Built Using 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Next.js
+- Vercel

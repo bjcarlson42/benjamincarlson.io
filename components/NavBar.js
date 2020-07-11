@@ -8,7 +8,7 @@ export default function NavBar() {
     const handleState = () => {
         var scrollTop = 0
         scrollTop = scrollY
-        if (router.pathname == '/' && scrollTop  == 0) {
+        if (router.pathname == '/' && scrollTop == 0) {
             document.getElementById('home').classList.add('unscrolledLink')
             document.getElementById('gear').classList.add('unscrolledLink')
             document.getElementById('blog').classList.add('unscrolledLink')
@@ -86,9 +86,9 @@ export default function NavBar() {
                         <Nav.Link id="gear" className={router.pathname == "/gear" ? "active nav-padding nav-text" : "nav-text"} href="/gear">Gear</Nav.Link>
                         <Nav.Link id="blog" className={router.pathname == "/blog" ? "active nav-text" : "nav-text"} href="/blog">Blog</Nav.Link>
                         <Nav.Link id="projects" className={router.pathname == "/projects" ? "active nav-text" : "nav-text"} href="/projects">Projects</Nav.Link>
+                        <Nav.Link id="contact" className={router.pathname == "/contact" ? "active nav-text" : "nav-text"} href="/contact">Contact</Nav.Link>
                     </Nav>
                     <Nav className="ml-auto">
-                        <Nav.Link id="contact" className={router.pathname == "/contact" ? "active nav-text" : "nav-text"} href="/contact">Contact</Nav.Link>
                         <Nav.Link id="tutorials" className={router.pathname == "/tutorials" ? "active nav-text tutorial-nav" : "nav-text tutorial-nav"} href="/tutorials">Tutorials</Nav.Link>
                     </Nav>
                 </Navbar.Collapse>

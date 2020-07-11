@@ -8,8 +8,10 @@ function Index({ p }) {
     function descFormat(cell) {
         if (cell.length < 40) {
             return cell + '.'
-        } else {
+        } else if (cell.length >= 40) {
             return cell.substr(0, 40) + '...'
+        } else {
+            return '' // allows for empty descriptions
         }
     }
 
@@ -18,6 +20,9 @@ function Index({ p }) {
     }
 
     function projName(cell) {
+        const path = 'https://google.com'
+            // html_url:
+        // cell.forEach(d => { d.dataField = <><a href={path}>{d.dataFieldValue}</a></> })
         return capital_letter(cell.split('-').join(' '))
     }
 
@@ -107,8 +112,8 @@ Index.getInitialProps = async () => {
     const url = "https://api.github.com/users/bjcarlson42/repos"
     const res = await fetch(url, { "headers": headers })
     const json = await res.json()
-    const p = json
-    return { p: p }
+    console.log(json)
+    return { p: json }
 }
 
 export default Index

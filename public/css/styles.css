@@ -16,6 +16,11 @@ pre {
     padding: 10px;
 }
 
+code {
+    background-color: #f0f0f0;
+    color: #000;
+}
+
 li {
     list-style-position: inside;
 }
@@ -296,6 +301,7 @@ h1, h2, h3, h4, h5, h6 {
 /***** 
 ** Links.js **
 *****/
+
 
 .link-row:hover {
     background-color: transparent !important;

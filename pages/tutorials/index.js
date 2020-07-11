@@ -1,4 +1,6 @@
 import Head from 'next/head'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export default function Index() {
     return (
@@ -11,14 +13,38 @@ export default function Index() {
                 <h1 className="text-center">Learn To Code For Free</h1>
                 <p className="text-center">Written tutorials from my <a target="_blank" href="https://youtube.com/benjamincarlson">YouTube video tutorials</a></p>
                 <br />
-                <div style={{ width: '30%' }}>
-                    <a href="/tutorials/post/06-09-2020-python-twitter-bot-tweepy">
-                        <div className="text-center">
-                            <img style={{ width: '300px' }} src="../images/tutorials/1.jpg"></img>
-                            <h2 style={{ color: '#000' }}>Python Automation With Tweepy</h2>
+                <Row>
+                    <Col lg>
+                        <div className="individual-post">
+                            <a href="/tutorials/post/06-09-2020-python-twitter-bot-tweepy">
+                                <div className="text-center">
+                                    <img className="individual-post-img" src="../images/tutorials/1.jpg"></img>
+                                    <h2 className="individual-post-text">Python Automation With Tweepy</h2>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
+                    </Col>
+                    <Col lg>
+                        {/* <div className="individual-post">
+                            <a href="/tutorials/post/06-09-2020-python-twitter-bot-tweepy">
+                                <div className="text-center">
+                                    <img className="individual-post-img" src="../images/tutorials/1.jpg"></img>
+                                    <h2 className="individual-post-text">Python Automation With Tweepy</h2>
+                                </div>
+                            </a>
+                        </div> */}
+                    </Col>
+                    <Col lg>
+                        {/* <div className="individual-post">
+                            <a href="/tutorials/post/06-09-2020-python-twitter-bot-tweepy">
+                                <div className="text-center">
+                                    <img className="individual-post-img" src="../images/tutorials/1.jpg"></img>
+                                    <h2 className="individual-post-text">Python Automation With Tweepy</h2>
+                                </div>
+                            </a>
+                        </div> */}
+                    </Col>
+                </Row>
             </div>
         </div>
     )

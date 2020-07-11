@@ -1,0 +1,32 @@
+/* Tutorial CSS */
+
+.blog-post-container h1, .blog-post-container h2, .blog-post-container h3, .blog-post-container h4, .blog-post-container h5, .blog-post-container h6, .blog-post-container p {
+    line-height: 32px;
+}
+
+.blog-post-container p {
+    font-size: 21px;
+    font-weight: 300;
+    letter-spacing: -0.003em;
+    word-break: break-word;
+    color: rgba(41, 41, 41, 1);
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.individual-post-img {
+    width: 300px;
+}
+
+.individual-post-text {
+    color: #000;
+    padding-top: 5px;
+}
+
+@media only screen and (max-width: 335px) {
+    .individual-post-img {
+        width: 280px;
+    }
+}

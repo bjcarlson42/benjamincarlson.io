@@ -5,6 +5,7 @@ import Head from 'next/head'
 import Author from '../../../components/Author'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
+import Sidebar from '../../../components/Sidebar'
 
 export default function PostTemplate({ content, data }) {
     // This holds the data between `---` from the .md file
@@ -20,14 +21,17 @@ export default function PostTemplate({ content, data }) {
                 <h1 className="text-center" style={{ paddingTop: '75px' }}>{frontmatter.title}</h1>
                 <iframe style={{ display: 'block', margin: 'auto' }} width="560" height="315" src={frontmatter.youtube} frameBorder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                 <br />
-                <p>Outline: {frontmatter.snippet}</p>
+                <p className="text-center">Written by <b>{frontmatter.author}</b> in <b>{frontmatter.category}</b> | <b>{frontmatter.readTime}</b> min read</p>
                 <br />
+                {/* <p>{frontmatter.snippet}</p> */}
                 <Row>
                     <Col xl xl={9}>
-                        <ReactMarkdown source={content} />
+                        <div className="blog-post-container">
+                            <ReactMarkdown source={content} />
+                        </div>
                     </Col>
                     <Col xl>
-
+                        <Sidebar />
                     </Col>
                 </Row>
 

@@ -14,7 +14,7 @@ function Links() {
                         <img src="/images/portrait.jpeg" className="profile-img"></img>
                     </div>
                 </Row>
-                <a href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw" target="_blank">
+                <a href="https://www.youtube.com/benjamincarlson" target="_blank">
                     <Row className="link-row" style={{
                         color: '#000',
                         backgroundColor: '#fff',
