@@ -22,7 +22,7 @@ const Subscribe = () => {
         const { error } = await res.json();
 
         if (error) {
-            alert('Error!')
+            alert(error)
             return;
         }
 
