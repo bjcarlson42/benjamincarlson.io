@@ -6,8 +6,7 @@ export default async (req, res) => {
     const title = 'Latest YouTube video: ' + json.items[0].snippet.title
     const id = json.items[0].id.videoId
     const vid_url = 'http://www.youtube.com/watch?v=' + id
-    const thumbnail = json.items[0].snippet.thumbnails.high.url
     return res.status(200).json({
-        title: title, vid_url: vid_url, thumbnail: thumbnail
+        title: title, vid_url: vid_url
     })
 }
