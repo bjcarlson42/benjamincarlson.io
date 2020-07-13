@@ -17,7 +17,7 @@ export default function NavBar() {
             document.getElementById('tutorials').classList.add('unscrolledLink')
         }
         // remove navbar on the links page
-        if (router.pathname == '/links') {
+        if (router.pathname == '/link') {
             document.getElementById('global-nav').classList.add('hide')
         }
     }

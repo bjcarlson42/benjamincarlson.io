@@ -6,6 +6,7 @@ import Author from '../../../components/Author'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Sidebar from '../../../components/Sidebar'
+import Subscribe from '../../../components/Subscribe'
 
 export default function PostTemplate({ content, data }) {
     // This holds the data between `---` from the .md file
@@ -36,6 +37,7 @@ export default function PostTemplate({ content, data }) {
                 </Row>
 
                 <Author name={frontmatter.author} />
+                <Subscribe />
             </div>
         </div>
     )

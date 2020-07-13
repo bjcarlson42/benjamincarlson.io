@@ -1,16 +1,14 @@
 import Head from 'next/head'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import dynamic from 'next/dynamic'
 import TodoList from '../components/Todo'
 import { faArrowDown } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import YouTubeOdometer from '../components/YouTubeOdometer'
+import YouTubeSection from '../components/YouTubeSection'
+import Subscribe from '../components/Subscribe'
 
-function Home({ youtubeData }) {
-  const Odometer = dynamic(import('react-odometerjs'), {
-    ssr: false,
-    loading: () => 0
-  });
+export default function Home() {
   return (
     <div className='main'>
       <Head>
@@ -22,11 +20,7 @@ function Home({ youtubeData }) {
         <div className="centered">
           <h1>Benjamin J. Carlson</h1>
           <p>Rising junior studying computer science, documenting the journey and teaching others on YouTube</p>
-          <span><Odometer format="(,ddd)" duration={1000} value={youtubeData.subscriberCount} /> subscribers</span>
-          <span>&nbsp;|&nbsp;</span>
-          <span><Odometer format="(,ddd)" duration={1000} value={youtubeData.viewCount} /> views</span>
-          <span>&nbsp;|&nbsp;</span>
-          <span><Odometer format="(,ddd)" duration={1000} value={youtubeData.videoCount} /> videos</span>
+          <YouTubeOdometer />
         </div>
 
         <div className="centered-arrow">
@@ -52,7 +46,7 @@ function Home({ youtubeData }) {
 
       <section id="projects-section">
         <div className="container">
-          <h3 className="h3-padding center" style={{paddingBottom: '50px', fontSize: '35px'}}>Projects</h3>
+          <h3 className="h3-padding center" style={{ paddingBottom: '50px', fontSize: '35px' }}>Projects</h3>
           <Row className="center">
             <Col md>
               <h3>WOTD</h3>
@@ -112,68 +106,44 @@ function Home({ youtubeData }) {
           <p className="h3-padding">This websites' tech stack...</p>
           <Row>
             <Col md className="padding-bottom">
-              <h6 className="center">Frontend</h6>
+              <h6 style={{fontSize: '22px'}}>Frontend</h6>
               <ul>
-                <li>NextJS</li>
-                <li>JS</li>
-                <li>HTML + CSS</li>
+                <li>REACT + NEXT JS</li>
               </ul>
             </Col>
             <Col md className="padding-bottom">
-              <h6 className="center">Contact form logic</h6>
+              <h6 style={{ fontSize: '22px' }}>Contact Form Logic</h6>
               <ul>
-                <li>Node Mailer</li>
+                <li>NODE MAILER</li>
               </ul>
             </Col>
             <Col md className="padding-bottom">
-              <h6 className="center">Deployment</h6>
+              <h6 style={{ fontSize: '22px' }}>Deployment</h6>
               <ul>
-                <li>Vercel</li>
+                <li>VERCEL</li>
               </ul>
             </Col>
           </Row>
         </div>
       </section>
 
-      <section id='youtube-section'>
-        <div className='container'>
-          <h2 className='h2-padding center'>YouTube</h2>
-          <p className='center' style={{ color: '#fff' }}>I started a <a href="https://youtube.com/benjamincarlson" target="_blank" className="animate-underline">YouTube channel</a> to teach others how to code and to document my programming journey. Here are some of my stats.</p>
-          <Row style={{ textAlign: 'center', color: '#fff' }}>
-            <Col lg>
-              <span className="odometer-num"><Odometer format="(,ddd)" duration={1000} value={youtubeData.subscriberCount} /></span>
-              <h6>Subscribers</h6>
-            </Col>
-            <Col lg>
-              <span className="odometer-num"><Odometer format="(,ddd)" duration={1000} value={youtubeData.viewCount} /></span>
-              <h6>Views</h6>
-            </Col>
-            <Col lg>
-              <span className="odometer-num"><Odometer format="(,ddd)" duration={1000} value={youtubeData.videoCount} /></span>
-              <h6>Videos</h6>
-            </Col>
-          </Row>
-        </div>
-      </section>
+      <YouTubeSection />
 
       <section id="goals">
         <div className="container">
           <h3 className="h3-padding">Future Endeavors</h3>
           <p>I am constantly learning new things. Here are some of the things I plan on learning in the next 6 months.</p>
+          <p style={{ color: 'lightgrey', fontSize: '14px' }}>Try the TODO list out! Add an item in the input box and mark an item as complete by clicking it!</p>
           <TodoList />
-          <small>Try the TODO list out! Add an item in the input box and mark an item as complete by clicking it!</small>
         </div>
       </section>
+
+      <div>
+        <div className="container">
+          <Subscribe />
+        </div>
+      </div>
+
     </div >
   )
 }
-
-Home.getInitialProps = async () => {
-  var key = process.env.YOUTUBE_KEY
-  const res = await fetch('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCLMdmCCRFGWt7rktx6tMErw&key=' + key)
-  const json = await res.json()
-  var data = json.items[0].statistics
-  return { youtubeData: data }
-}
-
-export default Home

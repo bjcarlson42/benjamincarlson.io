@@ -98,6 +98,13 @@ h1, h2, h3, h4, h5, h6 {
     color: #000;
 }
 
+@media only screen and (max-width: 425px) {
+    #tech-stack {
+        padding: 50px;
+        text-align: center;
+    }
+}
+
 #projects-section {
     background-color: rgb(33, 37, 41);
     color: #fff;
@@ -107,6 +114,15 @@ h1, h2, h3, h4, h5, h6 {
 #goals {
     background-color: #fff;
     padding: 20px 0;
+}
+
+@media only screen and (max-width: 425px) {
+    .btn-todo-submit {
+        width: 100%;
+    }
+    #projects-section {
+        padding: 30px;
+    }
 }
 
 #youtube-section {

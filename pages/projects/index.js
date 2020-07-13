@@ -1,7 +1,5 @@
 import Head from 'next/head'
 import BootstrapTable from 'react-bootstrap-table-next'
-import paginationFactory from 'react-bootstrap-table2-paginator'
-// import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 
 function Index({ p }) {
 
@@ -10,7 +8,7 @@ function Index({ p }) {
             return cell + '.'
         } else if (cell.length >= 40) {
             return cell.substr(0, 40) + '...'
-        } else {
+        } else if (cell.length == 0) {
             return '' // allows for empty descriptions
         }
     }
@@ -20,9 +18,6 @@ function Index({ p }) {
     }
 
     function projName(cell) {
-        const path = 'https://google.com'
-            // html_url:
-        // cell.forEach(d => { d.dataField = <><a href={path}>{d.dataFieldValue}</a></> })
         return capital_letter(cell.split('-').join(' '))
     }
 
@@ -97,7 +92,6 @@ function Index({ p }) {
                         data={projects}
                         columns={columns}
                         bordered={false}
-                    // pagination={paginationFactory()}
                     />
                 </div>
             </div>
@@ -112,7 +106,6 @@ Index.getInitialProps = async () => {
     const url = "https://api.github.com/users/bjcarlson42/repos"
     const res = await fetch(url, { "headers": headers })
     const json = await res.json()
-    console.log(json)
     return { p: json }
 }
 

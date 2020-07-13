@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Row from 'react-bootstrap/Row'
-import LinkRow from '../components/LinkRow'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import Links from '../components/Links'
 import {
     faGithub,
     faTwitter,
@@ -22,7 +22,7 @@ library.add(
     faLinkedin
 )
 
-function Links({ title, vid_url, thumbnail }) {
+export default function Link() {
     return (
         <div className="bg">
             <div className='container links-container'>
@@ -38,8 +38,7 @@ function Links({ title, vid_url, thumbnail }) {
                 <p className="text-center white">Benjamin Carlson</p>
 
                 <div className="link-row-outer-container">
-                    <LinkRow name={title} href={vid_url} img={thumbnail} />
-                    <LinkRow name="Connect with me on Twitter" href="https://twitter.com/benscstutorials" img="/images/twitter.png" alt="Twitter logo" />
+                    <Links />
                 </div>
 
                 <div className="container">
@@ -123,17 +122,3 @@ function Links({ title, vid_url, thumbnail }) {
         </div>
     )
 }
-
-Links.getInitialProps = async () => {
-    var key = process.env.YOUTUBE_KEY
-    var channel_id = 'UCLMdmCCRFGWt7rktx6tMErw'
-    const res = await fetch('https://www.googleapis.com/youtube/v3/search?key=' + key + '&channelId=' + channel_id + '&part=snippet,id&order=date&maxResults=1')
-    const json = await res.json()
-    const title = 'Latest YouTube video: ' + json.items[0].snippet.title
-    const id = json.items[0].id.videoId
-    const vid_url = 'http://www.youtube.com/watch?v=' + id
-    const thumbnail = json.items[0].snippet.thumbnails.high.url
-    return { title: title, vid_url: vid_url, thumbnail: thumbnail }
-}
-
-export default Links
