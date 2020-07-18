@@ -1,6 +1,6 @@
 import Navbar from 'react-bootstrap/Navbar'
 import Nav from 'react-bootstrap/Nav'
-import React, { useEffect } from 'react';
+import React, { useEffect } from 'react'
 import { useRouter } from "next/router"
 
 export default function NavBar() {

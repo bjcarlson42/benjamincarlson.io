@@ -8,7 +8,7 @@ My portfolio has changed over the years - from a static HTML site to Wordpress t
 - `pages/api/gear` - Gear API route for [/gear](https://benjamincarlson.io/gear)
 - `pages/index` - Index page with YouTube data
 - `pages/blog` - Blog with data from Medium
-- `links` - My own "linktree"
+- `link` - My own "linktree"
 - `pages/*` - All other static pages
 
 ## Running Locally
@@ -27,6 +27,7 @@ Create a `.env` file.
 ```
 YOUTUBE_KEY=
 GITHUB_KEY=
+BUTTONDOWN__KEY=
 ```
 
 ## Built Using 

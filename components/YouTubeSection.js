@@ -7,7 +7,6 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 const YouTubeSection = () => {
-
     const { data, error } = useSWR('/api/youtube', fetcher)
     const subscriberCount = data?.subscriberCount
     const viewCount = data?.viewCount

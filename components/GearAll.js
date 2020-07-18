@@ -20,8 +20,6 @@ const GearAll = () => {
     var hardware = data.filter(function (g) {
         return g.software == 0;
     });
-    if (error) return <div className="container main center">Failed to load gear</div>
-    if (!data) return <div className="container main center" style={{ marginTop: '200px' }}>Loading...</div>
 
     return (
         <section>
