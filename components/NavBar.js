@@ -4,21 +4,14 @@ import React, { useEffect } from 'react'
 import { useRouter } from "next/router"
 
 export default function NavBar() {
-    const router = useRouter();
+    const router = useRouter()
     const handleState = () => {
-        var scrollTop = 0
-        scrollTop = scrollY
-        if (router.pathname == '/' && scrollTop == 0) {
-            document.getElementById('home').classList.add('unscrolledLink')
-            document.getElementById('gear').classList.add('unscrolledLink')
-            document.getElementById('blog').classList.add('unscrolledLink')
-            document.getElementById('projects').classList.add('unscrolledLink')
-            document.getElementById('contact').classList.add('unscrolledLink')
-            document.getElementById('tutorials').classList.add('unscrolledLink')
-        }
-        // remove navbar on the links page
-        if (router.pathname == '/link') {
-            document.getElementById('global-nav').classList.add('hide')
+        var scrollTop = 0 // initially set scrollTop to 0
+        scrollTop = scrollY // takes care of error when user refreshes mid page
+
+        // check if user is on '/hello'
+        if (router.pathname == '/hello') {
+            document.getElementById('global-nav').classList.add('hide') // hide navbar
         }
     }
     const handleScroll = () => {
@@ -31,40 +24,15 @@ export default function NavBar() {
             x = 10
         }
 
-        if (scrollTop > x) {
-            document.getElementById('global-nav').classList.add('scrolled-nav')
-            document.getElementById('global-nav').classList.add('nav-scrolled-box-shadow')
-        } else if (scrollTop < x) {
-            document.getElementById('global-nav').classList.remove('scrolled-nav')
-            document.getElementById('global-nav').classList.remove('nav-scrolled-box-shadow')
-        }
-        if (router.pathname == '/') {
+        if (screen.width > 767) {
             if (scrollTop > x) {
-                document.getElementById('home').classList.add('scrolledLink')
-                document.getElementById('home').classList.remove('unscrolledLink')
-                document.getElementById('gear').classList.add('scrolledLink')
-                document.getElementById('gear').classList.remove('unscrolledLink')
-                document.getElementById('blog').classList.add('scrolledLink')
-                document.getElementById('blog').classList.remove('unscrolledLink')
-                document.getElementById('projects').classList.add('scrolledLink')
-                document.getElementById('projects').classList.remove('unscrolledLink')
-                document.getElementById('contact').classList.add('scrolledLink')
-                document.getElementById('contact').classList.remove('unscrolledLink')
-                document.getElementById('tutorials').classList.add('scrolledLink')
-                document.getElementById('tutorials').classList.remove('unscrolledLink')
+                document.getElementById('global-nav').classList.add('scrolled-nav')
+                document.getElementById('global-nav').classList.add('nav-scrolled-box-shadow')
+                document.getElementById("global-nav").style.backgroundcolor = "white"
             } else if (scrollTop < x) {
-                document.getElementById('home').classList.remove('scrolledLink')
-                document.getElementById('home').classList.add('unscrolledLink')
-                document.getElementById('gear').classList.remove('scrolledLink')
-                document.getElementById('gear').classList.add('unscrolledLink')
-                document.getElementById('blog').classList.remove('scrolledLink')
-                document.getElementById('blog').classList.add('unscrolledLink')
-                document.getElementById('projects').classList.remove('scrolledLink')
-                document.getElementById('projects').classList.add('unscrolledLink')
-                document.getElementById('contact').classList.remove('scrolledLink')
-                document.getElementById('contact').classList.add('unscrolledLink')
-                document.getElementById('tutorials').classList.remove('scrolledLink')
-                document.getElementById('tutorials').classList.add('unscrolledLink')
+                document.getElementById('global-nav').classList.remove('scrolled-nav')
+                document.getElementById('global-nav').classList.remove('nav-scrolled-box-shadow')
+                document.getElementById("global-nav").style.backgroundcolor = "transparent"
             }
         }
     }

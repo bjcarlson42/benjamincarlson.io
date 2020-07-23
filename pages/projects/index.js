@@ -4,11 +4,11 @@ import BootstrapTable from 'react-bootstrap-table-next'
 function Index({ p }) {
 
     function descFormat(cell) {
-        if (cell.length < 40) {
+        if (cell.length < 40 && cell.length != 0  ) {
             return cell + '.'
         } else if (cell.length >= 40) {
             return cell.substr(0, 40) + '...'
-        } else if (cell.length == 0) {
+        } else {
             return '' // allows for empty descriptions
         }
     }
@@ -73,7 +73,7 @@ function Index({ p }) {
         dataField: 'stargazers_count',
         text: 'Stars',
         sort: true
-    },];
+    },]
     const projects = p
 
     return (

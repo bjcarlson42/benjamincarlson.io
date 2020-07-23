@@ -1,7 +1,6 @@
 import React from 'react'
 import useSWR from 'swr'
 import fetcher from '../lib/fetcher'
-import '../pages/api/gear'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Gear from '../components/Gear'
@@ -9,10 +8,9 @@ import Gear from '../components/Gear'
 const GearAll = () => {
     const { data, error } = useSWR('/api/gear', fetcher)
 
-    if (error) return <div className="container main center">Failed to load gear</div>
+    if (error) return <div className="container main center" style={{ marginTop: '200px' }}>Failed to load gear</div>
     if (!data) return <div className="container main center" style={{ marginTop: '200px' }}>Loading...</div>
 
-    // filter for software vs hardware
     var software = data.filter(function (g) {
         return g.software == 1;
     });

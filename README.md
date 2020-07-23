@@ -1,15 +1,13 @@
 # benjamincarlson.io
 
-My portfolio has changed over the years - from a static HTML site to Wordpress to Jekyll to Gatsby and finally to Next.js/React. This site has my writing, latest work, programming tutorials, and much more. Feel free to submit a pull request with your implementation to any of the issues or project boards.
+My portfolio has changed over the years - from a static HTML site to Wordpress to Jekyll to Gatsby to Django and finally to Next.js/React. This site has my writing, latest work, programming tutorials, and much more.
 
 ## Overview
 
 - `pages/tutorials/blog/content/*` - Static pre-rendered blog posts
-- `pages/api/gear` - Gear API route for [/gear](https://benjamincarlson.io/gear)
-- `pages/index` - Index page with YouTube data
-- `pages/blog` - Blog with data from Medium
-- `link` - My own "linktree"
-- `pages/*` - All other static pages
+- `pages/api/*` - API routes
+- `/hello` - My own "linktree"
+- `pages/*` - static pages
 
 ## Running Locally
 
@@ -33,4 +31,5 @@ BUTTONDOWN__KEY=
 ## Built Using 
 
 - Next.js
+- Bootstrap
 - Vercel

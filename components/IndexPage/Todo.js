@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import { withStateHandlers } from 'recompose';
+import { withStateHandlers } from 'recompose'
 import Row from 'react-bootstrap/Row'
 
 const ItemRow = styled.div`
