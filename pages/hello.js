@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Row from 'react-bootstrap/Row'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Links from '../components/Links'
+import Links from '../components/HelloPage/Links'
 import {
     faGithub,
     faTwitter,
@@ -27,7 +27,7 @@ export default function Link() {
         <div className="bg">
             <div className='container links-container'>
                 <Head>
-                    <title>Links | Benjamin J. Carlson</title>
+                    <title>Hello | Benjamin J. Carlson</title>
                     <meta name="description" content="Benjamin Carlson links to YouTube, Medium, personal website and more. Connect with Ben" />
                 </Head>
                 <Row>
@@ -35,49 +35,53 @@ export default function Link() {
                         <img src="/images/portrait.jpeg" className="profile-img"></img>
                     </div>
                 </Row>
-                <p className="text-center white">Benjamin Carlson</p>
-
-                <div className="link-row-outer-container">
-                    <Links />
-                </div>
-
+                <p className="text-center white" style={{fontSize: '30px'}}>Benjamin Carlson</p>
+                <p className="text-center white">19 year old computer science student documenting the process on YouTube</p>
                 <div className="container">
                     <div style={{
                         textAlign: 'center',
                         paddingBottom: '20px'
                     }}>
-                        <a href="https://twitter.com/benscstutorials" target="_blank">
-                            <FontAwesomeIcon id="twitter" icon={faTwitter} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
+                        <a href="https://twitter.com/benscstutorials" target="_blank" className="fa-link">
+                            <FontAwesomeIcon id="twitter" icon={faTwitter} className="fa-link" className={"fa"} />
                         </a>
-                        <a href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw" target="_blank">
-                            <FontAwesomeIcon id="youtube" icon={faYoutube} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
+                        <a href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw" target="_blank" className="fa-link">
+                            <FontAwesomeIcon id="youtube" icon={faYoutube} className="fa-link" className={"fa"} />
                         </a>
-                        <a href="https://github.com/bjcarlson42" target="_blank">
-                            <FontAwesomeIcon id="github" icon={faGithub} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
+                        <a href="https://github.com/bjcarlson42" target="_blank" className="fa-link">
+                            <FontAwesomeIcon id="github" icon={faGithub} className="fa-link" className={"fa"} />
                         </a>
-                        <a href="https://www.instagram.com/benscstutorials/" target="_blank">
-                            <FontAwesomeIcon id="instagram" icon={faInstagram} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
+                        <a href="https://www.instagram.com/benscstutorials/" target="_blank" className="fa-link">
+                            <FontAwesomeIcon id="instagram" icon={faInstagram} className="fa-link" className={"fa"} />
                         </a>
-                        <a href="https://medium.com/@benjamincarlson" target="_blank">
-                            <FontAwesomeIcon id="medium" icon={faMedium} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
+                        <a href="https://medium.com/@benjamincarlson" target="_blank" className="fa-link">
+                            <FontAwesomeIcon id="medium" icon={faMedium} className="fa-link" className={"fa"} />
                         </a>
-                        <a href="https://www.pinterest.com/benscstutorials/" target="_blank">
-                            <FontAwesomeIcon id="pinterest" icon={faPinterest} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
-                        </a>
-                        <a href="https://www.linkedin.com/in/bjcarlson42/" target="_blank">
-                            <FontAwesomeIcon id="linkedin" icon={faLinkedin} style={{ color: '#fff', fontSize: '30px', width: '30px', margin: '8px' }} className={"fa"} />
+                        {/* <a href="https://www.pinterest.com/benscstutorials/" target="_blank" className="fa-link">
+                            <FontAwesomeIcon id="pinterest" icon={faPinterest} className="fa-link" className={"fa"} />
+                        </a> */}
+                        <a href="https://www.linkedin.com/in/bjcarlson42/" target="_blank" className="fa-link">
+                            <FontAwesomeIcon id="linkedin" icon={faLinkedin} className="fa-link" className={"fa"} />
                         </a>
                     </div>
+                </div>
+                <div className="link-row-outer-container">
+                    <Links />
                 </div>
 
             </div>
             <style jsx>{`
                 .bg {
                     height: 100vh;
-                    background:linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url('/images/linkbg.jpg');
-                    background-size: cover;
-                    background-position: center center;
-                    background-repeat: no-repeat;
+                    background-color: #fff;
+                    background-image: -webkit-linear-gradient(30deg, #ABFDE9 50%, #55819A 50%);
+                }
+
+                .fa-link {
+                    color: #fff;
+                    font-size: 30px;
+                    width: 30px;
+                    margin: 8px;
                 }
 
                 .link-row-outer-container {
@@ -101,6 +105,10 @@ export default function Link() {
                 @media only screen and (max-width: 375px) {
                     .link-row-outer-container {
                         width: 100%;
+                    }
+
+                    .fa-link {
+                        font-size: 25px;
                     }
                 }
 

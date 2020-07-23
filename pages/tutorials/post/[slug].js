@@ -3,9 +3,6 @@ import matter from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import Head from 'next/head'
 import Author from '../../../components/Author'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Sidebar from '../../../components/Sidebar'
 import Subscribe from '../../../components/Subscribe'
 
 export default function PostTemplate({ content, data }) {
@@ -25,16 +22,10 @@ export default function PostTemplate({ content, data }) {
                 <p className="text-center">Written by <b>{frontmatter.author}</b> in <b>{frontmatter.category}</b> | <b>{frontmatter.readTime}</b> min read</p>
                 <br />
                 {/* <p>{frontmatter.snippet}</p> */}
-                <Row>
-                    <Col xl xl={9}>
-                        <div className="blog-post-container">
-                            <ReactMarkdown source={content} />
-                        </div>
-                    </Col>
-                    <Col xl>
-                        <Sidebar />
-                    </Col>
-                </Row>
+                <div className="blog-post-container">
+                    <ReactMarkdown source={content} />
+                </div>
+
 
                 <Author name={frontmatter.author} />
                 <Subscribe />
