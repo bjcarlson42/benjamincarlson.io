@@ -1,5 +1,5 @@
 export default async (req, res) => {
-    const { email } = req.body;
+    const { email, path } = req.body;
 
     if (!email) {
         return res.status(400).json({ error: 'Email is required' });
@@ -12,7 +12,7 @@ export default async (req, res) => {
             {
                 body: JSON.stringify({
                     email,
-                    tags: ['benjamincarlson.io']
+                    tags: ['benjamincarlson.io'+path]
                 }),
                 headers: {
                     Authorization: `Token ${API_KEY}`,
@@ -27,7 +27,13 @@ export default async (req, res) => {
 
             if (text.includes('already subscribed')) {
                 return res.status(400).json({
-                    error: `You're already subscribed to my mailing list.`
+                    error: `You're already subscribed to my mailing list!`
+                });
+            }
+
+            if (text.includes('Enter a valid')) {
+                return res.status(400).json({
+                    error: `Please enter a valid email!`
                 });
             }
 

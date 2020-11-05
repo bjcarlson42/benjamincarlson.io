@@ -1,132 +1,81 @@
-import Head from 'next/head'
-import Row from 'react-bootstrap/Row'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Links from '../components/HelloPage/Links'
+import React from 'react'
+import { NextSeo } from 'next-seo'
 import {
-    faGithub,
-    faTwitter,
-    faInstagram,
-    faPinterest,
-    faYoutube,
-    faMedium,
-    faLinkedin
-} from '@fortawesome/free-brands-svg-icons'
-library.add(
-    faGithub,
-    faTwitter,
-    faInstagram,
-    faPinterest,
-    faYoutube,
-    faMedium,
-    faLinkedin
-)
+    Stack,
+    Flex,
+    Heading,
+    useColorMode,
+    Avatar,
+    Text
+} from '@chakra-ui/core'
+import useSWR from 'swr'
+import fetcher from '../lib/fetcher'
 
-export default function Link() {
+import SocialLink from '../components/SocialLink'
+import Container from '../components/Container'
+
+const url = 'https://benjamincarlson.io/hello'
+const titleSEO = 'Hello – Benjamin Carlson'
+const description = 'I am a developer and creator. Here are some of my links.'
+
+const Hello = () => {
+
+    const { data, error } = useSWR('/api/links', fetcher)
+    const title = data?.title
+    const vid_url = data?.vid_url
+
     return (
-        <div className="bg">
-            <div className='container links-container'>
-                <Head>
-                    <title>Hello | Benjamin J. Carlson</title>
-                    <meta name="description" content="Benjamin Carlson links to YouTube, Medium, personal website and more. Connect with Ben" />
-                </Head>
-                <Row>
-                    <div style={{ display: 'block', margin: 'auto', padding: '50px 0 20px 0' }}>
-                        <img src="/images/portrait.jpeg" className="profile-img"></img>
-                    </div>
-                </Row>
-                <p className="text-center white" style={{fontSize: '30px'}}>Benjamin Carlson</p>
-                <p className="text-center white">19 year old computer science student documenting the process on YouTube</p>
-                <div className="container">
-                    <div style={{
-                        textAlign: 'center',
-                        paddingBottom: '20px'
-                    }}>
-                        <a href="https://twitter.com/benscstutorials" target="_blank" className="fa-link">
-                            <FontAwesomeIcon id="twitter" icon={faTwitter} className="fa-link" className={"fa"} />
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw" target="_blank" className="fa-link">
-                            <FontAwesomeIcon id="youtube" icon={faYoutube} className="fa-link" className={"fa"} />
-                        </a>
-                        <a href="https://github.com/bjcarlson42" target="_blank" className="fa-link">
-                            <FontAwesomeIcon id="github" icon={faGithub} className="fa-link" className={"fa"} />
-                        </a>
-                        <a href="https://www.instagram.com/benscstutorials/" target="_blank" className="fa-link">
-                            <FontAwesomeIcon id="instagram" icon={faInstagram} className="fa-link" className={"fa"} />
-                        </a>
-                        <a href="https://medium.com/@benjamincarlson" target="_blank" className="fa-link">
-                            <FontAwesomeIcon id="medium" icon={faMedium} className="fa-link" className={"fa"} />
-                        </a>
-                        {/* <a href="https://www.pinterest.com/benscstutorials/" target="_blank" className="fa-link">
-                            <FontAwesomeIcon id="pinterest" icon={faPinterest} className="fa-link" className={"fa"} />
-                        </a> */}
-                        <a href="https://www.linkedin.com/in/bjcarlson42/" target="_blank" className="fa-link">
-                            <FontAwesomeIcon id="linkedin" icon={faLinkedin} className="fa-link" className={"fa"} />
-                        </a>
-                    </div>
-                </div>
-                <div className="link-row-outer-container">
-                    <Links />
-                </div>
-
-            </div>
-            <style jsx>{`
-                .bg {
-                    height: 100vh;
-                    background-color: #fff;
-                    background-image: -webkit-linear-gradient(30deg, #ABFDE9 50%, #55819A 50%);
-                }
-
-                .fa-link {
-                    color: #fff;
-                    font-size: 30px;
-                    width: 30px;
-                    margin: 8px;
-                }
-
-                .link-row-outer-container {
-                    width: 60%;
-                    display: block;
-                    margin: auto;
-                }
-
-                @media only screen and (max-width: 768px) {
-                    .link-row-outer-container {
-                        width: 80%;
-                    }
-                }
-
-                @media only screen and (max-width: 425px) {
-                    .link-row-outer-container {
-                        width: 90%;
-                    }
-                }
-
-                @media only screen and (max-width: 375px) {
-                    .link-row-outer-container {
-                        width: 100%;
-                    }
-
-                    .fa-link {
-                        font-size: 25px;
-                    }
-                }
-
-                .profile-img {
-                    border-radius: 50%;
-                    width: 100px;
-                    height: 100px;
-                }
-
-                .links-container {
-                    min-height: 100vh;
-                }
-
-                .white {
-                    color: #fff;
-                }
-            `}
-            </style>
-        </div>
+        <>
+            <NextSeo
+                title={titleSEO}
+                description={description}
+                canonical={url}
+                openGraph={{
+                    url,
+                    title,
+                    description
+                }}
+            />
+            <Container>
+                <Stack
+                    as="main"
+                    spacing={8}
+                    justifyContent="center"
+                    alignItems="flex-start"
+                    m="0 auto 4rem auto"
+                    maxWidth="700px"
+                    px={2}
+                >
+                    <Flex
+                        flexDirection="column"
+                        justifyContent="flex-start"
+                        alignItems="flex-start"
+                        width={['100%', '500px', '700px']}
+                    >
+                        <Avatar
+                            size='2xl'
+                            name="Benjamin Carlson"
+                            src="../images/portrait.jpeg"
+                            mr={2}
+                            alignSelf="center"
+                            my={5}
+                        />
+                        <Heading letterSpacing="tight" mb={4} as="h1" size="xl" alignSelf="center">
+                            Hello 👋, I'm Ben
+                        </Heading>
+                        <Text alignSelf="center" textAlign="center" mb={4}>I’m a developer, writer, creator, and student. Use the links below to learn more.</Text>
+                        <SocialLink name={title} href={vid_url} icon="youtube" />
+                        <SocialLink name="Check Out My Website!" href="/" icon="code" />
+                        <SocialLink name="View My Opensource Code!" href="https://github.com/bjcarlson42?tab=repositories" icon="github" />
+                        <SocialLink name="Subscribe to my newsletter" href="https://buttondown.email/benjamincarlson" icon="mail" />
+                        <SocialLink name="Sponsor me on GitHub!" href="https://github.com/sponsors/bjcarlson42" icon="github" />
+                        <SocialLink name="Subscribe To My YouTube Channel!" href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw?sub_confirmation=1" icon="youtube" />
+                        <SocialLink name="Follow Me On Twitter!" href="https://twitter.com/bjmncrlsn" icon="twitter" />
+                    </Flex>
+                </Stack>
+            </Container>
+        </>
     )
 }
+
+export default Hello

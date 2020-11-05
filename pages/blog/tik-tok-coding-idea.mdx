@@ -1,0 +1,38 @@
+---
+title: 'How TikTok Gave Me the Perfect Coding Side Project'
+publishedAt: '2020-09-01'
+summary: 'I got an idea for a weekend coding project from Tik Tok.'
+image: '/images/tik-tok/emile-perron-xrVDYZRGdw4-unsplash.jpg'
+---
+
+As a computer science student, I am always looking for another cool side project to keep me busy. These ideas for side projects can come from anywhere; sometimes from the places you least expect.
+
+The other day I was scrolling through TikTok when I can across this video. Basically, it’s about how there are people in this world born on the same day and were in the same hospital are you were. Neat, right? I then looked at the comments and multiple users were saying there should be a website for this. Immediately I knew what I had to do. In this post, I will talk about how I was able to build and deploy this site in only a few hours completely for free by using various popular coding technologies.
+
+### The Idea
+
+Before I talk about the technology, I want to quickly discuss what I am trying to build. Essentially, it is a website where users can create an account and input their information like their name, birthday, hospital name, and snapchat username (for a way to contact). After they do this, they can see a table of every other user who has inputted their information. They can then (hopefully) find others with the same birthday and hospital!
+
+Over time I plan to add new features (because right now this is essentially an Excel spreadsheet clone), but for the moment that is the idea.
+
+### The Technology
+
+Now for the interesting part. Let’s look at the technology I used to build this.
+
+### Next.js
+
+Right off the bat I knew I was going to build this in Next.js. I had just finished uploading a tutorial series on YouTube about it and I built my personal website using it so I was confident I could quickly and easily get this site up and running with Next.js.
+
+Next.js gives you the best developer experience with all the features you need for production: hybrid static & server rendering, TypeScript support, smart bundling, route pre-fetching, and more. No config needed.
+
+### Firebase
+
+My next challenge was deciding how and where to store the data. For this, I turned to Google’s Firebase. I had worked with Firebase before in various forms, including with Flutter and Vanilla JavaScript, but not yet with Next.js. No problem though, because Next.js has amazing documentation and example projects. I was able to clone this firebase auth repo and get on my way. As seen by the repo name, Firebase also helped in another way; providing a means of authentication.
+
+> Firebase helps mobile and web app teams succeed
+
+### Bootstrap + react-bootstrap-table-next + HTML/CSS
+
+To quickly build a UI for this site, I turned to Bootstrap, specifically react bootstrap. Using it, I was able to code the Nav bar and the Modals quickly. Then, I used npm package “react-bootstrap-table-next” to build the table for the data. This allowed be to dynamically generate the data and add a search bar easily (see code below). Both of these technologies accounted for 99% of my UI.
+
+I also used HTML and CSS for some basic markup because, let’s face it, you can’t build a website without them.

@@ -1,7 +1,7 @@
 export const software = [
     {
         id: 1,
-        software: 0, // 0 for no, 1 for yes
+        software: 0, // 0 -> hardware, 1 -> software, 2 -> cameraware
         item: 'Laptop',
         title: 'Apple MacBook Pro (15-Inch, 16GB RAM, 512GB Storage, 2.6GHz Intel Core i7)',
         url: 'https://amzn.to/3fIS3vo'
@@ -15,7 +15,7 @@ export const software = [
     },
     {
         id: 3,
-        software: 0, // 0 for no, 1 for yes
+        software: 0,
         item: 'Monitor',
         title: 'Samsung CF390 Series 27 inch FHD 1920x1080 Curved Desktop Monitor',
         url: 'https://amzn.to/35QxuIB'
@@ -24,12 +24,12 @@ export const software = [
         id: 4,
         software: 0,
         item: 'Smartphone',
-        title: 'Google Pixel 2 XL',
-        url: 'https://amzn.to/2SWozA7'
+        title: 'Google Pixel 5',
+        url: 'https://store.google.com/product/pixel_5?gclid=Cj0KCQjwreT8BRDTARIsAJLI0KI2UDa9g0i9f2EBQ3IxzyICHNLxBLkTP7Swk67DM0dvuDXiKJF5A3AaArukEALw_wcB&gclsrc=aw.ds'
     },
     {
         id: 5,
-        software: 0, // 0 for no, 1 for yes
+        software: 0,
         item: 'Keyboard',
         title: 'Wireless Keyboard',
         url: 'https://amzn.to/3cohJez'
@@ -118,4 +118,18 @@ export const software = [
         title: 'TablePlus',
         url: 'https://tableplus.com/'
     },
+    {
+        id: 17,
+        software: 2,
+        item: 'Camera',
+        title: 'Google Pixel 5',
+        url: 'https://store.google.com/product/pixel_5?gclid=Cj0KCQjwreT8BRDTARIsAJLI0KI2UDa9g0i9f2EBQ3IxzyICHNLxBLkTP7Swk67DM0dvuDXiKJF5A3AaArukEALw_wcB&gclsrc=aw.ds'
+    },
+    {
+        id: 18,
+        software: 2,
+        item: 'Mic',
+        title: 'Blue Yeti USB Mic',
+        url: 'https://www.amazon.com/Blue-Yeti-USB-Microphone-Blackout/dp/B002VA464S/ref=sr_1_3?crid=6CJYFYCJ9ZP3&dchild=1&keywords=blue%2Byeti&qid=1604279275&sprefix=blue%2Bye%2Caps%2C192&sr=8-3&th=1'
+    }
 ]

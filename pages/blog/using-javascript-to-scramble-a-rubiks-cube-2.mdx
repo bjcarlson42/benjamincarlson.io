@@ -1,0 +1,147 @@
+---
+title: 'Using JavaScript To Scramble A Rubik’s Cube: An Improved Algorithm'
+publishedAt: '2020-04-04'
+summary: 'I am making a web app that required me to make a rubiks cube scramble. I will show you how to implement this algorithm in JavaScript.'
+image: '/images/using-javascript-to-scramble-cube-2/1.jpeg'
+---
+
+## Introduction
+
+This is a follow up post to the post I wrote just the other day on scrambling a Rubik’s Cube with JavaScript. If you haven’t read that post yet be sure to check it out here and then come back to this post. In this post, I will improve the JavaScript scrambler. To do that, we will unfortunately have to rewrite most of the code, but the fundamental design stays the same. Let’s get to it!
+
+## What’s a Scramble
+
+You should already know what a Rubik’s cube scramble is (assuming you read the first post), however, here is a quick refresher just in case. A scramble is a sequence of 20 moves that are performed on a solved cube. These 20 moves are picked randomly from the following set of moves:
+
+F, R, U, B, L, D, F2, R2, U2, B2, L2, D2, F', R', U', B', L', D'
+
+Here are some example scrambles:
+
+B2 R F' L2 R B L2 F' D' L2 F L2 R' U B D' F D' U2 R' 
+
+B' D U2 F' L U' R2 L' D B D' R2 B' F' R2 B2 D2 R B D2 
+
+L' R2 U2 F U' B' D2 B D B' F2 U R2 F2 U' L2 B2 R2 L U'
+
+## The Problem
+
+The problem with the last post was that our scrambling algorithm doesn’t account for the possibility of 2 of the same move being next to each other. For example, we might get a scrambles that look like these:
+
+B2 R F' L2 R B L2 F' L' L2 F L2 R' U B D' F D' U2 R' 
+
+B' D U2 F' L U' R2 R2 D B D' R2 B' F' R2 B2 D2 R B D2 
+
+L' R2 U2 F U' B' D2 B D B' F2 U R2 D D L2 B2 R2 L U'
+
+At first these scrambles might not look like an issue, however if you look closer, you will see that the first scramble has a L’ and a L2 directly next to each other. The last scramble has two D moves next to each other. This makes no sense. Take the last scramble for example. It’s the one with two D moves next to each other. That is the same as saying D2. Essentially, that scramble is now 19 moves, not 20. This is a problem, especially when we get 3 or 4 moves like this in our scrambles
+
+Additionally, having a R followed by an R’ makes no sense because they just cancel each other out! All we did was move the cube twice to get to the same spot. When this happens multiple times in a scramble, our scrambles could be 15 or less moves instead of 20!
+
+## The Fix
+
+This may seem like a simple fix but it is not quite that easy. It is hard to check if 2 adjacent moves are the same type. We need to think about solving this in a different way than we did last time. Let’s take a look at the options for each scramble again.
+
+F, R, U, B, L, D, F2, R2, U2, B2, L2, D2, F', R', U', B', L', D'
+
+We can see that there are 6 different moves by letter. There is F, R, U, B, L, and D. Furthermore, there are 3 different moves for each of these. A single clockwise move (F), a double move (F2), and single counter clockwise move (F’). These make up our 18 possible moves (6 x 3 = 18).
+
+We can use numbers to represent the scramble. We will assign F to 0, B to 1, and so on. Then at the end, we can substitute the letters back in and can be sure that no of the same letters will be next to each other.
+
+## Coding the Solution in JavaScript
+
+We can now approach this problem using this knowledge. Let’s start off by giving each of the 6 possibilities a number 0 through 6 and store them in an array. We will call this array numOptions.
+
+```javascript
+var numOptions = [0,1,2,3,4,5]
+```
+
+Now, we can randomly add these numbers to another array named scramble until we have 20 random letters in the array. Remember, a Rubik’s cube scramble is 20 moves.
+
+```javascript
+var scramble = [] // initialize to empty
+
+
+    for (var i = 0; i < 20; i++ ) {
+        scramble.push(numOptions[getRandomInt(6)])
+    }
+
+    // random int code from last tutorial
+    function getRandomInt(max) {
+        // returns up to max - 1
+        return Math.floor(Math.random() * Math.floor(max))
+    }
+```
+
+Now, we have an array of 20 random numbers from 0 to 5! Now, some of you are thinking, we still have the same problem as last time. If that’s you, you’re absolutely right. We still have the possibility for a two 3’s to be next to each other or two 1’s. However, since we are using numbers (as opposed to letters), it is super easy to loop through the array and check this. We can now write code to generate an array of 20 numbers, loop though and check to see if any of the same number are next to each other, and if they are, generate the array again.
+
+```javascript
+var bad = true
+
+    while (bad) {
+        scramble = []
+        for (var i = 0; i < length; i++) {
+            scramble.push(numOptions[getRandomInt(6)])
+        }
+        // check if moves directly next to each other are the same letter
+        for (var i = 0; i < length - 1; i++) {
+            if (scramble[i] == scramble[i + 1]) {
+                bad = true
+                break
+            } else {
+                bad = false
+            }
+        }
+    }
+```
+
+To briefly explain the code above: we declare a boolean bad and set it to true. The next block of code we already saw. Then, we check the scramble by looping through the array. It compares the value at index 0 to the value at index 1. If they are not equal it moves on and checks the rest of the array in the same fashion. If at any point two numbers are equal, it breaks, regenerates the scramble, and checks again.
+
+## Adding the Letters
+
+The final step is to substitute letters for the numbers. We will do this by declaring an array of all possible options and then writing a switch statement nested inside a for loop to substitute the right letters for each number.
+
+Ex. If the number is 3, we will place either a B, B2, or B’ (randomly of course).
+
+```javascript
+var options = ["F", "F2", "F'", "R", "R2", "R'", "U", "U2", "U'", "B", "B2", "B'", "L", "L2", "L'", "D", "D2", "D'"]
+var move
+
+for (var i = 0; i < 20; i++) {
+        switch (scramble[i]) {
+            case 0:
+                move = options[getRandomInt(3)] // 0,1,2
+                scrambleMoves.push(move)
+                break
+            case 1:
+                move = options[getRandomIntBetween(3, 6)] // 3,4,5
+                scrambleMoves.push(move)
+                break
+            case 2:
+                move = options[getRandomIntBetween(6, 9)] // 6,7,8
+                scrambleMoves.push(move)
+                break
+            case 3:
+                move = options[getRandomIntBetween(9, 12)] // 9,10,11
+                scrambleMoves.push(move)
+                break
+            case 4:
+                move = options[getRandomIntBetween(12, 15)] // 12,13,14
+                scrambleMoves.push(move)
+                break
+            case 5:
+                move = options[getRandomIntBetween(15, 18)] // 15,16,17
+                scrambleMoves.push(move)
+                break
+        }
+    }
+    
+function getRandomIntBetween(min, max) { // return a number from min to max - 1. Ex. 3, 9 returns 3 - 8
+    return Math.floor(Math.random() * (max - min) + min)
+}
+```
+
+You will notice we have another function that gets a random number between 2 numbers called getRandomIntBetween. I added this because we need to be able to get a random number between 2 numbers and our current randNum function only allowed us to get a random number from 0 to a specified number.
+
+## Conclusion
+
+After seeing how I solved this problem, can you solve it better? I would love to see if there is a better solution! If you give it a try, let me know in the comments. You can get the code for this tutorial on my GitHub.

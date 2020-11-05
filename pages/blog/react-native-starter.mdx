@@ -1,0 +1,51 @@
+---
+title: 'Create an IOS and Android app in under 5 minutes!'
+publishedAt: '2020-04-01'
+summary: 'I am making a web app that required me to make a rubiks cube scramble. I will show you how to implement this algorithm in JavaScript.'
+image: '/images/react-native-starter/1.png'
+---
+
+React Native is a JavaScript framework for building cross platform mobile apps. In this tutorial, I’ll show you how to quickly set up a React Native project and run your app on your actual device! The code for this tutorial can be found on my GitHub.
+
+## Expo
+
+In this tutorial, we will be using expo with React Native. Expo acts as a container around the React Native framework that allows us to develop applications more quickly and easily compared to if we were using bare bones React Native. The first thing we need to do is install the Expo CLI command line utility. Open your terminal and run the following command:
+
+```shell
+npm install -g expo-cli
+```
+
+Now we can create a new React Native project. I will call my project ExampleProject but you can call it whatever you like.
+
+```shell
+expo init ExampleProject
+```
+
+Expo will prompt you with the following message:
+
+![react native](/images/react-native-starter/2.png)
+
+For this tutorial, I will select blank but I encourage you to do some research and select the best option for your project.
+
+## Running Our App
+
+Believe it or not, our app is ready to be run! To start our app we must move into the folder which contains our app and then run the start command.
+
+```shell
+cd AwesomeProject
+npm start
+```
+
+When you run ‘npm start’, a new browser window will open at your local host. You will notice a barcode in the lower left hand corner.
+
+![react native](/images/react-native-starter/3.png)
+
+We can scan this barcode in the expo app to run our app on a device. Go to either the Apple App Store or the Google Play Store and search for ‘expo client’. See the image below.
+
+![react native](/images/react-native-starter/4.png)
+
+Once you download and open the app, you will see an option to “Scan QR Code”. Tap this and scan your code. After the JavaScript loads, you should be able to see the app on your device. If you see “Open up App.js to start working on your app!” you have done it correctly.
+
+## Conclusion
+
+Now go out and start building the app of your dreams! If you want the exact code I used in this tutorial, it can be found on my GitHub and this post and more can be found on my website. Happy coding!
