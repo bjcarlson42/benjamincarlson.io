@@ -1,0 +1,72 @@
+---
+title: 'Create a Cross Platform Mobile App With Flutter in Under 5 Minutes!'
+publishedAt: '2020-04-29'
+summary: 'I am making a web app that required me to make a rubiks cube scramble. I will show you how to implement this algorithm in JavaScript.'
+---
+
+## Introduction
+
+A few weeks ago I wrote an article detailing how you can quickly create a cross platform mobile app with React Native and run it on your device. Since that article got a lot of traction, I have decided to write a similar article with Flutter!
+
+> Rather watch a video than read? Watch this article in video format on YouTube: https://youtu.be/0eAqiyIr-_Y
+
+## What Is Flutter?
+
+Flutter, built by Google, is a UI toolkit for building beautiful, natively compiled applications for mobile, web, and desktop. Flutter apps are built using the dart programming language.
+
+The first step is to download the Flutter SDK from flutter’s website. Be sure to download the right one for your machine.
+
+Next we need to unzip this folder and move it to somewhere more permanent. Find the zipped file in your downloads folder and double click it to unzip it.
+
+Next, create a folder named Developer right under your main user. Inside that folder place the unzipped flutter folder. Here is my folder structure:
+
+```bash
+/Users/bjcarlson/Developer/flutter
+```
+
+Instead of bjcarlson you should see your username. This is for a mac but windows should be similar.
+
+The final step is to tell our machine where to find these files whenever we want to use them! For this, open up a terminal window and write:
+
+```bash
+vim .bash_profile
+```
+
+Inside here we will write:
+
+```bash
+export PATH="$PATH:/Users/bjcarlson/Developer/flutter/bin"
+```
+
+Of course, replace my username for yours. To exit and save write:
+
+```bash
+:wq!
+```
+
+After this quit and restart terminal.
+
+To make sure everything works, open up terminal again and write:
+
+```bash
+flutter --version
+```
+
+If you get the following output, you have done it correctly.
+
+![Python](/images/create-a-flutter-app-fast/1.png)
+
+Now we can create an app.
+
+Navigate to where you want to place this app and run ```flutter create my_awesome_app```
+
+Move into the folder and run the run command.
+
+```bash
+cd my_awesome_app
+flutter run
+```
+
+That’s it! Your app will now start on an actual device if you have one connected, or a simulator if you set that up. For info on that see flutters docs.
+
+Happy coding!

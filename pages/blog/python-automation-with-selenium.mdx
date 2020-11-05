@@ -1,0 +1,226 @@
+---
+title: 'Python Automation With Selenium'
+publishedAt: '2020-04-29'
+summary: 'I am making a web app that required me to make a rubiks cube scramble. I will show you how to implement this algorithm in JavaScript.'
+image: '/images/python-automation-with-selenium/1.jpeg'
+---
+
+## Introduction
+
+Recently I make two YouTube videos detailing how to use Python and Selenium to code an Instagram Bot. Today, I am taking those videos and putting them into article format so you can follow along and copy/paste code! Just like the videos, I will be splitting these articles into 2 parts. You can watch the first video here:
+
+> Remember, this is for educational purposes only. I do not recommend using this outside testing and exploring purposes because Instagram does not allow bots!
+
+## Prerequisites
+
+The following are items you need installed before you begin.
+
+### Python
+
+- Navigate to https://www.python.org/downloads/ and download the latest version.
+
+### Virtualenv
+
+- Run the following command:
+
+```bash
+pip install virtualenv
+```
+
+(Note: you need pip installed to run the command)
+
+### Selenium
+
+- Navigate to https://www.selenium.dev/downloads/ and download the latest version
+
+### WebDriver for Chrome
+
+- Navigate to https://chromedriver.chromium.org/downloads and under Current Releases download the version for your Chrome Browser (81, 80, or 79)
+
+- Unzip the file
+
+- Run the following command:
+
+```bash
+mv ~Downloads/chromedriver /usr/local/bin
+```
+
+(Note: There is a space after …chromedriver and /usr…)
+
+After you have those three things, we are ready to start!
+
+## Setting Up The Environment
+
+We will be using a Python virtual environment to keep this project and its dependancies separate from other projects on your machine.
+
+Make a new folder where you want to store this project, move into that folder, and then create a new virtual environment.
+
+```bash
+mkdir <projectName>
+cd <projectName>
+virtualenv -p python3 <venvName>
+```
+
+Next, activate the virtual environment.
+
+```bash
+source <venvName>/bin/activate
+```
+
+Next, let’s install Selenium. Selenium is our one dependency for this project and it allows us to automate web browsers.
+
+```bash
+pip install selenium
+```
+
+Finally, open those files in a code editor of your choice.
+
+## Time To Code!
+
+I mentioned that we are going to be making an Instagram bot. More specifically, we will be writing code to automate logging in to Instagram, searching a hashtag from the explore page, and liking and commenting on each picture.
+
+Create a file named bot.py at the same level as your vitualenv.
+
+Inside this file, write the following code:
+
+```python
+from selenium import webdriver
+from time import sleep
+from selenium.webdriver.common.keys import Keys
+from random import randint
+```
+
+We will use each of these imports and discuss what they each do when we use them.
+
+Next, let’s declare some standard Python boilerplate code:
+
+```python
+class Bot(): 
+    def __init__(self):
+        self.login('benscstutorials')
+   
+    def login(self, username):
+        print('hi')
+def main():
+    my_bot = Bot()
+if __name__ == '__main__':
+    main()
+```
+
+The above code will print ```hi``` if you run it.
+
+Next, lets declare an instance of our webdriver. The following code will all be written in the login def.
+
+```python
+self.driver = webdriver.Chrome()
+```
+
+We can now user driver to call various methods that webdriver gives us access to. First, we need to open instagram. We can do that with the get method.
+
+```python
+self.driver.get('https://www.instagram.com/')
+```
+
+If we run this with python -i bot.py, you will see an automated webbrowser window open up and navigate to Instagram.
+
+Pretty cool, right!
+
+Next, we need to wait for Instagram to open. This is where sleep comes in. We can use sleep to make our code go idle for a specified number of seconds.
+
+```python
+sleep(5)
+```
+
+Now, we need to insert our username and password into the form and hit login. To do this we can get each element by xpath, and use the send_keys() method to send text!
+
+To get the element xpath, right click on the element and click inspect. This will bring you to the source code. Next, right click on the source code for that element. Towards the bottom you will see copy, copy xpath.
+
+![Python](/images/python-automation-with-selenium/2.png)
+
+Do this for both username and password. Then, in your editor write the following code in the login method:
+
+```python
+username_input = self.driver.find_element_by_xpath("//input[@name='username']")
+username_input.send_keys(username)
+password_input = self.driver.find_element_by_xpath("//input[@name='password']")
+password_input.send_keys(pw)
+```
+
+You will notice that i am sending the variable pw instead of my actual password. This is for security reasons. Make a new file called ```secrets.py``` and inside it, declare your password as such:
+
+```python:secrets.py
+pw = 'XXXXXX'
+```
+
+Then, at the top of bot.py write
+
+```python:bot.py
+from secrets import pw
+```
+
+The next step is to click login.
+
+To do this, copy the xpath of the submit button and use the click() method.
+
+```python
+submit_btn = self.driver.find_element_by_xpath(“//button[@type=’submit’]”)
+submit_btn.click()
+```
+
+This should log us in!
+
+
+You will notice that a popup appears when you log in asking you if you want to turn on notifications.
+
+![Python](/images/python-automation-with-selenium/3.png)
+
+We want to hit not now. Again copy the xpath and use the click() method.
+
+```python
+sleep(5)
+not_now_btn = self.driver.find_element_by_xpath(‘/html/body/div[4]/div/div/div[3]/button[2]’)
+not_now_btn.click()
+```
+
+Be sure to add ```sleep(5)```. If you don’t instagram will not be loaded fully and your code will fail!
+
+Your final code should look like such:
+
+```javascript
+from selenium import webdriver
+from time import sleep
+from secrets import pw
+from selenium.webdriver.common.keys import Keys
+from random import randint
+class Bot():
+    def __init__(self):
+        self.login('benscstutorials')
+    
+    def login(self, username):
+        self.driver = webdriver.Chrome()   
+        self.driver.get('https://www.instagram.com/')
+        sleep(5)
+        username_input = self.driver.find_element_by_xpath(
+            "//input[@name='username']")
+        username_input.send_keys(username)
+        password_input = self.driver.find_element_by_xpath(
+            "//input[@name='password']")
+        password_input.send_keys(pw)
+        submit_btn = self.driver.find_element_by_xpath(
+            "//button[@type='submit']")
+        submit_btn.click()
+        sleep(5)
+        not_now_btn = self.driver.find_element_by_xpath(
+            '/html/body/div[4]/div/div/div[3]/button[2]')
+        not_now_btn.click()
+def main():
+    my_bot = Bot()
+if __name__ == '__main__':
+    main()
+```
+
+## Conclusion
+
+That’s it! In the next post I will continue this and discuss how to like and comment on posts by hashtag.
+
+> Update: there is no next post but feel free to watch the video tutorial on YouTube!
