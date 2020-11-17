@@ -6,10 +6,11 @@ import {
     Text,
     Stack,
     Icon,
-    useColorMode
+    useColorMode,
+    Image
 } from '@chakra-ui/core'
 
-const FeaturedProjectCard = ({ title, href, icon, children, size, color }) => {
+const FeaturedProjectCard = ({ title, href, icon, children, size, color, src }) => {
     const { colorMode } = useColorMode()
     const borderColor = {
         light: 'gray.200',
@@ -38,14 +39,12 @@ const FeaturedProjectCard = ({ title, href, icon, children, size, color }) => {
                 borderRadius={4}
                 p={4}
             >
-                <Icon
-                    name={icon}
-                    color={iconColor[colorMode]}
-                    size={size}
-                    color={color}
+                <Image
+                    src={src}
+                    width={["40px", "50px", "60px"]}
                     ml={2}
                     mr={4}
-                />
+                ></Image>
                 <Stack>
                     <Heading
                         as="h4"

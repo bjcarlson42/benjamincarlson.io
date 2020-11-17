@@ -19,6 +19,7 @@ import LikeCounter from '../components/LikeCounter'
 import BlogSeo from '../components/BlogSeo'
 import Subscribe from '../components/Subscribe'
 import GitHubSponsorCard from '../components/GitHubSponsorCard'
+import Flutter25 from '../components/Flutter25'
 
 const editUrl = (slug) =>
     `https://github.com/bjcarlson42/benjamincarlson.io/edit/master/pages/blog/${slug}.mdx`
@@ -101,6 +102,7 @@ export default function BlogLayout({ children, frontMatter }) {
                         {'Edit on GitHub'}
                     </Link>
                 </Box>
+                <Flutter25 />
                 <Subscribe />
                 <GitHubSponsorCard />
             </Stack>

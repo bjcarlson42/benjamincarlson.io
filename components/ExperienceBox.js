@@ -5,10 +5,11 @@ import {
     Text,
     Flex,
     Box,
-    Link
+    Link,
+    Stack
 } from '@chakra-ui/core'
 
-const ExperienceBox = ({ name, year1, year2, year3, pos, children }) => {
+const ExperienceBox = ({ name, years, pos, children }) => {
 
     const { colorMode } = useColorMode()
 
@@ -21,76 +22,47 @@ const ExperienceBox = ({ name, year1, year2, year3, pos, children }) => {
         dark: 'gray.600'
     }
     return (
-        <Link href="https://www.linkedin.com/in/bjcarlson42/#experience-section" isExternal _hover={{
-            textDecoration: 'none'
-        }}>
-            <Box
-                mb={4}
-                w="100%"
-                borderWidth="1px"
-                rounded="md"
-                overflow="hidden"
-                p={[2, null, 4]}
+
+        <Link
+            href="https://www.linkedin.com/in/bjcarlson42/#experience-section"
+            isExternal
+            _hover={{
+                boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+                textDecoration: 'none'
+            }}
+            mt={4}
+        >
+            <Flex
+                align="center"
+                border="1px solid"
                 borderColor={borderColor[colorMode]}
+                borderRadius={4}
+                p={4}
             >
-                <Flex
-                    width="100%"
-                    align="flex-start"
-                    justifyContent="space-between"
-                    flexDirection='row'
-                >
-                    <Flex flexDirection="column">
-                        <Flex align="center">
+                <Stack>
+                    <Flex
+                        justifyContent="space-between"
+                        flexDirection={["column", "row", "row"]}
+                    >
+                        <Flex
+                            flexDirection="column"
+                        >
                             <Heading
                                 as="h4"
-                                size="lg"
+                                size="md"
                                 fontWeight="bold"
                             >
                                 {name}
                             </Heading>
+                            <Text>{pos}</Text>
                         </Flex>
-                        <Text
-                            color={colorSecondary[colorMode]}
-                        >
-                            {pos}
+                        <Text fontStyle="italic" color="gray.600" fontSize="14px">
+                            {years}
                         </Text>
                     </Flex>
-                    <Flex
-                        flexDirection="column"
-                    >
-                        <Text
-                            color="gray.500"
-                            minWidth="105px"
-                            textAlign='right'
-                            fontStyle="italic"
-                            fontSize="sm"
-                        >
-                            {year1}
-                        </Text>
-                        <Text
-                            color="gray.500"
-                            minWidth="105px"
-                            textAlign='right'
-                            fontStyle="italic"
-                            fontSize="sm"
-                        >
-                            {year2}
-                        </Text>
-                        <Text
-                            color="gray.500"
-                            minWidth="105px"
-                            textAlign='right'
-                            fontStyle="italic"
-                            fontSize="sm"
-                        >
-                            {year3}
-                        </Text>
-                    </Flex>
-                </Flex>
-                <Text color={colorSecondary[colorMode]} mt={4}>
-                    {children}
-                </Text>
-            </Box >
+                    <Text lineHeight="1.3">{children}</Text>
+                </Stack>
+            </Flex>
         </Link>
     )
 }

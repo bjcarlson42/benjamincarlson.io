@@ -21,7 +21,7 @@ import IndexHeading from '../components/IndexHeading'
 
 const url = 'https://benjamincarlson.io/'
 const title = 'Home – Benjamin Carlson'
-const description = 'Personal website for Benjamin Carlson. Browse my projects, writing, gear, and YouTube.'
+const description = 'Developer, creator, writer, and student living and working in CT. Browse my latest projects, posts, and stats.'
 
 const Index = () => {
   const { colorMode } = useColorMode()
@@ -65,6 +65,8 @@ const Index = () => {
             alignItems="flex-start"
             maxWidth="700px"
           >
+
+            {/* Hero Section */}
             <Heading
               letterSpacing="normal"
               mb={4}
@@ -74,34 +76,56 @@ const Index = () => {
             >
               Hello! I'm Benjamin Carlson, a developer and student living and working in CT.
             </Heading>
-            <Text color={colorSecondary[colorMode]} mt={[0, 0, 12]}>
+            <Text
+              color={colorSecondary[colorMode]}
+              mt={[0, 0, 12]}
+            >
               I’m a student, creator, developer, and writer. I go to <Link href="https://www2.ccsu.edu/" color="blue.500" isExternal>CCSU</Link> where I study
             computer science, cybersecurity, and mathematics. On this site you will find
             my projects, gear, writing, and much more. Feel free to reach out via <Link href="mailto:bjcarlson42@gmail.com" color="blue.500">email</Link> or any social media to say hi!
             </Text>
+
+            {/* Experience Section */}
             <Heading mt={8} mb={4} as="h2" size="xl">
               Experience
             </Heading>
-            <ExperienceBox name="The Law Forum LLC" year1="Fall 2020" year2="Summer 2020" year3="Summer 2019" pos="C# Software Developer">
+            <ExperienceBox
+              name="The Law Forum LLC"
+              years="Fall 2020 / Summer 2020 / Summer 2019"
+              pos="C# Software Developer"
+            >
               I first interned with The Law Forum during summer 2019, going into my sophmore year of college.
               Fortunately, I was able to return the following summer, 2020, only this time I worked remotely (due to the pandemic!). Currently, this fall 2020, I am
               working part time with The Law Forum while continuing my Junior year of college.
             </ExperienceBox>
-            <ExperienceBox name="Middletown, CT City Hall" year1="Summer 2018" pos="I.T. Department">
+            <ExperienceBox
+              name="Middletown, CT City Hall"
+              years="Summer 2018"
+              pos="I.T. Department"
+            >
               The summer after graduating from high school, I had the opportunity to work with my city halls' I.T. department. I didn't
               do any coding but I had a hands on look at the I.T. field and worked on a number of hardware related tasks.
             </ExperienceBox>
 
+            {/* Blog Section */}
             <TopBlogPosts />
 
+            {/* Project Section */}
             <Heading letterSpacing="tight" mt={8} size="xl" fontWeight={700} as="h2">
               Featured Projects
             </Heading>
             <FeaturedProjectCard
+              title="25 Days Of Flutter"
+              href="https://flutter25.com"
+              src="/images/flutter25.png"
+              color={iconColor[colorMode]}
+            >
+              25 Days Of Flutter is a 25 day tutorial series designed to take you from a Flutter beginner to coding a complete app using various modern technologies.
+            </ FeaturedProjectCard>
+            <FeaturedProjectCard
               title="Word Of The Day App"
               href="https://github.com/bjcarlson42/wotd"
-              icon="wotd"
-              size="50px"
+              src="/images/wotd.png"
               color={iconColor[colorMode]}
             >
               Word of the day app built with <Code>Dart</Code>, <Code>Flutter</Code>, and <Code>Wordnik API</Code>. Video tutorial posted on YouTube.
@@ -109,8 +133,7 @@ const Index = () => {
             <FeaturedProjectCard
               title="Personal Website"
               href="https://github.com/bjcarlson42/benjamincarlson.io"
-              icon="code"
-              size="50px"
+              src="/images/logo.png"
               color={iconColor[colorMode]}
             >
               My personal portfolio website you are on now. Built with <Code>Next.js</Code>, <Code>chakra-ui</Code>, <Code>mdx</Code> pages, and serverless functions for realtime data.
@@ -125,6 +148,7 @@ const Index = () => {
               </NextLink>
             </Flex>
 
+            {/* More On This Site Section */}
             <Heading letterSpacing="tight" mt={8} mb={2} size="xl" fontWeight={700} as="h2">
               More On This Site
            </Heading>
@@ -141,6 +165,8 @@ const Index = () => {
               <Link href="/thanks" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>Thanks</Button></Link>
             </Flex>
           </Flex>
+
+          {/* Subscribe Section */}
           <Subscribe />
         </Stack>
       </Container>

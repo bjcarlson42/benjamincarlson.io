@@ -8,7 +8,7 @@ import {
     Flex
 } from "@chakra-ui/core"
 
-const GitHubSponsorCard = () => {
+const Flutter25 = () => {
     const { colorMode } = useColorMode()
 
     const colorSecondary = {
@@ -26,7 +26,7 @@ const GitHubSponsorCard = () => {
             h="100%"
         >
             <Flex>
-                <Image size="75px" borderRadius={5} src="/images/portrait.jpeg"></Image>
+                <Image size="75px" borderRadius={5} src="/images/flutter25.png"></Image>
                 <Flex flexDirection={['column', 'row']}>
                     <Flex
                         width="100%"
@@ -36,14 +36,11 @@ const GitHubSponsorCard = () => {
                         mx={2}
                     >
                         <Heading as="h3" size="md">
-                            Sponsor Benjamin Carlson on GitHub Sponsors
+                            25 Days Of Flutter
                     </Heading>
                         <Text color={colorSecondary[colorMode]}>
-                            Hi 👋 I'm Benjamin Carlson, a college student studying computer science. I post weekly tutorial videos on my YouTube channel and build cool open source projects!
+                            25 Days Of Flutter is a 25 day tutorial series designed to take you from a Flutter beginner to coding a complete app using various modern technologies.
                     </Text>
-                    </Flex>
-                    <Flex>
-                        <iframe src="https://github.com/sponsors/bjcarlson42/button" title="Sponsor bjcarlson42" height="35" width="116" style={{ border: '0' }}></iframe>
                     </Flex>
                 </Flex>
             </Flex>
@@ -51,4 +48,4 @@ const GitHubSponsorCard = () => {
     )
 }
 
-export default GitHubSponsorCard
+export default Flutter25
