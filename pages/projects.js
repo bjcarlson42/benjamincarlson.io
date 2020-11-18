@@ -69,20 +69,26 @@ const Projects = () => {
                             Featured Projects
                         </Heading>
                         <FeaturedProjectCard
+                            title="25 Days Of Flutter"
+                            href="https://flutter25.com"
+                            src="/images/flutter25.png"
+                            color={iconColor[colorMode]}
+                        >
+                            25 Days Of Flutter is a 25 day tutorial series designed to take you from a Flutter beginner to coding a complete app using various modern technologies.
+                        </ FeaturedProjectCard>
+                        <FeaturedProjectCard
                             title="Word Of The Day App"
                             href="https://github.com/bjcarlson42/wotd"
-                            icon="wotd"
+                            src="/images/wotd.png"
                             color={iconColor[colorMode]}
-                            size="50px"
                         >
-                            Word of the day app built with <Code>Dart</Code>, <Code>Flutter</Code>, and Wordnik API. Video tutorial posted on YouTube.
+                            Word of the day app built with <Code>Dart</Code>, <Code>Flutter</Code>, and <Code>Wordnik API</Code>. Video tutorial posted on YouTube.
                         </ FeaturedProjectCard>
                         <FeaturedProjectCard
                             title="Personal Website"
                             href="https://github.com/bjcarlson42/benjamincarlson.io"
-                            icon="code"
+                            src="/images/logo.png"
                             color={iconColor[colorMode]}
-                            size="50px"
                         >
                             My personal portfolio website you are on now. Built with <Code>Next.js</Code>, <Code>chakra-ui</Code>, <Code>mdx</Code> pages, and serverless functions for realtime data.
                         </FeaturedProjectCard>
