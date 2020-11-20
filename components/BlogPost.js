@@ -3,15 +3,16 @@ import NextLink from 'next/link'
 import { useColorMode, Heading, Text, Flex, Box, Link } from '@chakra-ui/core'
 import fetcher from '../lib/fetcher'
 import useSWR from 'swr'
-import format from 'comma-number'
+import * as formatNum from 'comma-number'
+import { parseISO, format } from 'date-fns'
 
 const BlogPost = (frontMatter) => {
-    const { title, summary } = frontMatter;
-    const { colorMode } = useColorMode();
+    const { title, summary, publishedAt } = frontMatter
+    const { colorMode } = useColorMode()
     const secondaryTextColor = {
         light: 'gray.700',
         dark: 'gray.400'
-    };
+    }
 
     const slug = frontMatter.__resourcePath
         .replace('blog/', '')
@@ -23,32 +24,35 @@ const BlogPost = (frontMatter) => {
     return (
         <NextLink href={`blog/${slug}`} passHref>
             <Link w="100%" _hover={{ textDecoration: 'none' }}>
-                <Box mb={8} display="block" width="100%">
+                <Box mb={10} display="block" width="100%">
                     <Flex
                         width="100%"
                         align="flex-start"
                         justifyContent="space-between"
                         flexDirection={['column', 'row']}
                     >
-                        <Heading size="md" as="h3" mb={2} fontWeight="medium">
-                            {title}
-                        </Heading>
-                        <Flex>
-                            <Text
-                                color="gray.500"
-                                minWidth="105px"
-                                textAlign={['left', 'right']}
-                                mb={[4, 0]}
-                            >
-                                {`${views ? format(views) : '–––'} views`}
-                            </Text>
+                        <Flex flexDirection="column" align="flex-start" justifyContent="start" width="100%">
+                            <Heading size="md" as="h3" mb={1} fontWeight="medium">
+                                {title}
+                            </Heading>
+                            <Text mb={2} fontStyle="italic">Published on {format(parseISO(publishedAt), 'MMMM dd, yyyy')}</Text>
                         </Flex>
+
+                        <Text
+                            color="gray.500"
+                            minWidth="105px"
+                            textAlign={['left', 'right']}
+                            mb={[4, 0]}
+                        >
+                            {`${views ? formatNum(views) : '–––'} views`}
+                        </Text>
+
                     </Flex>
                     <Text color={secondaryTextColor[colorMode]}>{summary}</Text>
                 </Box>
             </Link>
         </NextLink>
-    );
-};
+    )
+}
 
-export default BlogPost;
+export default BlogPost
