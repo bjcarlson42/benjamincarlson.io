@@ -51,7 +51,7 @@ const MobileNavigation = () => {
                     </Button>
             </NextLink>
             <NextLink href="/blog" passHref>
-                <Button as="a" variant="ghost" p={[1, 2, 4]} backgroundColor={router.pathname.split(4) === '/blog' ? navActiveBg[colorMode] : null}>
+                <Button as="a" variant="ghost" p={[1, 2, 4]} backgroundColor={router.pathname.includes('/blog') ? navActiveBg[colorMode] : null}>
                     Blog
                     </Button>
             </NextLink>
