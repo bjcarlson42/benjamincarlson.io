@@ -18,7 +18,7 @@ const StickyNav = styled(Flex)`
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.15);
 `
 
-const MobileNavigation = () => {
+const MobileNavigationTop = () => {
     const { colorMode } = useColorMode()
     const router = useRouter()
     const [visibility, setVisibility] = useState('hidden')
@@ -75,4 +75,4 @@ const MobileNavigation = () => {
     )
 }
 
-export default MobileNavigation
+export default MobileNavigationTop
