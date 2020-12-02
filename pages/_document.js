@@ -1,14 +1,15 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
 import GoogleFonts from 'next-google-fonts'
+import { ColorModeScript } from "@chakra-ui/react"
 
 export default class MyDocument extends Document {
     render() {
         return (
             <Html lang="en">
-                <GoogleFonts href="https://fonts.googleapis.com/css2?family=Fira%20Sans:wght@400;600;700&display=swap" />
+                <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
                 <Head>
-                    <link href="/favicons/favicon.ico" rel="shortcut icon" />
+                    {/* <link href="/favicons/favicon.ico" rel="shortcut icon" />
                     <link href="/favicons/site.webmanifest" rel="manifest" />
                     <link
                         rel="preconnect"
@@ -36,7 +37,7 @@ export default class MyDocument extends Document {
                         color="#4a9885"
                         href="/static/favicons/safari-pinned-tab.svg"
                         rel="mask-icon"
-                    />
+                    /> */}
                     {/* Google Adsense */}
                     {/* <script data-ad-client="ca-pub-8586017200531248" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
@@ -58,6 +59,7 @@ export default class MyDocument extends Document {
                     />
                 </Head>
                 <body>
+                    <ColorModeScript initialColorMode="light" />
                     <Main />
                     <NextScript />
                 </body>

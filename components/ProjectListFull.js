@@ -12,7 +12,8 @@ import {
     Input,
     InputRightElement,
     SimpleGrid
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
+import { ExternalLinkIcon, StarIcon, SearchIcon } from '@chakra-ui/icons'
 
 const ProjectItem = ({ name, desc, star_count, href, language }) => {
     const { colorMode } = useColorMode()
@@ -30,11 +31,11 @@ const ProjectItem = ({ name, desc, star_count, href, language }) => {
                 <Flex justify="space-between">
                     <Flex align="center">
                         <Text as="h2" fontSize="xl" fontWeight="medium">{name}</Text>
-                        <Icon ml={2} name="external-link"></Icon>
+                        <ExternalLinkIcon ml={2} />
                     </Flex>
                     <Flex align="center">
                         <Text>{star_count}</Text>
-                        <Icon ml={2} name="star" color="yellow.300" />
+                        <StarIcon ml={2} color="yellow.300" />
                     </Flex>
                 </Flex>
                 <Flex justify="space-between">
@@ -63,9 +64,7 @@ const ProjectListFull = () => {
                     aria-label="Search by name, description, and language"
                     placeholder="Search by name, description, and language"
                 />
-                <InputRightElement>
-                    <Icon name="search" color="gray.300" />
-                </InputRightElement>
+                <InputRightElement children={<SearchIcon color="gray.500" />} />
             </InputGroup>
             <SimpleGrid columns={[1, 1, 2]} spacing="20px">
                 <ProjectItem key="loading-1" name="---" star_count="---" desc="---" language="---"></ProjectItem>
@@ -112,9 +111,7 @@ const ProjectListFull = () => {
                     onChange={(e) => setSearchValue(e.target.value)}
                     placeholder="Search by name, description, and language"
                 />
-                <InputRightElement>
-                    <Icon name="search" color="gray.300" />
-                </InputRightElement>
+                <InputRightElement children={<SearchIcon color="gray.500" />} />
             </InputGroup>
             <SimpleGrid columns={[1, 1, 2]} spacing="20px">
                 {!filteredProjects.length && 'No projects found.'}

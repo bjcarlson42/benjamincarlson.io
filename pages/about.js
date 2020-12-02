@@ -7,7 +7,7 @@ import {
     Flex,
     Stack,
     Link
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import Container from '../components/Container'
 import TimeLineFull from '../components/TimeLineFull'

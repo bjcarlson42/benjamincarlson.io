@@ -8,7 +8,7 @@ import {
     Heading,
     useColorMode,
     Code
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import Container from '../components/Container'
 import ProjectListFull from '../components/ProjectListFull'

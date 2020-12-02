@@ -3,7 +3,7 @@ import {
     useColorMode,
     Flex,
     Text
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 

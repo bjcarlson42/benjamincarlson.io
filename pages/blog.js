@@ -10,7 +10,7 @@ import {
     InputGroup,
     InputRightElement,
     Icon
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import Container from '../components/Container'
 import BlogPost from '../components/BlogPost'

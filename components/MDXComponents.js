@@ -6,12 +6,11 @@ import {
     Heading,
     Kbd,
     Link,
-    PseudoBox,
     Text,
     Divider,
     useColorMode
-} from '@chakra-ui/core';
-import { jsx } from '@emotion/core'
+} from '@chakra-ui/react';
+import { jsx } from '@emotion/react'
 import NextLink from 'next/link'
 
 const CustomLink = (props) => {
@@ -84,7 +83,7 @@ const DocsHeading = (props) => (
         <Box pointerEvents="auto">
             {props.children}
             {props.id && (
-                <PseudoBox
+                <Box
                     aria-label="anchor"
                     as="a"
                     color="blue.500"
@@ -99,7 +98,7 @@ const DocsHeading = (props) => (
                     href={`#${props.id}`}
                 >
                     #
-                </PseudoBox>
+                </Box>
             )}
         </Box>
     </Heading>
@@ -123,7 +122,7 @@ const MDXComponents = {
     h5: (props) => <DocsHeading as="h5" size="sm" fontWeight="bold" {...props} />,
     h6: (props) => <DocsHeading as="h6" size="xs" fontWeight="bold" {...props} />,
     inlineCode: (props) => (
-        <Code variantColor="yellow" fontSize="0.84em" {...props} />
+        <Code colorScheme="yellow" fontSize="0.84em" {...props} />
     ),
     kbd: Kbd,
     br: (props) => <Box height="24px" {...props} />,

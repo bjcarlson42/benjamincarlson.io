@@ -10,9 +10,10 @@ import {
     ListItem,
     ListIcon,
     Link
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import Container from '../components/Container'
+import { StarIcon } from '@chakra-ui/icons'
 
 const url = 'https://benjamincarlson.io/thanks'
 const title = 'Thanks – Benjamin Carlson'
@@ -65,15 +66,15 @@ const Thanks = () => {
                         </Text>
                         <List spacing={3}>
                             <ListItem>
-                                <ListIcon icon="star" color="yellow.300" />
+                                <ListIcon as={StarIcon} color="yellow.300" />
                                 <Link isExternal href="https://github.com/leerob" color="blue.500">Lee Robinson</Link>
                             </ListItem>
                             <ListItem>
-                                <ListIcon icon="star" color="yellow.300" />
+                                <ListIcon as={StarIcon} color="yellow.300" />
                                 <Link isExternal href="https://github.com/DevonCrawford?tab=overview&from=2020-10-01&to=2020-10-29" color="blue.500">Devon Crawford</Link>
                             </ListItem>
                             <ListItem>
-                                <ListIcon icon="star" color="yellow.300" />
+                                <ListIcon as={StarIcon} color="yellow.300" />
                                 <Link isExternal href="https://www.cbshin.com/" color="blue.500">Charles Shin</Link>
                             </ListItem>
                         </List>

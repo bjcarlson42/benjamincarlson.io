@@ -4,7 +4,7 @@ import {
     Flex,
     Button,
     Link
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import BlogPost from '../components/BlogPost'
 import NextLink from 'next/link'
@@ -12,6 +12,7 @@ import NextLink from 'next/link'
 import { frontMatter as TikTok } from '../pages/blog/tik-tok-coding-idea.mdx'
 import { frontMatter as FlutterToFirebase } from '../pages/blog/connect-flutter-to-firebase.mdx'
 import { frontMatter as JavaScriptCube } from '../pages/blog/using-javascript-to-scramble-a-rubiks-cube-1.mdx'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
 
 const TopBlogPosts = () => {
     return (
@@ -25,7 +26,7 @@ const TopBlogPosts = () => {
             <Flex justify="center" width="100%">
                 <NextLink href="/blog" passHref>
                     <Link _hover="none">
-                        <Button rightIcon="arrow-forward" variantColor="blue" variant="outline">
+                        <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline">
                             View All Posts
                         </Button>
                     </Link>

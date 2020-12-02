@@ -10,7 +10,8 @@ import {
   Link,
   Code,
   Button
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
+import { Chakra } from "../styles/chakra"
 
 import Container from '../components/Container'
 import Subscribe from '../components/Subscribe'
@@ -18,12 +19,13 @@ import ExperienceBox from '../components/ExperienceBox'
 import TopBlogPosts from '../components/TopBlogPosts'
 import FeaturedProjectCard from '../components/FeaturedProjectCard'
 import IndexHeading from '../components/IndexHeading'
+import { ArrowForwardIcon } from '@chakra-ui/icons'
 
 const url = 'https://benjamincarlson.io/'
 const title = 'Home – Benjamin Carlson'
 const description = 'Developer, creator, writer, and student living and working in CT. Browse my latest projects, posts, and stats.'
 
-const Index = () => {
+export default function Index({ cookies }) {
   const { colorMode } = useColorMode()
 
   const colorSecondary = {
@@ -141,7 +143,7 @@ const Index = () => {
             <Flex justify="center" width="100%">
               <NextLink href="/projects" passHref>
                 <Link _hover="none" mt={8}>
-                  <Button rightIcon="arrow-forward" variantColor="blue" variant="outline">
+                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline">
                     View All Projects
                 </Button>
                 </Link>
@@ -155,14 +157,14 @@ const Index = () => {
             <Text mb={2}>Be sure to check out all the pages on this site!</Text>
 
             <Flex wrap="wrap">
-              <Link href="/" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>Home</Button></Link>
-              <Link href="/projects" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>Projects</Button></Link>
-              <Link href="/blog" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>Blog</Button></Link>
-              <Link href="/statistics" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>Statistics</Button></Link>
-              <Link href="/about" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>About</Button></Link>
-              <Link href="/gear" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>Gear</Button></Link>
-              <Link href="/hello" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>Hello</Button></Link>
-              <Link href="/thanks" _hover="none"><Button rightIcon="arrow-forward" variantColor="blue" variant="outline" margin={2}>Thanks</Button></Link>
+              <Link href="/" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Home</Button></Link>
+              <Link href="/projects" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Projects</Button></Link>
+              <Link href="/blog" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Blog</Button></Link>
+              <Link href="/statistics" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Statistics</Button></Link>
+              <Link href="/about" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>About</Button></Link>
+              <Link href="/gear" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Gear</Button></Link>
+              <Link href="/hello" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Hello</Button></Link>
+              <Link href="/thanks" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Thanks</Button></Link>
             </Flex>
           </Flex>
 
@@ -174,4 +176,4 @@ const Index = () => {
   )
 }
 
-export default Index
+export { getServerSideProps } from "../styles/chakra"

@@ -4,7 +4,8 @@ import {
     Flex,
     Icon,
     Link
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
+import { ChevronDownIcon } from '@chakra-ui/icons'
 
 const IndexHeading = () => {
     return (
@@ -21,7 +22,7 @@ const IndexHeading = () => {
                 Hello! I'm Benjamin Carlson, <br /> a <Flex display="inline" color="blue.200">developer</Flex> and <Flex display="inline" color="blue.200">student</Flex> living and working in CT.
             </Heading>
             <Link alignSelf="center" href="#main" mt={20}>
-                <Icon name="chevron-down" size="40px"></Icon>
+                <ChevronDownIcon w="40px" height="40px" />
             </Link>
             <Flex id="main"></Flex>
         </Flex>

@@ -8,7 +8,7 @@ import {
     Icon,
     useColorMode,
     Image
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 const FeaturedProjectCard = ({ title, href, icon, children, size, color, src }) => {
     const { colorMode } = useColorMode()

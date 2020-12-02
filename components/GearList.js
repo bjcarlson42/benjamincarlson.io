@@ -8,7 +8,7 @@ import {
     Heading,
     Text,
     Link
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const Gear = ({ gear }) => {
     const { colorMode } = useColorMode()

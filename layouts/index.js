@@ -11,7 +11,8 @@ import {
     Box,
     Image,
     Icon
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
+import { TwitterIcon, GitHubIcon } from '../components/CustomIcons'
 
 import Container from '../components/Container'
 import ViewCounter from '../components/ViewCounter'
@@ -93,12 +94,12 @@ export default function BlogLayout({ children, frontMatter }) {
                 {children}
                 <Box>
                     <Link href={tweetUrl(slug)} isExternal>
-                        <Icon name="twitter" size="18px" mr={2} />
+                        <Icon as={TwitterIcon} size="18px" mr={2} />
                         {'Share on Twitter'}
                     </Link>
                     {` • `}
                     <Link href={editUrl(slug)} isExternal>
-                        <Icon name="github" size="18px" mr={2} />
+                        <Icon as={GitHubIcon} size="18px" mr={2} />
                         {'Edit on GitHub'}
                     </Link>
                 </Box>

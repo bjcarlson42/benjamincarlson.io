@@ -3,7 +3,7 @@ import {
     useColorMode,
     Button,
     Flex
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'

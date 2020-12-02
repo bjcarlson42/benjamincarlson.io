@@ -7,7 +7,7 @@ import {
     Image,
     Flex,
     Link
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const Flutter25 = () => {
     const { colorMode } = useColorMode()
@@ -36,7 +36,7 @@ const Flutter25 = () => {
                 h="100%"
             >
                 <Flex>
-                    <Image size="75px" borderRadius={5} src="/images/flutter25.png"></Image>
+                    <Image h="75px" w="75px" borderRadius={5} src="/images/flutter25.png"></Image>
                     <Flex flexDirection={['column', 'row']}>
                         <Flex
                             width="100%"

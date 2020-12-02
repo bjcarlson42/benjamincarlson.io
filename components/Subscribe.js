@@ -13,7 +13,7 @@ import {
     InputRightElement,
     InputLeftElement,
     Icon
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const Subscribe = () => {
     const router = useRouter()
@@ -101,8 +101,9 @@ const Subscribe = () => {
                             h="1.75rem"
                             size="sm"
                             onClick={subscribe}
-                            variantColor="blue"
+                            colorScheme="blue"
                             variant="outline"
+                            px={10}
                         >
                             Subscribe
                         </Button>
