@@ -1,6 +1,6 @@
 import React from 'react'
 import NextLink from 'next/link'
-import { Flex, Link, IconButton, useColorMode } from '@chakra-ui/core'
+import { Flex, Link, IconButton, useColorMode } from '@chakra-ui/react'
 import { SiTwitter, SiGithub, SiLinkedin, SiYoutube, SiMedium } from "react-icons/si"
 import { MdEmail } from "react-icons/md"
 
@@ -21,7 +21,7 @@ export const Footer = () => {
                 <Link href="https://twitter.com/bjmncrlsn" title="Twitter" isExternal>
                     <IconButton
                         aria-label="Twitter"
-                        icon={SiTwitter}
+                        icon={<SiTwitter />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -31,7 +31,7 @@ export const Footer = () => {
                 <Link href="https://github.com/bjcarlson42" title="GitHub" isExternal>
                     <IconButton
                         aria-label="GitHub"
-                        icon={SiGithub}
+                        icon={<SiGithub />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -45,7 +45,7 @@ export const Footer = () => {
                 >
                     <IconButton
                         aria-label="LinkedIn"
-                        icon={SiLinkedin}
+                        icon={<SiLinkedin />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -59,7 +59,7 @@ export const Footer = () => {
                 >
                     <IconButton
                         aria-label="YouTube"
-                        icon={SiYoutube}
+                        icon={<SiYoutube />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -69,7 +69,7 @@ export const Footer = () => {
                 <Link href="mailto:bjcarlson42@gmail.com" title="Email" isExternal>
                     <IconButton
                         aria-label="Email"
-                        icon={MdEmail}
+                        icon={<MdEmail />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -79,7 +79,7 @@ export const Footer = () => {
                 <Link href="https://medium.com/@benjamincarlson" title="Medium" isExternal>
                     <IconButton
                         aria-label="Medium"
-                        icon={SiMedium}
+                        icon={<SiMedium />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"

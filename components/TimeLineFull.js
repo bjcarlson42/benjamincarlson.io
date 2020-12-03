@@ -10,7 +10,8 @@ import {
     Stack,
     Divider,
     Link
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
+import { CheckIcon } from '@chakra-ui/icons'
 
 const YearDivider = () => {
     const { colorMode } = useColorMode()
@@ -37,7 +38,7 @@ const TimelineStep = ({ title, children }) => {
         <ListItem>
             <Stack ml={2} mb={4}>
                 <Flex align="center">
-                    <Icon name="check" mr={2} color={checkColor[colorMode]}/>
+                    <CheckIcon mr={2} color={checkColor[colorMode]} />
                     <Text fontWeight="medium">{title}</Text>
                 </Flex>
                 <Text color={color[colorMode]} ml={6}>
@@ -113,7 +114,7 @@ const TimelineFull = () => (
                 At Bryant I studied Data Science and ran Division 1 cross country and track.
             </TimelineStep>
             <TimelineStep title="Graduated High School 🎓">
-                 The past 4 years went by in a flash although I'm excited to start a new chapter in my life.
+                The past 4 years went by in a flash although I'm excited to start a new chapter in my life.
             </TimelineStep>
         </List>
 

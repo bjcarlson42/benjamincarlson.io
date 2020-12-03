@@ -4,15 +4,15 @@ import {
     Stack,
     Flex,
     Heading,
-    useColorMode,
     Avatar,
     Text
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import useSWR from 'swr'
 import fetcher from '../lib/fetcher'
 
 import SocialLink from '../components/SocialLink'
 import Container from '../components/Container'
+import { TwitterIcon, YoutubeIcon, GitHubIcon, MailIcon, CodeIcon } from '../components/CustomIcons'
 
 const url = 'https://benjamincarlson.io/hello'
 const titleSEO = 'Hello – Benjamin Carlson'
@@ -20,7 +20,7 @@ const description = 'I am a developer and creator. Here are some of my links.'
 
 const Hello = () => {
 
-    const { data, error } = useSWR('/api/links', fetcher)
+    const { data } = useSWR('/api/links', fetcher)
     const title = data?.title
     const vid_url = data?.vid_url
 
@@ -64,13 +64,13 @@ const Hello = () => {
                             Hello 👋, I'm Ben
                         </Heading>
                         <Text alignSelf="center" textAlign="center" mb={4}>I’m a developer, writer, creator, and student. Use the links below to learn more.</Text>
-                        <SocialLink name={title} href={vid_url} icon="youtube" />
-                        <SocialLink name="Check Out My Website!" href="/" icon="code" />
-                        <SocialLink name="View My Opensource Code!" href="https://github.com/bjcarlson42?tab=repositories" icon="github" />
-                        <SocialLink name="Subscribe to my newsletter" href="https://buttondown.email/benjamincarlson" icon="mail" />
-                        <SocialLink name="Sponsor me on GitHub!" href="https://github.com/sponsors/bjcarlson42" icon="github" />
-                        <SocialLink name="Subscribe To My YouTube Channel!" href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw?sub_confirmation=1" icon="youtube" />
-                        <SocialLink name="Follow Me On Twitter!" href="https://twitter.com/bjmncrlsn" icon="twitter" />
+                        <SocialLink name={title} href={vid_url} icon={YoutubeIcon} />
+                        <SocialLink name="Check Out My Website!" href="/" icon={CodeIcon} />
+                        <SocialLink name="View My Opensource Code!" href="https://github.com/bjcarlson42?tab=repositories" icon={GitHubIcon} />
+                        <SocialLink name="Subscribe to my newsletter" href="https://buttondown.email/benjamincarlson" icon={MailIcon} />
+                        <SocialLink name="Sponsor me on GitHub!" href="https://github.com/sponsors/bjcarlson42" icon={GitHubIcon} />
+                        <SocialLink name="Subscribe To My YouTube Channel!" href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw?sub_confirmation=1" icon={YoutubeIcon} />
+                        <SocialLink name="Follow Me On Twitter!" href="https://twitter.com/bjmncrlsn" icon={TwitterIcon} />
                     </Flex>
                 </Stack>
             </Container>

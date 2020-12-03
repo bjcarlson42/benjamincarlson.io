@@ -8,7 +8,7 @@ import {
     Stack,
     Link,
     SimpleGrid
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import Container from '../components/Container'
 import YouTubeData from '../components/YouTubeData'

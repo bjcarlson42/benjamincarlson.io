@@ -3,7 +3,7 @@ import {
     Button,
     useToast,
     ButtonGroup
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 import format from 'comma-number'
 import { BiLike } from "react-icons/bi"
 
@@ -66,8 +66,8 @@ const LikeCounter = ({ id }) => {
         <>
             <ButtonGroup>
                 <Button
-                    leftIcon={BiLike}
-                    variantColor="gray"
+                    leftIcon={<BiLike />}
+                    colorScheme="gray"
                     variant="outline"
                     onClick={like}
                     isLoading={loading}

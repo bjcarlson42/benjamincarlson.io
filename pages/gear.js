@@ -6,7 +6,7 @@ import {
     Text,
     Flex,
     Stack
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 import Container from '../components/Container'
 import GearList from '../components/GearList'

@@ -1,12 +1,13 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
 import GoogleFonts from 'next-google-fonts'
+import { ColorModeScript } from "@chakra-ui/react"
 
-export default class MyDocument extends Document {
+export default class MyDocument extends NextDocument {
     render() {
         return (
             <Html lang="en">
-                <GoogleFonts href="https://fonts.googleapis.com/css2?family=Fira%20Sans:wght@400;600;700&display=swap" />
+                <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
                 <Head>
                     {/* <link href="/favicons/favicon.ico" rel="shortcut icon" />
                     <link href="/favicons/site.webmanifest" rel="manifest" />
@@ -58,6 +59,7 @@ export default class MyDocument extends Document {
                     />
                 </Head>
                 <body>
+                    <ColorModeScript/>
                     <Main />
                     <NextScript />
                 </body>

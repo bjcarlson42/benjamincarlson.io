@@ -6,7 +6,7 @@ import {
     Heading,
     Image,
     Flex
-} from "@chakra-ui/core"
+} from "@chakra-ui/react"
 
 const GitHubSponsorCard = () => {
     const { colorMode } = useColorMode()
@@ -26,7 +26,7 @@ const GitHubSponsorCard = () => {
             h="100%"
         >
             <Flex>
-                <Image size="75px" borderRadius={5} src="/images/portrait.jpeg"></Image>
+                <Image w="75px" h="75px" borderRadius={5} src="/images/portrait.jpeg"></Image>
                 <Flex flexDirection={['column', 'row']}>
                     <Flex
                         width="100%"

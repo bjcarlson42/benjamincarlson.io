@@ -7,7 +7,7 @@ import {
     Box,
     Link,
     Stack
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 
 const ExperienceBox = ({ name, years, pos, children }) => {
 

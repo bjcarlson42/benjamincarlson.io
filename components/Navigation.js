@@ -5,7 +5,7 @@ import {
     Flex,
     Box,
     Image
-} from '@chakra-ui/core'
+} from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import NextLink from 'next/link'
 
@@ -50,7 +50,7 @@ const Navigation = () => {
             display={['none', 'flex', 'flex']}
         >
             <NextLink href="/" passHref>
-                <Image src="/images/logo.png" size={[null, 50, 70]}></Image>
+                <Image src="/images/logo.png" w={[null, 50, 70]} h={[null, 50, 70]}></Image>
             </NextLink>
             <Box>
                 <NextLink href="/statistics" passHref>
