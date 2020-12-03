@@ -1,5 +1,5 @@
 import React from 'react'
-import { CSSReset, ColorModeProvider, useColorMode } from '@chakra-ui/react'
+import { useColorMode, ColorModeProvider } from '@chakra-ui/react'
 import { MDXProvider } from '@mdx-js/react'
 import { Global, css } from '@emotion/react'
 import { DefaultSeo } from 'next-seo'
@@ -45,12 +45,13 @@ const GlobalStyle = ({ children }) => {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider theme={customTheme}>
-      <ColorModeProvider options={{
-        useSystsemColorMode: true
-      }}>
+    <ChakraProvider resetCSS theme={customTheme}>
+      <ColorModeProvider
+        options={{
+          useSystemColorMode: true,
+        }}
+      >
         <MDXProvider components={MDXComponents}>
-
           <GlobalStyle>
             <DefaultSeo {...SEO} />
             <Component {...pageProps} />

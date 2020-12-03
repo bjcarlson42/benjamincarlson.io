@@ -14,6 +14,7 @@ import {
 
 import Container from '../components/Container'
 import BlogPost from '../components/BlogPost'
+import { SearchIcon } from '@chakra-ui/icons'
 
 import { frontMatter as blogPosts } from './blog/*.mdx' // ./blog/*.mdx ./**/*.mdx
 import { frontMatter as TikTok } from './blog/tik-tok-coding-idea.mdx'
@@ -75,7 +76,7 @@ const Blog = () => {
                             {`I have been writing articles about programming since 2019. In total I have written ${blogPosts.length} articles - all of which can be found on this page.`}
                         </Text>
                         <Heading letterSpacing="tight" mt={8} mb={4} size="xl" fontWeight={700}>
-                            Handpicked For November 2020
+                            Handpicked For December 2020
                         </Heading>
                         <BlogPost {...TikTok} />
                         <BlogPost {...FirebaseFlutter} />
@@ -89,7 +90,7 @@ const Blog = () => {
                                 placeholder="Search by title"
                             />
                             <InputRightElement>
-                                <Icon name="search" color="gray.300" />
+                                <SearchIcon color="gray.300" />
                             </InputRightElement>
                         </InputGroup>
                         {!filteredBlogPosts.length && 'No posts found.'}

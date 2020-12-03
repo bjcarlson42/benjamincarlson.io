@@ -11,7 +11,6 @@ import {
   Code,
   Button
 } from '@chakra-ui/react'
-import { Chakra } from "../styles/chakra"
 
 import Container from '../components/Container'
 import Subscribe from '../components/Subscribe'
@@ -25,7 +24,7 @@ const url = 'https://benjamincarlson.io/'
 const title = 'Home – Benjamin Carlson'
 const description = 'Developer, creator, writer, and student living and working in CT. Browse my latest projects, posts, and stats.'
 
-export default function Index({ cookies }) {
+export default function Index() {
   const { colorMode } = useColorMode()
 
   const colorSecondary = {
@@ -175,5 +174,3 @@ export default function Index({ cookies }) {
     </>
   )
 }
-
-export { getServerSideProps } from "../styles/chakra"

@@ -1,9 +1,9 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document'
+import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
 import { GA_TRACKING_ID } from '../lib/gtag'
 import GoogleFonts from 'next-google-fonts'
 import { ColorModeScript } from "@chakra-ui/react"
 
-export default class MyDocument extends Document {
+export default class MyDocument extends NextDocument {
     render() {
         return (
             <Html lang="en">
@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
                     />
                 </Head>
                 <body>
-                    <ColorModeScript initialColorMode="light" />
+                    <ColorModeScript/>
                     <Main />
                     <NextScript />
                 </body>

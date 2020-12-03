@@ -1,10 +1,9 @@
 /** @jsx jsx */
 import {
     Box,
-    Callout,
+    Alert,
     Code,
     Heading,
-    Kbd,
     Link,
     Text,
     Divider,
@@ -16,8 +15,8 @@ import NextLink from 'next/link'
 const CustomLink = (props) => {
     const { colorMode } = useColorMode()
     const color = {
-        light: 'hsl(208, 99%, 44%)',
-        dark: 'hsl(208, 95%, 68%)'
+        light: 'blue.500',
+        dark: 'blue.500'
     }
 
     const href = props.href
@@ -42,7 +41,7 @@ const Quote = (props) => {
     }
 
     return (
-        <Callout
+        <Alert
             mt={4}
             w="98%"
             bg={bgColor[colorMode]}
@@ -124,7 +123,6 @@ const MDXComponents = {
     inlineCode: (props) => (
         <Code colorScheme="yellow" fontSize="0.84em" {...props} />
     ),
-    kbd: Kbd,
     br: (props) => <Box height="24px" {...props} />,
     hr: Hr,
     // table: Table,
