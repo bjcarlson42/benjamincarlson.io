@@ -1,27 +1,34 @@
 # benjamincarlson.io
 
-My personal portfolio website hosted at https://benjamincarlson.io.
+My personal portfolio website hosted at [https://benjamincarlson.io](https://benjamincarlson.io).
 
 ## Overview
 
-My personal website has changed over the years - from a static HTML site to Wordpress to Jekyll to Gatsby to Django and finally to Next.js/React. This site has my writing, projects, gear, and much more.
+My personal website has changed over the years - from a static HTML/CSS/JS site to Wordpress to Jekyll to Gatsby to Django (I made a site with django but never deployed it due to it costing so much!) and finally to Next.js/React. This site has my writing, projects, gear, tutorials, experience, and much more.
 
 ## Running Locally
 
 To run locally you must
 
 1. Clone this repo
-2. Create a .env file and enter your secret keys (if you skip this step the site will still work but some parts wont function correctly)
-3. Open up your local host and explore!
 
 ```bash
-git clone https://github.com/bjcarlson42/personal-website.git
-cd benjamincarlson.io
-yarn
-yarn dev
+git clone https://github.com/bjcarlson42/benjamincarlson.io.git
 ```
 
-Create a `.env` file.
+or
+
+```bash
+git clone https://github.com/bjcarlson42/benjamincarlson.io.git .
+```
+
+2. Create a .env file and enter your secret keys (if you skip this step the site will still run but some data won't be fetched)
+
+```bash
+touch .env
+```
+
+Inside ```.env```:
 
 ```
 YOUTUBE_KEY=
@@ -39,12 +46,30 @@ STRAVA_SECRET=
 STRAVA_REFRESH_TOKEN=
 ```
 
+3. Move into the project root and remove git tacking (if you are planning to submit a PR to this repo don't do this step!)
+
+```bash
+rm -rf .git*
+```
+
+4. Install dependencies
+
+```bash
+yarn
+```
+
+5. Run locally!
+
+```bash
+yarn dev
+```
+
 Navigate to [http://localhost:3000](http://localhost:3000).
 
-## Technologies 
+## Technologies
 
 - Framework: [Next.js](https://nextjs.org/)
 - CSS Framework: [Chakra](https://chakra-ui.com/)
-- Blog Syntax: [Prism.js](https://prismjs.com/)
+- Blog Code Syntax: [Prism.js](https://prismjs.com/)
 - Blog: [MDX](https://mdxjs.com/)
 - Deployment: [Vercel](https://vercel.com/)
