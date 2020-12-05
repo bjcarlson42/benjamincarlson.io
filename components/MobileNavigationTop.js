@@ -33,6 +33,11 @@ const MobileNavigationTop = () => {
         dark: 'gray.900'
     }
 
+    const color = {
+        light: 'black',
+        dark: 'white'
+    }
+
     const handleScroll = () => {
         var scrollTop = 0
         scrollTop = scrollY
@@ -69,6 +74,7 @@ const MobileNavigationTop = () => {
         >
             <Text 
                 visibility={visibility}
+                color={color[colorMode]}
             >{router.pathname === '/' ? 'Home' : router.pathname.slice(1, 2).toUpperCase()}{router.pathname.slice(2).split('/')[0]}</Text>
             <DarkModeSwitch />
         </StickyNav >
