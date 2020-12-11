@@ -153,17 +153,17 @@ export default function Index() {
             <Heading letterSpacing="tight" mt={8} mb={2} size="xl" fontWeight={700} as="h2">
               More On This Site
            </Heading>
-            <Text mb={2}>Be sure to check out all the pages on this site!</Text>
+            <Text mb={2} color={colorSecondary[colorMode]}>Be sure to check out all the pages on this site!</Text>
 
             <Flex wrap="wrap">
-              <Link href="/" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Home</Button></Link>
-              <Link href="/projects" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Projects</Button></Link>
-              <Link href="/blog" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Blog</Button></Link>
-              <Link href="/statistics" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Statistics</Button></Link>
-              <Link href="/about" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>About</Button></Link>
-              <Link href="/gear" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Gear</Button></Link>
-              <Link href="/hello" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Hello</Button></Link>
-              <Link href="/thanks" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" margin={2}>Thanks</Button></Link>
+              <Link href="/" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Home</Button></Link>
+              <Link href="/projects" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Projects</Button></Link>
+              <Link href="/blog" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Blog</Button></Link>
+              <Link href="/statistics" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Statistics</Button></Link>
+              <Link href="/about" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>About</Button></Link>
+              <Link href="/gear" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Gear</Button></Link>
+              <Link href="/hello" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Hello</Button></Link>
+              <Link href="/thanks" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Thanks</Button></Link>
             </Flex>
           </Flex>
 

@@ -5,20 +5,23 @@ import {
     Heading,
     Text,
     Stack,
-    Icon,
     useColorMode,
     Image
 } from '@chakra-ui/react'
 
-const FeaturedProjectCard = ({ title, href, icon, children, size, color, src }) => {
+const FeaturedProjectCard = ({ title, href, children, src }) => {
     const { colorMode } = useColorMode()
     const borderColor = {
         light: 'gray.200',
         dark: 'gray.600'
     }
-    const iconColor = {
-        light: 'gray.1000',
-        dark: 'white'
+    const colorSecondary = {
+        light: 'gray.700',
+        dark: 'gray.400'
+    }
+    const boxShadowColor = {
+        light: '0px 8px 26px rgba(0, 0, 0, 0.1)',
+        dark: '0px 8px 26px rgba(0, 0, 0, 0.9)'
     }
 
     return (
@@ -27,7 +30,7 @@ const FeaturedProjectCard = ({ title, href, icon, children, size, color, src }) 
             title={title}
             isExternal
             _hover={{
-                boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+                boxShadow: boxShadowColor[colorMode],
                 textDecoration: 'none'
             }}
             mt={4}
@@ -50,11 +53,11 @@ const FeaturedProjectCard = ({ title, href, icon, children, size, color, src }) 
                         as="h4"
                         size="md"
                         fontWeight="bold"
-                        mb={4}
+                        mb={2}
                     >
                         {title}
                     </Heading>
-                    <Text lineHeight="1.3">{children}</Text>
+                    <Text color={colorSecondary[colorMode]}>{children}</Text>
                 </Stack>
             </Flex>
         </Link>

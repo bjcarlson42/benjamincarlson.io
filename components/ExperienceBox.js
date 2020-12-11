@@ -4,7 +4,6 @@ import {
     Heading,
     Text,
     Flex,
-    Box,
     Link,
     Stack
 } from '@chakra-ui/react'
@@ -12,7 +11,6 @@ import {
 const ExperienceBox = ({ name, years, pos, children }) => {
 
     const { colorMode } = useColorMode()
-
     const colorSecondary = {
         light: 'gray.700',
         dark: 'gray.400'
@@ -21,13 +19,18 @@ const ExperienceBox = ({ name, years, pos, children }) => {
         light: 'gray.200',
         dark: 'gray.600'
     }
+    const boxShadowColor = {
+        light: '0px 8px 26px rgba(0, 0, 0, 0.1)',
+        dark: '0px 8px 26px rgba(0, 0, 0, 0.9)'
+    }
+    
     return (
 
         <Link
             href="https://www.linkedin.com/in/bjcarlson42/#experience-section"
             isExternal
             _hover={{
-                boxShadow: '0px 4px 20px rgba(0, 0, 0, 0.1)',
+                boxShadow: boxShadowColor[colorMode],
                 textDecoration: 'none'
             }}
             mt={4}
@@ -60,7 +63,7 @@ const ExperienceBox = ({ name, years, pos, children }) => {
                             {years}
                         </Text>
                     </Flex>
-                    <Text lineHeight="1.3">{children}</Text>
+                    <Text color={colorSecondary[colorMode]}>{children}</Text>
                 </Stack>
             </Flex>
         </Link>
