@@ -6,17 +6,12 @@ import useSWR from 'swr'
 import * as formatNum from 'comma-number'
 import { parseISO, format } from 'date-fns'
 
-const BlogPost = (frontMatter) => {
-    const { title, summary, publishedAt } = frontMatter
+const BlogPost = ({ title, summary, slug }) => {
     const { colorMode } = useColorMode()
     const secondaryTextColor = {
         light: 'gray.700',
         dark: 'gray.400'
     }
-
-    const slug = frontMatter.__resourcePath
-        .replace('blog/', '')
-        .replace('.mdx', '')
 
     const { data } = useSWR(`/api/page-views?id=${slug}`, fetcher)
     const views = data?.total
@@ -35,7 +30,7 @@ const BlogPost = (frontMatter) => {
                             <Heading size="md" as="h3" mb={1} fontWeight="medium">
                                 {title}
                             </Heading>
-                            <Text mb={2} fontStyle="italic">Published on {format(parseISO(publishedAt), 'MMMM dd, yyyy')}</Text>
+                            {/* <Text mb={2} fontStyle="italic">Published on {format(parseISO(publishedAt), 'MMMM dd, yyyy')}</Text> */}
                         </Flex>
 
                         <Text

@@ -15,10 +15,10 @@ import {
 import Container from '../components/Container'
 import Subscribe from '../components/Subscribe'
 import ExperienceBox from '../components/ExperienceBox'
-import TopBlogPosts from '../components/TopBlogPosts'
 import FeaturedProjectCard from '../components/FeaturedProjectCard'
 import IndexHeading from '../components/IndexHeading'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
+import BlogPost from '../components/BlogPost'
 
 const url = 'https://benjamincarlson.io/'
 const title = 'Home – Benjamin Carlson'
@@ -109,7 +109,37 @@ export default function Index() {
             </ExperienceBox>
 
             {/* Blog Section */}
-            <TopBlogPosts />
+            <Heading mt={8} mb={4} as="h2" size="xl">
+              Top Blog Posts
+                </Heading>
+            
+            <BlogPost
+              title="How Tik Tok Gave Me The Perfect Coding Side Project"
+              summary="I got an idea for a weekend coding project from Tik Tok."
+              slug="tik-tok-coding-idea"
+            />
+            <BlogPost
+              title="Add A Firebase Backend To Your Flutter App Fast!"
+              summary="Learn how to integrate Google's Firebase into your Flutter App."
+              slug="connect-flutter-to-firebase"
+            />
+            <BlogPost
+              title="Using JavaScript To Scramble A Rubik’s Cube: An Improved Algorithm"
+              summary="I am making a web app that required me to make a rubiks cube scramble. I will show you how to implement this algorithm in JavaScript."
+              slug="using-javascript-to-scramble-a-rubiks-cube-2"
+            />
+
+            {/* <BlogPost {...FlutterToFirebase} />
+            <BlogPost {...JavaScriptCube} /> */}
+            <Flex justify="center" width="100%">
+              <NextLink href="/blog" passHref>
+                <Link _hover="none">
+                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline">
+                    View All Posts
+                        </Button>
+                </Link>
+              </NextLink>
+            </Flex>
 
             {/* Project Section */}
             <Heading letterSpacing="tight" mt={8} size="xl" fontWeight={700} as="h2">

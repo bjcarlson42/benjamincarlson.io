@@ -13,6 +13,7 @@ import {
     Icon
 } from '@chakra-ui/react'
 import { TwitterIcon, GitHubIcon } from '../components/CustomIcons'
+import { useRouter } from 'next/router'
 
 import Container from '../components/Container'
 import ViewCounter from '../components/ViewCounter'
@@ -28,15 +29,13 @@ const tweetUrl = (slug) =>
     `https://twitter.com/intent/tweet?text=https://benjamincarlson.io/blog/${slug} by @bjmncrlsn`
 
 export default function BlogLayout({ children, frontMatter }) {
-    const slug = frontMatter.__resourcePath
-        .replace('blog/', '')
-        .replace('.mdx', '');
-    const { colorMode } = useColorMode();
+    const { colorMode } = useColorMode()
     const textColor = {
         light: 'gray.700',
         dark: 'gray.400'
-    };
-
+    }
+    const router = useRouter();
+    const slug = router.asPath.replace('/blog', '');
     return (
         <Container>
             <BlogSeo url={`https://benjamincarlson.io/blog/${slug}`} {...frontMatter} />
