@@ -38,7 +38,7 @@
     "mdx-prism": "^0.3.1",
     "next": "10.0.0",
     "next-google-fonts": "^1.2.1",
-    "next-mdx-enhanced": "4.0.0",
+    "next-mdx-remote": "^1.0.1",
     "next-seo": "^4.11.0",
     "node-html-parser": "^1.2.20",
     "prettier": "^2.1.2",

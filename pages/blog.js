@@ -16,15 +16,13 @@ import Container from '../components/Container'
 import BlogPost from '../components/BlogPost'
 import { SearchIcon } from '@chakra-ui/icons'
 
-import { frontMatter as blogPosts } from './blog/*.mdx' // ./blog/*.mdx ./**/*.mdx
-import { frontMatter as TikTok } from './blog/tik-tok-coding-idea.mdx'
-import { frontMatter as FirebaseFlutter } from './blog/connect-flutter-to-firebase.mdx'
+import { getAllFilesFrontMatter } from '../lib/mdx'
 
 const url = 'https://benjamincarlson.io/blog'
 const title = 'Blog – Benjamin Carlson'
 const description = 'Personal blog for Benjamin Carlson. I write about computer science, web development, python automation, and more.'
 
-const Blog = () => {
+export default function Blog({ posts }) {
     const [searchValue, setSearchValue] = useState('')
     const { colorMode } = useColorMode()
     const secondaryTextColor = {
@@ -32,7 +30,7 @@ const Blog = () => {
         dark: 'gray.400'
     }
 
-    const filteredBlogPosts = blogPosts
+    const filteredBlogPosts = posts
         .sort(
             (a, b) =>
                 Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
@@ -72,17 +70,10 @@ const Blog = () => {
                         <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
                             Blog
                         </Heading>
-                        <Text color={secondaryTextColor[colorMode]}>
-                            {`I have been writing articles about programming since 2019. In total I have written ${blogPosts.length} articles - all of which can be found on this page.`}
+                        <Text color={secondaryTextColor[colorMode]} mb={4}>
+                            {`I have been writing articles about programming since 2019. In total I have written ${posts.length} articles - all of which can be found on this page.`}
                         </Text>
-                        <Heading letterSpacing="tight" mt={8} mb={4} size="xl" fontWeight={700}>
-                            Handpicked For December 2020
-                        </Heading>
-                        <BlogPost {...TikTok} />
-                        <BlogPost {...FirebaseFlutter} />
-                        <Heading letterSpacing="tight" mb={4} size="xl" fontWeight={700}>
-                            All Posts
-                        </Heading>
+
                         <InputGroup mb={4} mr={4} w="100%">
                             <Input
                                 aria-label="Search by title"
@@ -104,4 +95,8 @@ const Blog = () => {
     )
 }
 
-export default Blog
+export async function getStaticProps() {
+    const posts = await getAllFilesFrontMatter('blog')
+
+    return { props: { posts } }
+}
