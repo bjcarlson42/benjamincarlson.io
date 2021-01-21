@@ -4,35 +4,35 @@ export const software = [
         software: 0, // 0 -> hardware, 1 -> software, 2 -> cameraware
         item: 'Laptop',
         title: 'Apple MacBook Pro (15-Inch, 16GB RAM, 512GB Storage, 2.6GHz Intel Core i7)',
-        url: 'https://amzn.to/3fIS3vo'
+        url: 'https://amzn.to/3o7y2l5'
     },
     {
         id: 2,
         software: 0,
         item: 'Adaptor',
         title: 'HyperDrive USB C Hub',
-        url: 'https://amzn.to/2Wnx35J'
+        url: 'https://amzn.to/3sNfjP1'
     },
     {
         id: 3,
         software: 0,
         item: 'Monitor',
         title: 'Samsung CF390 Series 27 inch FHD 1920x1080 Curved Desktop Monitor',
-        url: 'https://amzn.to/35QxuIB'
+        url: 'https://amzn.to/3p6zbur'
     },
     {
         id: 4,
         software: 0,
         item: 'Smartphone',
         title: 'Google Pixel 5',
-        url: 'https://store.google.com/product/pixel_5?gclid=Cj0KCQjwreT8BRDTARIsAJLI0KI2UDa9g0i9f2EBQ3IxzyICHNLxBLkTP7Swk67DM0dvuDXiKJF5A3AaArukEALw_wcB&gclsrc=aw.ds'
+        url: 'https://amzn.to/3p9a9uB'
     },
     {
         id: 5,
         software: 0,
         item: 'Keyboard',
         title: 'Wireless Keyboard',
-        url: 'https://amzn.to/3cohJez'
+        url: 'https://amzn.to/2NlAA25'
     },
     {
         id: 6,

@@ -1,5 +1,4 @@
 import React from 'react'
-import { SimpleGrid } from '@chakra-ui/react'
 import useSWR from 'swr'
 import fetcher from '../lib/fetcher'
 import format from 'comma-number'
