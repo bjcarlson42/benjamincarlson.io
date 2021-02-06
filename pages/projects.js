@@ -31,6 +31,7 @@ const Projects = () => {
         light: 'gray.600',
         dark: 'gray.300'
     }
+    
     return (
         <>
             <NextSeo
@@ -57,7 +58,7 @@ const Projects = () => {
                         justifyContent="flex-start"
                         alignItems="flex-start"
                         maxWidth="700px"
-                        px={2}
+                        px={4}
                     >
                         <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
                             Projects
@@ -96,6 +97,7 @@ const Projects = () => {
                         <Heading letterSpacing="tight" mb={2} mt={4} size="xl" fontWeight={700}>
                             All Projects
                         </Heading>
+                        {/* <Text>And the rest of my GitHub...</Text> */}
                         <ProjectListFull />
                     </Flex>
                 </Stack>

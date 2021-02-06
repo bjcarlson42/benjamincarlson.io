@@ -26,8 +26,8 @@ const MobileNavigation = () => {
     }
 
     const navActiveBg = {
-        light: 'blue.100',
-        dark: 'blue.700',
+        light: 'gray.200',
+        dark: 'gray.600',
     }
 
     return (
@@ -63,11 +63,6 @@ const MobileNavigation = () => {
             <NextLink href="/gear" passHref>
                 <Button as="a" variant="ghost" p={[1, 2, 4]} backgroundColor={router.pathname === '/gear' ? navActiveBg[colorMode] : null}>
                     Gear
-                    </Button>
-            </NextLink>
-            <NextLink href="/about" passHref>
-                <Button as="a" variant="ghost" p={[1, 2, 4]} backgroundColor={router.pathname === '/about' ? navActiveBg[colorMode] : null}>
-                    About
                     </Button>
             </NextLink>
             <NextLink href="/" passHref>

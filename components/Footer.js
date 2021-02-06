@@ -1,27 +1,26 @@
 import React from 'react'
 import NextLink from 'next/link'
 import { Flex, Link, IconButton, useColorMode } from '@chakra-ui/react'
-import { SiTwitter, SiGithub, SiLinkedin, SiYoutube, SiMedium } from "react-icons/si"
-import { MdEmail } from "react-icons/md"
+import { FiGithub, FiTwitter, FiLinkedin, FiYoutube, FiMail } from "react-icons/fi"
 
 export const Footer = () => {
 
     const { colorMode } = useColorMode()
     const borderIcon = {
-        light: 'blue.400',
-        dark: 'blue.500'
+        light: 'gray.400',
+        dark: 'gray.500'
     }
     const footerHoverBg = {
         light: 'gray.100',
         dark: 'gray.700',
     }
     return (
-        <Flex align="center" mb={4} direction="column">
+        <Flex align="center" mb={4} direction="column" visibility={'hidden', 'visible', 'visible'} display={['none', 'flex', 'flex']}>
             <div>
                 <Link href="https://twitter.com/bjmncrlsn" title="Twitter" isExternal>
                     <IconButton
                         aria-label="Twitter"
-                        icon={<SiTwitter />}
+                        icon={<FiTwitter />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -31,7 +30,7 @@ export const Footer = () => {
                 <Link href="https://github.com/bjcarlson42" title="GitHub" isExternal>
                     <IconButton
                         aria-label="GitHub"
-                        icon={<SiGithub />}
+                        icon={<FiGithub />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -45,7 +44,7 @@ export const Footer = () => {
                 >
                     <IconButton
                         aria-label="LinkedIn"
-                        icon={<SiLinkedin />}
+                        icon={<FiLinkedin />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -59,7 +58,7 @@ export const Footer = () => {
                 >
                     <IconButton
                         aria-label="YouTube"
-                        icon={<SiYoutube />}
+                        icon={<FiYoutube />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -69,17 +68,7 @@ export const Footer = () => {
                 <Link href="mailto:bjcarlson42@gmail.com" title="Email" isExternal>
                     <IconButton
                         aria-label="Email"
-                        icon={<MdEmail />}
-                        size="lg"
-                        color={borderIcon[colorMode]}
-                        variant="ghost"
-                        _hover={{ backgroundColor: footerHoverBg[colorMode] }}
-                    />
-                </Link>
-                <Link href="https://medium.com/@benjamincarlson" title="Medium" isExternal>
-                    <IconButton
-                        aria-label="Medium"
-                        icon={<SiMedium />}
+                        icon={<FiMail />}
                         size="lg"
                         color={borderIcon[colorMode]}
                         variant="ghost"
@@ -88,17 +77,6 @@ export const Footer = () => {
                 </Link>
             </div>
             <div>
-                <NextLink href="/gear" passHref>
-                    <Link
-                        fontSize="md"
-                        color="gray.500"
-                        minWidth="100px"
-                        mr={2}
-                        title="Gear"
-                    >
-                        /gear
-                    </Link>
-                </NextLink>
                 <NextLink href="/hello" passHref>
                     <Link
                         fontSize="md"
@@ -108,28 +86,6 @@ export const Footer = () => {
                         title="Hello"
                     >
                         /hello
-                    </Link>
-                </NextLink>
-                <NextLink href="/about" passHref>
-                    <Link
-                        fontSize="md"
-                        color="gray.500"
-                        minWidth="100px"
-                        mr={2}
-                        title="About"
-                    >
-                        /about
-                    </Link>
-                </NextLink>
-                <NextLink href="/thanks" passHref>
-                    <Link
-                        fontSize="md"
-                        color="gray.500"
-                        minWidth="100px"
-                        mr={2}
-                        title="Thanks"
-                    >
-                        /thanks
                     </Link>
                 </NextLink>
             </div>

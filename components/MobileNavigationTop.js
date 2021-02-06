@@ -67,12 +67,13 @@ const MobileNavigationTop = () => {
             bg={bgColor[colorMode]}
             as="div"
             p={2}
+            px={4}
             mb={[null, 0, 8]}
             mx="auto"
             display={['flex', 'none', 'none']}
             backgroundColor={navBgColor[colorMode]}
         >
-            <Text 
+            <Text
                 visibility={visibility}
                 color={color[colorMode]}
             >{router.pathname === '/' ? 'Home' : router.pathname.slice(1, 2).toUpperCase()}{router.pathname.slice(2).split('/')[0]}</Text>

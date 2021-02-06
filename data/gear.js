@@ -131,5 +131,12 @@ export const software = [
         item: 'Mic',
         title: 'Blue Yeti USB Mic',
         url: 'https://www.amazon.com/Blue-Yeti-USB-Microphone-Blackout/dp/B002VA464S/ref=sr_1_3?crid=6CJYFYCJ9ZP3&dchild=1&keywords=blue%2Byeti&qid=1604279275&sprefix=blue%2Bye%2Caps%2C192&sr=8-3&th=1'
+    },
+    {
+        id: 19,
+        software: 2,
+        item: 'Lights',
+        title: 'Neewer LED Lights',
+        url: 'https://amzn.to/3oUsMSj'
     }
 ]

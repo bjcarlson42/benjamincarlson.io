@@ -30,8 +30,8 @@ const Navigation = () => {
     }
 
     const navHoverBg = {
-        light: 'blue.100',
-        dark: 'blue.700',
+        light: 'gray.100',
+        dark: 'gray.700',
     }
 
     return (
@@ -51,9 +51,10 @@ const Navigation = () => {
             mx="auto"
             display={['none', 'flex', 'flex']}
         >
-            <NextLink href="/" passHref>
+            {/* <NextLink href="/" passHref>
                 <Image src="/images/logo.png" w={[null, 50, 70]} h={[null, 50, 70]}></Image>
-            </NextLink>
+            </NextLink> */}
+            <DarkModeSwitch />
             <Box>
                 <NextLink href="/statistics" passHref>
                     <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/statistics' ? navHoverBg[colorMode] : null}>
@@ -75,23 +76,17 @@ const Navigation = () => {
                         Gear
                     </Button>
                 </NextLink>
-                <NextLink href="/about" passHref>
-                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/about' ? navHoverBg[colorMode] : null}>
-                        About
-                    </Button>
-                </NextLink>
                 <NextLink href="/" passHref>
                     <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/' ? navHoverBg[colorMode] : null}>
                         Home
                     </Button>
                 </NextLink>
-                <NextLink href="https://tutorials.benjamincarlson.io" passHref>
+                {/* <NextLink href="https://tutorials.benjamincarlson.io" passHref>
                     <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} target="_blank">
                         Tutorials
                     </Button>
-                </NextLink>
+                </NextLink> */}
             </Box>
-            <DarkModeSwitch />
         </StickyNav >
     )
 }

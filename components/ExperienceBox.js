@@ -5,10 +5,11 @@ import {
     Text,
     Flex,
     Link,
-    Stack
+    Stack,
+    Badge
 } from '@chakra-ui/react'
 
-const ExperienceBox = ({ name, years, pos, children }) => {
+const ExperienceBox = ({ name, years, pos, badge_1, badge_2, badge_1_margin, badge_2_margin, children }) => {
 
     const { colorMode } = useColorMode()
     const colorSecondary = {
@@ -23,7 +24,7 @@ const ExperienceBox = ({ name, years, pos, children }) => {
         light: '0px 8px 26px rgba(0, 0, 0, 0.1)',
         dark: '0px 8px 26px rgba(0, 0, 0, 0.9)'
     }
-    
+
     return (
 
         <Link
@@ -59,9 +60,17 @@ const ExperienceBox = ({ name, years, pos, children }) => {
                             </Heading>
                             <Text>{pos}</Text>
                         </Flex>
-                        <Text fontStyle="italic" color="gray.600" fontSize="14px">
-                            {years}
-                        </Text>
+                        <Flex
+                            flexDirection="column"
+                        >
+                            <Text fontStyle="italic" color="gray.600" fontSize="14px">
+                                {years}
+                            </Text>
+                            <Flex justifyContent={["flex-start", "flex-end", "flex-end"]}>
+                                <Badge m={1}>{badge_1}</Badge>
+                                <Badge m={1} display={badge_2 == null ? 'none' : 'flex'}>{badge_2}</Badge>
+                            </Flex>
+                        </Flex>
                     </Flex>
                     <Text color={colorSecondary[colorMode]}>{children}</Text>
                 </Stack>
