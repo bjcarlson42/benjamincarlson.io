@@ -1,7 +1,35 @@
 import { google } from 'googleapis'
+import { CronJob } from "quirrel/next"
 
-export default async (req, res) => {
-    const headers = {
+export default CronJob("api/weekly-stats", "00 0 * * 1", async (req, res) => {
+    // YouTube
+    var key = process.env.YOUTUBE_KEY
+    const ytresponse = await fetch('https://www.googleapis.com/youtube/v3/channels?part=statistics&id=UCLMdmCCRFGWt7rktx6tMErw&key=' + key)
+    const ytjson = await ytresponse.json()
+    const { subscriberCount, viewCount, videoCount } = ytjson.items[0].statistics
+
+    // GitHub
+    const ghheaders = {
+        "Authorization": "Token " + process.env.GITHUB_KEY
+    }
+    // followers
+    const url = "https://api.github.com/users/bjcarlson42/followers"
+    const ghresponse = await fetch(url, { "headers": ghheaders })
+    const ghjson = await ghresponse.json()
+    const numFollwers = Object.keys(ghjson).length
+    // projects
+    const url2 = "https://api.github.com/users/bjcarlson42/repos"
+    const response2 = await fetch(url2, { "headers": ghheaders })
+    const json2 = await response2.json()
+    const numProjects = Object.keys(json2).length
+    // stars
+    var starsCount = 0
+    json2.forEach(f => {
+        starsCount += f.stargazers_count
+    })
+
+    // Strava
+    const stravaheaders = {
         'Accept': 'application/json, text/plain, */*',
         'Content-Type': 'application/json'
     }
@@ -15,19 +43,25 @@ export default async (req, res) => {
 
     const reauthorizeResponse = await fetch('https://www.strava.com/oauth/token', {
         method: 'post',
-        "headers": headers,
+        "headers": stravaheaders,
         "body": body
     })
+
+    const res1 = await fetch('https://www.strava.com/oauth/authorize?redirect_uri=http://localhost/&response_type=code&scope=read,read_all,activity:read,activity:read_all,profile:read_all&client_id=36423')
+    // console.log(res1)
+
 
     const reAuthJson = await reauthorizeResponse.json()
     // console.log(reAuthJson)
 
-    const response = await fetch('https://www.strava.com/api/v3/athletes/8696836/stats?access_token=' + reAuthJson.access_token)
-    const json = await response.json()
+    const stravaresponse = await fetch('https://www.strava.com/api/v3/athletes/8696836/stats?access_token=' + reAuthJson.access_token)
+    const stravajson = await stravaresponse.json()
     // console.log(json)
-    const { count, distance } = json.all_run_totals
-    const movingTime = json.all_run_totals.moving_time
-
+    const { count, distance } = stravajson.all_run_totals
+    const movingTime = stravajson.all_run_totals.moving_time
+    
+    var movingTimeConv = (movingTime * 0.0166667).toFixed(0) // sec -> min
+    var distanceConv = (distance * 0.000621371).toFixed(0) // meters -> miles
     const auth = new google.auth.GoogleAuth({
         credentials: {
             client_email: process.env.GOOGLE_CLIENT_EMAIL,
@@ -46,21 +80,32 @@ export default async (req, res) => {
         version: 'v4'
     })
 
-    const sheets_response = await sheets.spreadsheets.values.get({
+    const clear = await sheets.spreadsheets.values.clear({
         spreadsheetId: '1mj1HxNlbFnaHi4GI1OHnTbn_n810E5nAFQTR20j3OYw',
-        range: 'B7:B9',
+        range: 'B1:B9',
     })
 
-    const run_increase = count - sheets_response.data.values[0]
-    const distance_increase = sheets_response.data.values[1][0]
-    const moving_time_increase = sheets_response.data.values[2][0]
-
-    return res.status(200).json({
-        count,
-        distance,
-        movingTime,
-        run_increase,
-        distance_increase,
-        moving_time_increase
+    const response = await sheets.spreadsheets.values.append({
+        spreadsheetId: '1mj1HxNlbFnaHi4GI1OHnTbn_n810E5nAFQTR20j3OYw',
+        range: 'B1:B9',
+        valueInputOption: 'USER_ENTERED',
+        requestBody: {
+            values: [
+                [`${subscriberCount}`],
+                [`${viewCount}`],
+                [`${videoCount}`],
+                [`${numFollwers}`],
+                [`${numProjects}`],
+                [`${starsCount}`],
+                [`${count}`],
+                [`${distanceConv}`],
+                [`${movingTimeConv}`]
+            ]
+        }
     })
-}
+
+    // return res.status(201).json({
+    //     data: response.data,
+    //     d: clear.data
+    // })
+})

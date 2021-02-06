@@ -48,7 +48,7 @@ const Statistics = () => {
                     alignItems="flex-start"
                     m="0 auto 4rem auto"
                     maxWidth="700px"
-                    px={2}
+                    px={4}
                 >
                     <Flex
                         flexDirection="column"
@@ -76,19 +76,13 @@ const Statistics = () => {
                         your own dashboard.
                     </Text>
                     </Flex>
-                    <Flex
-                        flexDirection="column"
-                        justifyContent="space-start"
-                        alignItems="flex-start"
-                        maxWidth="700px"
-                    >
-                        <SimpleGrid columns={[1, 2, 3]} spacing="20px">
-                            <YouTubeData />
-                            <GitHubData />
-                            <StravaData />
-                            <ButtondownData />
-                        </SimpleGrid>
-                    </Flex>
+                    <SimpleGrid columns={[1, 2, 3]} w="100%">
+                        <YouTubeData />
+                        <GitHubData />
+                        <StravaData />
+                        {/* <ButtondownData /> */}
+                    </SimpleGrid>
+                    <Text mt={2} fontSize="12px" color={colorSecondary[colorMode]}>Increase and decrease values are compared to the previous week (Monday 12am EST is the start of a new week) and are in the same unit as the statistic.</Text>
                 </Stack>
             </Container>
         </>

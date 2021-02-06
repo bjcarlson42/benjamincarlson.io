@@ -67,7 +67,7 @@ const Hello = () => {
                         <SocialLink name={title} href={vid_url} icon={YoutubeIcon} />
                         <SocialLink name="Check Out My Website!" href="/" icon={CodeIcon} />
                         <SocialLink name="View My Opensource Code!" href="https://github.com/bjcarlson42?tab=repositories" icon={GitHubIcon} />
-                        <SocialLink name="Subscribe to my newsletter" href="https://buttondown.email/benjamincarlson" icon={MailIcon} />
+                        {/* <SocialLink name="Subscribe to my newsletter" href="https://buttondown.email/benjamincarlson" icon={MailIcon} /> */}
                         <SocialLink name="Sponsor me on GitHub!" href="https://github.com/sponsors/bjcarlson42" icon={GitHubIcon} />
                         <SocialLink name="Subscribe To My YouTube Channel!" href="https://www.youtube.com/channel/UCLMdmCCRFGWt7rktx6tMErw?sub_confirmation=1" icon={YoutubeIcon} />
                         <SocialLink name="Follow Me On Twitter!" href="https://twitter.com/bjmncrlsn" icon={TwitterIcon} />

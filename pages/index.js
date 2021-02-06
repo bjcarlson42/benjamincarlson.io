@@ -9,20 +9,21 @@ import {
   Stack,
   Link,
   Code,
-  Button
+  Button,
+  Divider
 } from '@chakra-ui/react'
 
 import Container from '../components/Container'
-import Subscribe from '../components/Subscribe'
 import ExperienceBox from '../components/ExperienceBox'
 import FeaturedProjectCard from '../components/FeaturedProjectCard'
-import IndexHeading from '../components/IndexHeading'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
 import BlogPost from '../components/BlogPost'
+import Todo from '../components/Todo'
+import TechStack from '../components/TechStack'
 
 const url = 'https://benjamincarlson.io/'
 const title = 'Home – Benjamin Carlson'
-const description = 'Developer, creator, writer, and student living and working in CT. Browse my latest projects, posts, and stats.'
+const description = 'Developer, creator, writer, and student living and working in CT. Browse Ben\'s latest projects, experience, blog posts, and statistics.'
 
 export default function Index() {
   const { colorMode } = useColorMode()
@@ -50,7 +51,6 @@ export default function Index() {
         }}
       />
       <Container>
-        <IndexHeading />
         <Stack
           as="main"
           spacing={8}
@@ -58,7 +58,7 @@ export default function Index() {
           alignItems="flex-start"
           m="0 auto 4rem auto"
           maxWidth="700px"
-          px={2}
+          px={4}
         >
           <Flex
             flexDirection="column"
@@ -66,53 +66,57 @@ export default function Index() {
             alignItems="flex-start"
             maxWidth="700px"
           >
-
-            {/* Hero Section */}
             <Heading
-              letterSpacing="normal"
+              letterSpacing="tight"
               mb={4}
               as="h1"
               size="xl"
-              visibility={['visible', 'visible', 'hidden']}
             >
               Hello! I'm Benjamin Carlson, a developer and student living and working in CT.
             </Heading>
             <Text
               color={colorSecondary[colorMode]}
-              mt={[0, 0, 12]}
             >
-              I’m a student, creator, developer, and writer. I go to <Link href="https://www2.ccsu.edu/" color="blue.500" isExternal>CCSU</Link> where I study
-            computer science, cybersecurity, and mathematics. On this site you will find
-            my projects, gear, writing, and much more. Feel free to reach out via <Link href="mailto:bjcarlson42@gmail.com" color="blue.500">email</Link> or any social media to say hi!
+              I go to <Link href="https://www2.ccsu.edu/" color="blue.500" isExternal>CCSU</Link> where I study computer science, cybersecurity, and mathematics.
+            My personal website is where I showcase my projects, writing, statistics, experience, and more.
+            It also serves as a sandbox to play around with new technologies!
+            Feel free to reach out via <Link href="mailto:bjcarlson42@gmail.com" color="blue.500">email</Link> or any social media with any questions, inquiries, or just to say hi!
             </Text>
 
-            {/* Experience Section */}
-            <Heading mt={8} mb={4} as="h2" size="xl">
+            <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">
               Experience
             </Heading>
             <ExperienceBox
               name="The Law Forum LLC"
               years="Fall 2020 / Summer 2020 / Summer 2019"
               pos="C# Software Developer"
+              badge_1='Part Time'
+              badge_2='Internship'
             >
-              I first interned with The Law Forum during summer 2019, going into my sophmore year of college.
-              Fortunately, I was able to return the following summer, 2020, only this time I worked remotely (due to the pandemic!). Currently, this fall 2020, I am
-              working part time with The Law Forum while continuing my Junior year of college.
+              At the Law Forum, I use in ASP .NET, C#, HTML/CSS, JavaScript, and SQL to create and update internal websites for
+              both The Law Forum and clients. I have completed 2 summer internships and over 6 months of part time work both
+              in the office and remote.
             </ExperienceBox>
             <ExperienceBox
               name="Middletown, CT City Hall"
               years="Summer 2018"
               pos="I.T. Department"
+              badge_1="Internship"
             >
               The summer after graduating from high school, I had the opportunity to work with my city halls' I.T. department. I didn't
               do any coding but I had a hands on look at the I.T. field and worked on a number of hardware related tasks.
             </ExperienceBox>
 
-            {/* Blog Section */}
-            <Heading mt={8} mb={4} as="h2" size="xl">
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
+
+            <Todo />
+
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
+
+            <Heading letterSpacing="tight" mt={8} mb={4} size="lg" fontWeight={700} as="h2">
               Top Blog Posts
-                </Heading>
-            
+            </Heading>
+
             <BlogPost
               title="How Tik Tok Gave Me The Perfect Coding Side Project"
               summary="I got an idea for a weekend coding project from Tik Tok."
@@ -129,8 +133,6 @@ export default function Index() {
               slug="using-javascript-to-scramble-a-rubiks-cube-2"
             />
 
-            {/* <BlogPost {...FlutterToFirebase} />
-            <BlogPost {...JavaScriptCube} /> */}
             <Flex justify="center" width="100%">
               <NextLink href="/blog" passHref>
                 <Link _hover="none">
@@ -141,8 +143,9 @@ export default function Index() {
               </NextLink>
             </Flex>
 
-            {/* Project Section */}
-            <Heading letterSpacing="tight" mt={8} size="xl" fontWeight={700} as="h2">
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
+
+            <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">
               Featured Projects
             </Heading>
             <FeaturedProjectCard
@@ -179,26 +182,25 @@ export default function Index() {
               </NextLink>
             </Flex>
 
-            {/* More On This Site Section */}
-            <Heading letterSpacing="tight" mt={8} mb={2} size="xl" fontWeight={700} as="h2">
-              More On This Site
-           </Heading>
-            <Text mb={2} color={colorSecondary[colorMode]}>Be sure to check out all the pages on this site!</Text>
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
 
-            <Flex wrap="wrap">
-              <Link href="/" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Home</Button></Link>
-              <Link href="/projects" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Projects</Button></Link>
-              <Link href="/blog" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Blog</Button></Link>
-              <Link href="/statistics" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Statistics</Button></Link>
-              <Link href="/about" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>About</Button></Link>
-              <Link href="/gear" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Gear</Button></Link>
-              <Link href="/hello" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Hello</Button></Link>
-              <Link href="/thanks" _hover="none"><Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" mr={2} mt={4}>Thanks</Button></Link>
+            <Flex
+              justify="start"
+              flexDirection="column"
+              display={['none', 'flex', 'flex']}
+            >
+              <TechStack />
             </Flex>
-          </Flex>
 
-          {/* Subscribe Section */}
-          <Subscribe />
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" display={['none', 'flex', 'flex']}/>
+
+            <Text mt={8}>Looks like you've made it to the end of this page... feel free to <Link href="https://youtube.com/benjamincarlson" isExternal color="blue.500">check out my YouTube</Link> where
+            you can find even more programming content.
+            </Text>
+
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
+
+          </Flex>
         </Stack>
       </Container>
     </>
