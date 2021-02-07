@@ -10,14 +10,6 @@ import MobileNavigationTop from '../components/MobileNavigationTop'
 
 const Container = ({ children }) => {
   const { colorMode } = useColorMode()
-  const borderIcon = {
-    light: 'gray.400',
-    dark: 'gray.500'
-  }
-  const footerHoverBg = {
-    light: 'gray.100',
-    dark: 'gray.700',
-  }
   const bgColor = {
     light: 'white',
     dark: '#171717' // #1A202C

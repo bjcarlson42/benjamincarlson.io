@@ -3,8 +3,7 @@ import {
     useColorMode,
     Button,
     Flex,
-    Box,
-    Image
+    Box
 } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import NextLink from 'next/link'
@@ -51,33 +50,60 @@ const Navigation = () => {
             mx="auto"
             display={['none', 'flex', 'flex']}
         >
-            {/* <NextLink href="/" passHref>
-                <Image src="/images/logo.png" w={[null, 50, 70]} h={[null, 50, 70]}></Image>
-            </NextLink> */}
             <DarkModeSwitch />
             <Box>
                 <NextLink href="/statistics" passHref>
-                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/statistics' ? navHoverBg[colorMode] : null}>
+                    <Button
+                        as="a"
+                        variant="ghost"
+                        p={[1, 2, 4]}
+                        _hover={{ backgroundColor: navHoverBg[colorMode] }}
+                        backgroundColor={router.pathname === '/statistics' ? navHoverBg[colorMode] : null}
+                        aria-label="Statistics"
+                    >
                         Statistics
                     </Button>
                 </NextLink>
                 <NextLink href="/blog" passHref>
-                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname.includes('/blog') ? navHoverBg[colorMode] : null}>
+                    <Button
+                        as="a"
+                        variant="ghost"
+                        p={[1, 2, 4]}
+                        _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname.includes('/blog') ? navHoverBg[colorMode] : null}
+                        aria-label="Blog"
+                    >
                         Blog
                     </Button>
                 </NextLink>
                 <NextLink href="/projects" passHref>
-                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/projects' ? navHoverBg[colorMode] : null}>
+                    <Button
+                        as="a"
+                        variant="ghost"
+                        p={[1, 2, 4]}
+                        _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/projects' ? navHoverBg[colorMode] : null}
+                        aria-label="Projects"
+                    >
                         Projects
                     </Button>
                 </NextLink>
                 <NextLink href="/gear" passHref>
-                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/gear' ? navHoverBg[colorMode] : null}>
+                    <Button
+                        as="a"
+                        variant="ghost"
+                        p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/gear' ? navHoverBg[colorMode] : null}
+                        aria-label="Gear"
+                    >
                         Gear
                     </Button>
                 </NextLink>
                 <NextLink href="/" passHref>
-                    <Button as="a" variant="ghost" p={[1, 2, 4]} _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/' ? navHoverBg[colorMode] : null}>
+                    <Button
+                        as="a"
+                        variant="ghost"
+                        p={[1, 2, 4]}
+                        _hover={{ backgroundColor: navHoverBg[colorMode] }} backgroundColor={router.pathname === '/' ? navHoverBg[colorMode] : null}
+                        aria-label="Home"
+                    >
                         Home
                     </Button>
                 </NextLink>

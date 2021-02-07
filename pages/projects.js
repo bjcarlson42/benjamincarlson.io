@@ -31,7 +31,7 @@ const Projects = () => {
         light: 'gray.600',
         dark: 'gray.300'
     }
-    
+
     return (
         <>
             <NextSeo
@@ -73,6 +73,7 @@ const Projects = () => {
                             title="25 Days Of Flutter"
                             href="https://flutter25.com"
                             src="/images/flutter25.png"
+                            alt='Flutter 25 logo'
                             color={iconColor[colorMode]}
                         >
                             25 Days Of Flutter is a 25 day tutorial series designed to take you from a Flutter beginner to coding a complete app using various modern technologies.
@@ -81,6 +82,7 @@ const Projects = () => {
                             title="Word Of The Day App"
                             href="https://github.com/bjcarlson42/wotd"
                             src="/images/wotd.png"
+                            alt='Word Of The Day logo'
                             color={iconColor[colorMode]}
                         >
                             Word of the day app built with <Code>Dart</Code>, <Code>Flutter</Code>, and <Code>Wordnik API</Code>. Video tutorial posted on YouTube.
@@ -89,6 +91,7 @@ const Projects = () => {
                             title="Personal Website"
                             href="https://github.com/bjcarlson42/benjamincarlson.io"
                             src="/images/logo.png"
+                            alt='Personal website logo'
                             color={iconColor[colorMode]}
                         >
                             My personal portfolio website you are on now. Built with <Code>Next.js</Code>, <Code>chakra-ui</Code>, <Code>mdx</Code> pages, and serverless functions for realtime data.

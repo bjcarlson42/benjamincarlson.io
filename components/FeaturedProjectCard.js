@@ -9,7 +9,7 @@ import {
     Image
 } from '@chakra-ui/react'
 
-const FeaturedProjectCard = ({ title, href, children, src }) => {
+const FeaturedProjectCard = ({ title, href, children, src, alt }) => {
     const { colorMode } = useColorMode()
     const borderColor = {
         light: 'gray.200',
@@ -44,6 +44,7 @@ const FeaturedProjectCard = ({ title, href, children, src }) => {
             >
                 <Image
                     src={src}
+                    alt={alt}
                     width={["40px", "50px", "60px"]}
                     ml={2}
                     mr={4}
