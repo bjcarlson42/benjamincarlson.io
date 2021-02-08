@@ -9,7 +9,6 @@ export default class MyDocument extends NextDocument {
             <Html lang="en">
                 <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
                 <Head>
-                    {/* <!-- TradeDoubler site verification 3201928 --> */}
                     {/* <link href="/favicons/favicon.ico" rel="shortcut icon" />
                     <link href="/favicons/site.webmanifest" rel="manifest" />
                     <link
@@ -40,7 +39,7 @@ export default class MyDocument extends NextDocument {
                         rel="mask-icon"
                     /> */}
                     {/* Google Adsense */}
-                    {/* <script data-ad-client="ca-pub-8586017200531248" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script> */}
+                    <script data-ad-client="ca-pub-8586017200531248" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
                     <script
                         async
