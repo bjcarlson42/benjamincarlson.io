@@ -87,22 +87,22 @@ export const software = [
         id: 13,
         software: 1,
         item: 'Video Editor',
-        title: 'IMovie',
-        url: 'https://www.apple.com/imovie/'
+        title: 'Final Cut Pro',
+        url: 'https://www.apple.com/final-cut-pro/'
     },
     {
         id: 13,
         software: 1,
         item: 'Recording Software',
-        title: 'OBS Studio',
-        url: 'https://obsproject.com/'
+        title: 'Quicktime Player',
+        url: 'https://en.wikipedia.org/wiki/QuickTime'
     },
     {
         id: 14,
         software: 1,
         item: 'Terminal',
         title: 'Mac Terminal',
-        url: ''
+        url: 'https://en.wikipedia.org/wiki/Terminal_(macOS)'
     },
     {
         id: 15,
@@ -122,8 +122,8 @@ export const software = [
         id: 17,
         software: 2,
         item: 'Camera',
-        title: 'Google Pixel 5',
-        url: 'https://store.google.com/product/pixel_5?gclid=Cj0KCQjwreT8BRDTARIsAJLI0KI2UDa9g0i9f2EBQ3IxzyICHNLxBLkTP7Swk67DM0dvuDXiKJF5A3AaArukEALw_wcB&gclsrc=aw.ds'
+        title: 'Panasonic - LUMIX',
+        url: 'https://amzn.to/3q2ydQm'
     },
     {
         id: 18,
