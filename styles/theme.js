@@ -17,7 +17,6 @@ const breakpoints = createBreakpoints({
 })
 
 const overrides = {
-  ...chakraTheme,
   fonts,
   breakpoints,
   fontWeights: {

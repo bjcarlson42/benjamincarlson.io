@@ -88,6 +88,17 @@ export const Footer = () => {
                         /hello
                     </Link>
                 </NextLink>
+                <NextLink href="/videos" passHref>
+                    <Link
+                        fontSize="md"
+                        color="gray.500"
+                        minWidth="100px"
+                        mr={2}
+                        title="Hello"
+                    >
+                        /videos
+                    </Link>
+                </NextLink>
             </div>
         </Flex>
     )

@@ -201,8 +201,6 @@ export default function Index() {
             you can find even more programming content.
             </Text>
 
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
-
           </Flex>
         </Stack>
       </Container>

@@ -1,0 +1,216 @@
+---
+title: 'Python Automation With Selenium Part 1: Building an Instagram Bot (2021 Updated)'
+publishedAt: '2020-04-16'
+summary: "Building an Instagram Bot with Python, Selenium, and Chrome WebDriver."
+---
+
+[View the video on YouTube](https://youtu.be/AWSz7rVKZbQ)
+
+Video transcript:
+
+hey guys logo to the video today I'll be
+showing you how to use Python and
+selenium to automate Instagram by making
+an instrument bot so the first thing
+that we need to do is download Python if
+you don't have it installed alright so
+for that I can open a new chrome window
+go to Python org go to the downloads
+page and you can get the live version
+here secondly we're going to need to
+selenium for that we can go to selenium
+dev and again go to the downloads page
+and get away as freshman here now
+selenium is what's going to be power in
+our project today and basically what it
+is is it automates browsers and in order
+to use selenium we're gonna need a web
+driver so for that we're going to look
+up webdriver for Chrome and go to the
+first link and right now home page you
+can download the version of Chrome
+driver that you need so the version will
+correspond to the version of Chrome that
+you have so to find out which version
+that is you can go to settings go to a
+boat Chrome and you'll see it right here
+alright now we're ready to start coding
+alright so the first thing you're gonna
+want to do is create a folder where you
+want to store this project for me I'm
+going to be putting it in the YouTube
+folder on my machine here I have a
+terminal window I'm already into that
+folder as you can see we list all the
+items in here you'll see Slee and python
+now actually gonna make a new folder for
+this project to call this tutorial
+selenium and i'm going to CD into that
+project now since we're using python
+we're gonna want it to use a virtual
+environment so I'm gonna be using pip
+env if you don't have it already you can
+stall it by typing through install
+envy your on that I already have it
+installed so this will not do anything
+alright so there you go see it's
+installed and up today and secondly
+where you're going to want to create a
+new environment so to do that we can use
+pip easy hmm
+install that will create a new
+environment for us
+and if we go into the folder you'll see
+it created two files right here
+secondly we go we want to now start the
+shell to do that though thinking the
+shell and now we are in our virtual
+environment now we're going to install
+our one dependency for this project
+which is selenium we can do that by
+writing pip energy install selenium all
+right there you go now everything's set
+up for this project now we're going to
+want to make a Python file so we can do
+that directly from the terminal with
+touch and I'm going to name this font
+dot pi there we go and now we can open
+this in our editor alright so we're
+going to be editing Assadi bot py file
+so the first thing that we want to do is
+import webdriver
+from selenium next we're just going to
+write some standard python boilerplate
+code so we can get up and running
+all right so basically what this is
+doing is when we run the program it will
+check this first this will execute a
+strip so it will run the main method
+which will instantiate a variable named
+my bot to class spot and then it will
+initiate the init function of class bot
+which for now all that is doing is
+printing it works so we can test that by
+simply writing Python but
+py you know see yet it works
+all right so similarly how we declare a
+variable my bot to be equal to this
+class bot we can say for webdriver
+so we can say self dot driver which is
+our variable this could be anything you
+want we're going to make that equal to
+webdriver dot roam next we can call
+functions that webdriver gives us so to
+call this we need to write again so got
+driver dot you'll see there are a bunch
+of different functions here that we can
+use one we're gonna want to use it get
+see right there and the definition of
+get is it loads a webpage in the current
+browser session so for this like I said
+we're going to using Instagram so let's
+go grab the Instagram URL copy that and
+paste it in here as a string literal all
+right so now if we run this file again
+it should get this URL one thing to note
+is if you run this it will work but it
+will close the browser right after it
+finishes so to see that it's working I'm
+going to add - I which is interactive
+mode so after it finishes executing it
+will the browser will remain open there
+you go
+so if we right-click and inspect
+you'll see we get all the code behind
+the webpage now let's do it again and
+you can see this code right here
+corresponds to this input so we want to
+get this element in Python right so what
+we're going to do that is by
+right-clicking and hit copy and copy
+XPath so this is the path to get to this
+element and we can grab that in here by
+using so dot driver dot find and you'll
+see those bunch of different ways going
+to find that element you find about
+class name by CSS select your ID but the
+one we're using is XPath similar to get
+we can pass in like that and boom there
+you go so after we get it we want to
+send our username in right so the way
+we're gonna do that is by using the send
+keys method so we can type self driver
+dot send underscore keys you can send it
+whatever we want so let's see I'll send
+it my easy way and one thing to note
+before we run this if we run this it
+will fail because it will execute this
+instruction here
+but before Instagram is actually loaded
+it will execute this line so this will
+fail even though it's there it will fail
+because Instagram is not loaded yet so
+it will think it's not there so to fix
+that we can use a Python function to
+sleep
+so we can import that time so now it
+will execute this line and then it will
+do nothing for five seconds and then it
+will execute this line so let's run that
+see what we get
+nice ringing error no attribute send
+keys ah yes I need to initialize this to
+a variable let's call this use their
+name input equals that and then we're
+going to instead of self driver to send
+keys we want to send the keys to that
+variable try that again
+and there you go you can see our user
+name is in there so next we're going to
+send our password and we can do it the
+same way we can just inspect speaking to
+grab the XPath and we can do the same
+thing to the different user name we'll
+call this password book I'll set that
+equal to the self driver judge find
+element by XPath and then send keys
+we're gonna send our password but we
+want to keep this password to secret so
+what we can do is we can send password
+like this and input this for another
+file so let's make a new file call this
+secret stuff PI and we're gonna make a
+variable PW and set that equal to your
+password
+so enter your password here or from
+speakers import password now we can pass
+that into there so let's run this and
+see if it works
+and there you go we have the username
+and we have the password so the final
+step is to actually click login so just
+like we've been doing to get the X code
+and here we gotta be careful when we
+right click and hit inspect it brings us
+to this did right here well this isn't
+actually what we want to click what we
+want to click is this bind so let's copy
+that expand as opposed to copying the
+did XPath
+I'm going to click it all we're going to
+do is call another function dot click
+and this will click it for us let's see
+if that works
+there you go we can see it clicked it
+for us and we are in so now we have this
+pop-up that comes up and we want to
+click not now on this so just like how
+we click the submit button we can click
+not now
+you
+and there we go looks like it worked
+alright so in the next video we'll
+continue to dive deeper into this if you
+enjoy this video
+just give it a like and share and I'll
+see you the next one

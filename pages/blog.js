@@ -8,8 +8,7 @@ import {
     Stack,
     Input,
     InputGroup,
-    InputRightElement,
-    Icon
+    InputRightElement
 } from '@chakra-ui/react'
 
 import Container from '../components/Container'

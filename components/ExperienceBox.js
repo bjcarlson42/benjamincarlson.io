@@ -9,7 +9,7 @@ import {
     Badge
 } from '@chakra-ui/react'
 
-const ExperienceBox = ({ name, years, pos, badge_1, badge_2, badge_1_margin, badge_2_margin, children }) => {
+const ExperienceBox = ({ name, years, pos, badge_1, badge_2, children }) => {
 
     const { colorMode } = useColorMode()
     const colorSecondary = {

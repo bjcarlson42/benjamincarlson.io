@@ -25,6 +25,10 @@
   </url>
 
   <url>
+    <loc>https://benjamincarlson.io/videos</loc>
+  </url>
+
+  <url>
     <loc>https://benjamincarlson.io/blog/connect-flutter-to-firebase</loc>
   </url>
 
@@ -56,5 +60,13 @@
     <loc
       >https://benjamincarlson.io/blog/using-javascript-to-scramble-a-rubiks-cube-2</loc
     >
+  </url>
+
+  <url>
+    <loc>https://benjamincarlson.io/videos/1</loc>
+  </url>
+
+  <url>
+    <loc>https://benjamincarlson.io/videos/2</loc>
   </url>
 </urlset>

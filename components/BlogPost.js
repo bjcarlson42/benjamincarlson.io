@@ -4,7 +4,6 @@ import { useColorMode, Heading, Text, Flex, Box, Link } from '@chakra-ui/react'
 import fetcher from '../lib/fetcher'
 import useSWR from 'swr'
 import * as formatNum from 'comma-number'
-import { parseISO, format } from 'date-fns'
 
 const BlogPost = ({ title, summary, slug }) => {
     const { colorMode } = useColorMode()
@@ -30,7 +29,6 @@ const BlogPost = ({ title, summary, slug }) => {
                             <Heading size="md" as="h3" mb={1} fontWeight="medium">
                                 {title}
                             </Heading>
-                            {/* <Text mb={2} fontStyle="italic">Published on {format(parseISO(publishedAt), 'MMMM dd, yyyy')}</Text> */}
                         </Flex>
 
                         <Text
