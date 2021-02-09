@@ -50,6 +50,7 @@ const Todo = () => {
                 />
                 <InputRightElement width="6.75rem">
                     <Button
+                        aria-label="Add a TODO!"
                         fontWeight="bold"
                         h="1.75rem"
                         size="sm"
@@ -72,7 +73,7 @@ const Todo = () => {
                         }}
                     >
                         Add!
-                        </Button>
+                    </Button>
                 </InputRightElement>
             </InputGroup>
             <List spacing={3}>
@@ -83,7 +84,7 @@ const Todo = () => {
                                 <ListIcon as={CheckCircleIcon} color="green.500" />
                                 {todo}
                             </Flex>
-                            <IconButton icon={<DeleteIcon color="red.400" />} onClick={() => removeTodo(todo)} />
+                            <IconButton aria-label={`Delete TODO ${todo}`} icon={<DeleteIcon color="red.400" />} onClick={() => removeTodo(todo)} />
                         </Flex>
                     </ListItem>
                 ))}

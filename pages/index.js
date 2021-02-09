@@ -136,9 +136,9 @@ export default function Index() {
             <Flex justify="center" width="100%">
               <NextLink href="/blog" passHref>
                 <Link _hover="none">
-                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline">
+                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" aria-label="view all posts">
                     View All Posts
-                        </Button>
+                  </Button>
                 </Link>
               </NextLink>
             </Flex>
@@ -178,7 +178,7 @@ export default function Index() {
             <Flex justify="center" width="100%">
               <NextLink href="/projects" passHref>
                 <Link _hover="none" mt={8}>
-                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline">
+                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" aria-label="view all projects">
                     View All Projects
                 </Button>
                 </Link>
