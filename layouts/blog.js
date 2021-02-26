@@ -112,7 +112,7 @@ export default function BlogLayout({ children, frontMatter }) {
                 <script
                     src="https://utteranc.es/client.js"
                     repo="bjcarlson42/comments-benjamincarlson.io"
-                    issue-term="pathname"
+                    issue-term="url"
                     theme={commentsTheme[colorMode]}
                     crossorigin="anonymous"
                     async>
