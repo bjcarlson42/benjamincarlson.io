@@ -105,6 +105,13 @@ export default function BlogLayout({ children, frontMatter }) {
                 <Flutter25 />
                 <Subscribe />
                 <GitHubSponsorCard />
+                <script src="https://utteranc.es/client.js"
+                    repo="bjcarlson42/comments-benjamincarlson.io"
+                    issue-term="pathname"
+                    theme="github-light"
+                    crossorigin="anonymous"
+                    async>
+                </script>
             </Stack>
         </Container>
     )
