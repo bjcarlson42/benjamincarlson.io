@@ -34,6 +34,10 @@ export default function BlogLayout({ children, frontMatter }) {
         light: 'gray.700',
         dark: 'gray.400'
     }
+    const commentsTheme = {
+        light: 'github-light',
+        dark: 'github-dark'
+    }
     const router = useRouter();
     const slug = router.asPath.replace('/blog', '')
     return (
@@ -105,10 +109,11 @@ export default function BlogLayout({ children, frontMatter }) {
                 <Flutter25 />
                 <Subscribe />
                 <GitHubSponsorCard />
-                <script src="https://utteranc.es/client.js"
+                <script
+                    src="https://utteranc.es/client.js"
                     repo="bjcarlson42/comments-benjamincarlson.io"
                     issue-term="pathname"
-                    theme="github-light"
+                    theme={commentsTheme[colorMode]}
                     crossorigin="anonymous"
                     async>
                 </script>
