@@ -23,7 +23,11 @@ export default class Comments extends Component {
 
     render() {
         return (
-            <div ref={this.commentBox}/>
+            <div>
+                <h1>Comments</h1>
+                <hr/>
+                <div ref={this.commentBox}/>
+            </div>
         );
     }
 }
