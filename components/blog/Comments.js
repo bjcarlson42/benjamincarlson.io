@@ -23,9 +23,7 @@ export default class Comments extends Component {
 
     render() {
         return (
-            <div>
-                <h1>Comments</h1>
-                <hr/>
+            <div style={{width: '100%'}}>
                 <div ref={this.commentBox}/>
             </div>
         );
