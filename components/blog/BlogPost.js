@@ -1,7 +1,7 @@
 import React from 'react'
 import NextLink from 'next/link'
 import { useColorMode, Heading, Text, Flex, Box, Link } from '@chakra-ui/react'
-import fetcher from '../lib/fetcher'
+import fetcher from '../../lib/fetcher'
 import useSWR from 'swr'
 import * as formatNum from 'comma-number'
 

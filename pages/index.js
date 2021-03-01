@@ -17,7 +17,7 @@ import Container from '../components/Container'
 import ExperienceBox from '../components/ExperienceBox'
 import FeaturedProjectCard from '../components/FeaturedProjectCard'
 import { ArrowForwardIcon } from '@chakra-ui/icons'
-import BlogPost from '../components/BlogPost'
+import BlogPost from '../components/blog/BlogPost'
 import Todo from '../components/Todo'
 import TechStack from '../components/TechStack'
 

@@ -12,7 +12,7 @@ import {
 import { useRouter } from 'next/router'
 
 import Container from '../components/Container'
-import BlogSeo from '../components/BlogSeo'
+import BlogSeo from '../components/blog/BlogSeo'
 
 export default function VideoLayout({ children, frontMatter }) {
     const { colorMode } = useColorMode()

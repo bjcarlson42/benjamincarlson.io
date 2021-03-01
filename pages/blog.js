@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 
 import Container from '../components/Container'
-import BlogPost from '../components/BlogPost'
+import BlogPost from '../components/blog/BlogPost'
 import { SearchIcon } from '@chakra-ui/icons'
 
 import { getAllFilesFrontMatter } from '../lib/mdx'

@@ -18,10 +18,11 @@ import { useRouter } from 'next/router'
 import Container from '../components/Container'
 import ViewCounter from '../components/ViewCounter'
 import LikeCounter from '../components/LikeCounter'
-import BlogSeo from '../components/BlogSeo'
+import BlogSeo from '../components/blog/BlogSeo'
 import Subscribe from '../components/Subscribe'
 import GitHubSponsorCard from '../components/GitHubSponsorCard'
 import Flutter25 from '../components/Flutter25'
+import Comments from '../components/blog/Comments'
 
 const editUrl = (slug) =>
     `https://github.com/bjcarlson42/benjamincarlson.io/edit/master/pages/blog/${slug}.mdx`
@@ -109,14 +110,7 @@ export default function BlogLayout({ children, frontMatter }) {
                 <Flutter25 />
                 <Subscribe />
                 <GitHubSponsorCard />
-                <script
-                    src="https://utteranc.es/client.js"
-                    repo="bjcarlson42/comments-benjamincarlson.io"
-                    issue-term="url"
-                    theme={commentsTheme[colorMode]}
-                    crossorigin="anonymous"
-                    async>
-                </script>
+                <Comments />
             </Stack>
         </Container>
     )

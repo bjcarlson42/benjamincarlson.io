@@ -55,7 +55,7 @@ const TechStack = () => {
                         <Td>Multiple api routes that fetch my real-time social media data using Next.JS <Link href="https://nextjs.org/docs/api-routes/introduction" color="blue.500" isExternal>serverless functions</Link>.</Td>
                     </Tr>
                     <Tr>
-                        <Td>Firebase DB View/Like Count</Td>
+                        <Td>Realtime Blog Post View/Like Count</Td>
                         <Td>/api</Td>
                         <Td>I use <Link href="https://firebase.google.com" color="blue.500" isExternal>Google's Firebase</Link> to store view and like counts for my blog posts.</Td>
                     </Tr>
@@ -64,11 +64,6 @@ const TechStack = () => {
                         <Td>n/a</Td>
                         <Td>I use <Link href="https://vercel.com" color="blue.500" isExternal>Vercel</Link> to deploy my app.</Td>
                     </Tr>
-                    {/* <Tr>
-                        <Td>Tutorials</Td>
-                        <Td>tutorials.benjamincarlson.io</Td>
-                        <Td>My sub domain where I create programming tutorial articles. I have big plans for this site.</Td>
-                    </Tr> */}
                 </Tbody>
             </Table>
         </>
