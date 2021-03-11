@@ -1,4 +1,4 @@
-export const software = [
+export const gear = [
     {
         id: 1,
         software: 0, // 0 -> hardware, 1 -> software, 2 -> cameraware
@@ -122,8 +122,8 @@ export const software = [
         id: 17,
         software: 2,
         item: 'Camera',
-        title: 'Panasonic - LUMIX',
-        url: 'https://amzn.to/3q2ydQm'
+        title: 'Canon EOS m50',
+        url: 'https://amzn.to/2Ok9f1e'
     },
     {
         id: 18,

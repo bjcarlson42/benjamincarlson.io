@@ -88,7 +88,7 @@ export default function Index() {
             </Heading>
             <ExperienceBox
               name="The Law Forum LLC"
-              years="Fall 2020 / Summer 2020 / Summer 2019"
+              years="Summer 2019, 2020, Fall 2020, Spring 2021"
               pos="C# Software Developer"
               badge_1='Part Time'
               badge_2='Internship'

@@ -38,11 +38,6 @@ const GearList = () => {
         dark: 'white'
     }
 
-    const colorSecondary = {
-        light: 'gray.700',
-        dark: 'gray.400'
-    }
-
     if (error) return <div>Error loading gear!</div>
     if (!data) return <CircularProgress isIndeterminate color={color[colorMode]}></CircularProgress>
 

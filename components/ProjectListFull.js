@@ -83,34 +83,15 @@ const ProjectListFull = () => {
         </div>
     )
 
-    function projName(str) {
-        const exceptions = ['benjamincarlson.io', 'flutter-json', 'flutter-ui', 'mm-kennels', 'wotd', 'tutorials.benjamincarlson.io'] // names of repos that I don't watch changed
-        if (exceptions.includes(str)) {
-            // make additional changes in here if needed
-            // ex:
-            // if (str == 'wotd') {
-            //     return 'word of the day'
-            // }
-            return str
-        }
-        return capital_letter(str.split('-').join(' '))
-    }
-
-    function capital_letter(str) {
-        str = str.split(' ');
-
-        for (let i = 0, x = str.length; i < x; i++) {
-            str[i] = str[i][0].toUpperCase() + str[i].substr(1);
-        }
-
-        return str.join(' ')
-    }
-
     const filteredProjects = Object(data.repos)
-        .filter((post) =>
-            post.name.toLowerCase().includes(searchValue.toLowerCase())
-            || post.description.toLowerCase().includes(searchValue.toLowerCase())
-            || post.language.toLowerCase().includes(searchValue.toLowerCase())
+        .filter((project) =>
+            project.name.toLowerCase().includes(searchValue.toLowerCase())
+            || project.description.toLowerCase().includes(searchValue.toLowerCase())
+            || project.language?.toLowerCase().includes(searchValue.toLowerCase())
+        )
+        .sort(
+            (a, b) =>
+                Number(b.stars) - Number(a.stars)
         )
 
     return (
@@ -127,7 +108,7 @@ const ProjectListFull = () => {
                 {!filteredProjects.length && 'No projects found.'}
                 {filteredProjects
                     .map((p) => (
-                        <ProjectItem key={p.name} name={projName(p.name)} star_count={p.stars} href={p.url} desc={p.description} language={p.language}></ProjectItem>
+                        <ProjectItem key={p.name} name={p.name} star_count={p.stars} href={p.url} desc={p.description} language={p.language}></ProjectItem>
                     ))}
             </SimpleGrid>
         </>

@@ -42,7 +42,7 @@ const GitHubSponsorCard = () => {
                             Hi 👋 I'm Benjamin Carlson, a college student studying computer science. I post weekly tutorial videos on my YouTube channel and build cool open source projects!
                     </Text>
                     </Flex>
-                    <Flex>
+                    <Flex mt={[2, 0, 0]}>
                         <iframe src="https://github.com/sponsors/bjcarlson42/button" title="Sponsor bjcarlson42" height="35" width="116" style={{ border: '0' }}></iframe>
                     </Flex>
                 </Flex>

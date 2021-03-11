@@ -66,7 +66,7 @@ const Projects = () => {
                         <Text color={colorSecondary[colorMode]}>Between school, work, youtube, and individual curiosity, I have worked on many projects over the years. Below you will find
                         all of them. Clicking on the project card will bring you to the GitHub repo. If you enjoy or use any of these projects, please <Link href="https://github.com/sponsors/bjcarlson42" isExternal color="blue.500">consider sponsoring me</Link> on GitHub!
                         </Text>
-                        <Heading letterSpacing="tight" mt={4} size="xl" fontWeight={700}>
+                        <Heading letterSpacing="tight" as="h1" mt={4} size="xl" fontWeight={700}>
                             Featured Projects
                         </Heading>
                         <FeaturedProjectCard
@@ -96,12 +96,11 @@ const Projects = () => {
                         >
                             My personal portfolio website you are on now. Built with <Code>Next.js</Code>, <Code>chakra-ui</Code>, <Code>mdx</Code> pages, and serverless functions for realtime data.
                         </FeaturedProjectCard>
-                        <GitHubSponsorCard />
-                        <Heading letterSpacing="tight" mb={2} mt={4} size="xl" fontWeight={700}>
+                        <Heading letterSpacing="tight" as="h2" mb={2} mt={4} size="xl" fontWeight={700}>
                             All Projects
                         </Heading>
-                        {/* <Text>And the rest of my GitHub...</Text> */}
                         <ProjectListFull />
+                        <GitHubSponsorCard />
                     </Flex>
                 </Stack>
             </Container>

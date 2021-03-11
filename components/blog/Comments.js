@@ -6,7 +6,7 @@ export default class Comments extends Component {
         super(props);
         this.commentBox = React.createRef();
     }
-    
+
     componentDidMount() {
         // const { colorMode } = useColorMode()
         // const utteranceTheme = colorMode === "dark" ? "github-dark" : "github-light";
@@ -23,8 +23,8 @@ export default class Comments extends Component {
 
     render() {
         return (
-            <div style={{width: '100%'}}>
-                <div ref={this.commentBox}/>
+            <div style={{ width: '100%' }}>
+                <div ref={this.commentBox} />
             </div>
         );
     }
