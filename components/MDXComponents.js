@@ -11,6 +11,7 @@ import {
 } from '@chakra-ui/react';
 import { jsx } from '@emotion/react'
 import NextLink from 'next/link'
+import UseEffect from '../components/blog/posts/useEffect'
 
 const CustomLink = (props) => {
     const { colorMode } = useColorMode()
@@ -134,6 +135,8 @@ const MDXComponents = {
     ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
     li: (props) => <Box as="li" pb={1} {...props} />,
     blockquote: Quote,
+    // blog post components
+    UseEffect,
 }
 
 export { CustomLink }
