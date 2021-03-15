@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { DeleteIcon, CheckCircleIcon } from '@chakra-ui/icons'
+import { DeleteIcon } from '@chakra-ui/icons'
 import {
     useToast,
     Input,
@@ -12,9 +12,8 @@ import {
     InputRightElement,
     Flex,
     IconButton,
-    List,
     ListItem,
-    ListIcon
+    OrderedList
 } from "@chakra-ui/react"
 
 const Todo = () => {
@@ -40,7 +39,7 @@ const Todo = () => {
     return (
         <Stack spacing={4} w="100%">
             <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">TODO List</Heading>
-            <Text>Here is a list of things I plan to learn over the next 6 months or so.</Text>
+            <Text>Here is a list of things I plan to learn on my own time over the next 6 months.</Text>
             <InputGroup size="md" mt={4} borderColor="gray.500" borderColor={borderColor[colorMode]}>
                 <Input
                     aria-label="Eenter a TODO!"
@@ -54,7 +53,8 @@ const Todo = () => {
                         fontWeight="bold"
                         h="1.75rem"
                         size="sm"
-                        colorScheme="blue"
+                        colorScheme="gray"
+                        mr={2}
                         variant="outline"
                         px={10}
                         onClick={() => {
@@ -76,19 +76,18 @@ const Todo = () => {
                     </Button>
                 </InputRightElement>
             </InputGroup>
-            <List spacing={3}>
-                {todos.map((todo, index) => (
-                    <ListItem key={index} color={colorSecondary[colorMode]}>
-                        <Flex justify="space-between" align="center">
-                            <Flex align="center">
-                                <ListIcon as={CheckCircleIcon} color="green.500" />
+            <div>
+                <OrderedList spacing={3}>
+                    {todos.map((todo, index) => (
+                        <ListItem key={index} color={colorSecondary[colorMode]}>
+                            <Flex justify="space-between" align="center">
                                 {todo}
+                                <IconButton aria-label={`Delete TODO item titled ${todo}`} icon={<DeleteIcon color="red.400" />} onClick={() => removeTodo(todo)} />
                             </Flex>
-                            <IconButton aria-label={`Delete TODO ${todo}`} icon={<DeleteIcon color="red.400" />} onClick={() => removeTodo(todo)} />
-                        </Flex>
-                    </ListItem>
-                ))}
-            </List>
+                        </ListItem>
+                    ))}
+                </OrderedList>
+            </div>
         </Stack>
 
     )

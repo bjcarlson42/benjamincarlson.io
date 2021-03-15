@@ -42,10 +42,10 @@ export default function StatBox({ title, desc, url, percent, inc_dec }) {
                             <ExternalLinkIcon opacity={opacity} />
                         </Flex>
                         <StatNumber>{title}</StatNumber>
-                        <StatHelpText>
+                        {/* <StatHelpText>
                             <StatArrow type={inc_dec} />
                             {percent}
-                        </StatHelpText>
+                        </StatHelpText> */}
                     </Stat>
                 </StatGroup>
             </Box>

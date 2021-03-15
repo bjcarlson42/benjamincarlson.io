@@ -8,13 +8,17 @@ const fonts = {
   heading: `Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol"`
 }
 
-
 const breakpoints = createBreakpoints({
   sm: "40em",
   md: "52em",
   lg: "64em",
   lg: "62em",
 })
+
+const config = {
+  initialColorMode: "light",
+  useSystemColorMode: false,
+}
 
 const overrides = {
   fonts,
@@ -35,7 +39,8 @@ const overrides = {
     "4xl": "36px",
     "5xl": "48px",
     "6xl": "64px",
-  }
+  },
+  config
 }
 
 const customTheme = extendTheme(overrides)

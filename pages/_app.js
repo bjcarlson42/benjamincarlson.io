@@ -3,11 +3,11 @@ import { useColorMode, ColorModeProvider } from '@chakra-ui/react'
 import { MDXProvider } from '@mdx-js/react'
 import { Global, css } from '@emotion/react'
 import { DefaultSeo } from 'next-seo'
-import customTheme from '../styles/theme'
 import { prismLightTheme, prismDarkTheme } from '../styles/prism'
 import MDXComponents from '../components/MDXComponents'
 import SEO from '../next-seo.config'
 import { ChakraProvider } from '@chakra-ui/react'
+import { Chakra } from "../src/Chakra"
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode()
@@ -17,14 +17,6 @@ const GlobalStyle = ({ children }) => {
       <Global
         styles={css`
           ${colorMode === 'light' ? prismLightTheme : prismDarkTheme};
-          ::selection {
-            background-color: #90CDF4;
-            color: #fefefe;
-          }
-          ::-moz-selection {
-            background: #ffb7b7;
-            color: #fefefe;
-          }
           html {
             min-width: 356px;
             scroll-behavior: smooth;
@@ -33,7 +25,7 @@ const GlobalStyle = ({ children }) => {
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            background: ${colorMode === 'light' ? 'white' : '#171717'};
+            background: ${colorMode === 'light' ? 'white' : '#15161a'};
           }
         `}
       />
@@ -45,10 +37,10 @@ const GlobalStyle = ({ children }) => {
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider resetCSS theme={customTheme}>
+    <Chakra cookies={pageProps.cookies}>
       <ColorModeProvider
         options={{
-          useSystemColorMode: true,
+          useSystemColorMode: false,
         }}
       >
         <MDXProvider components={MDXComponents}>
@@ -58,7 +50,7 @@ function MyApp({ Component, pageProps }) {
           </GlobalStyle>
         </MDXProvider>
       </ColorModeProvider>
-    </ChakraProvider>
+    </Chakra>
   )
 }
 

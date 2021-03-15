@@ -1,5 +1,5 @@
-import { useColorMode } from '@chakra-ui/react'
 import React, { Component } from "react";
+
 export default class Comments extends Component {
 
     constructor(props) {
@@ -8,7 +8,6 @@ export default class Comments extends Component {
     }
 
     componentDidMount() {
-        // const { colorMode } = useColorMode()
         // const utteranceTheme = colorMode === "dark" ? "github-dark" : "github-light";
         let scriptEl = document.createElement("script");
         scriptEl.setAttribute("src", "https://utteranc.es/client.js");

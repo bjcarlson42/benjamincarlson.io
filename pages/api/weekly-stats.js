@@ -104,8 +104,8 @@ export default CronJob("api/weekly-stats", "00 0 * * 1", async (req, res) => {
         }
     })
 
-    // return res.status(201).json({
-    //     data: response.data,
-    //     d: clear.data
-    // })
+    return res.status(201).json({
+        data: response.data,
+        d: clear.data
+    })
 })

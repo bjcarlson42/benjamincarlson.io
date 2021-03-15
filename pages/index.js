@@ -38,6 +38,11 @@ export default function Index() {
     dark: 'gray.300'
   }
 
+  const linkColor = {
+    light: 'blue.400',
+    dark: 'blue.600'
+  }
+
   return (
     <>
       <NextSeo
@@ -77,10 +82,10 @@ export default function Index() {
             <Text
               color={colorSecondary[colorMode]}
             >
-              I go to <Link href="https://www2.ccsu.edu/" color="blue.500" isExternal>CCSU</Link> where I study computer science, cybersecurity, and mathematics.
+              I go to <Link href="https://www2.ccsu.edu/" color={linkColor[colorMode]} isExternal>CCSU</Link> where I study computer science, cybersecurity, and mathematics.
             My personal website is where I showcase my projects, writing, statistics, experience, and more.
             It also serves as a sandbox to play around with new technologies!
-            Feel free to reach out via <Link href="mailto:bjcarlson42@gmail.com" color="blue.500">email</Link> or any social media with any questions, inquiries, or just to say hi!
+            Feel free to reach out via <Link href="mailto:bjcarlson42@gmail.com" color={linkColor[colorMode]}>email</Link> or any social media with any inquiries.
             </Text>
 
             <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">
@@ -136,7 +141,7 @@ export default function Index() {
             <Flex justify="center" width="100%">
               <NextLink href="/blog" passHref>
                 <Link _hover="none">
-                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" aria-label="view all posts">
+                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all posts">
                     View All Posts
                   </Button>
                 </Link>
@@ -178,7 +183,7 @@ export default function Index() {
             <Flex justify="center" width="100%">
               <NextLink href="/projects" passHref>
                 <Link _hover="none" mt={8}>
-                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="blue" variant="outline" aria-label="view all projects">
+                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all projects">
                     View All Projects
                 </Button>
                 </Link>
@@ -197,7 +202,7 @@ export default function Index() {
 
             <Divider mb={12} mt={16} w='90%' alignSelf="center" display={['none', 'flex', 'flex']}/>
 
-            <Text mt={8}>Looks like you've made it to the end of this page... feel free to <Link href="https://youtube.com/benjamincarlson" isExternal color="blue.500">check out my YouTube</Link> where
+            <Text mt={8}>Looks like you've made it to the end of this page... feel free to <Link href="https://youtube.com/benjamincarlson" isExternal color={linkColor[colorMode]}>check out my YouTube</Link> where
             you can find even more programming content.
             </Text>
 

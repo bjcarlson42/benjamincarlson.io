@@ -25,7 +25,7 @@ const Navigation = () => {
 
     const bgColor = {
         light: '#fff',
-        dark: '#171717' // #1A202C
+        dark: '#15161a'
     }
 
     const navHoverBg = {
