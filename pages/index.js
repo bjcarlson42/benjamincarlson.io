@@ -119,6 +119,18 @@ export default function Index() {
             <Divider mb={12} mt={16} w='90%' alignSelf="center" />
 
             <Heading letterSpacing="tight" mt={8} mb={4} size="lg" fontWeight={700} as="h2">
+              Latest Blog Post
+            </Heading>
+
+            <BlogPost
+              title="UseEffect In Next.JS - React Hooks"
+              summary="Learn what useEffect is learn how to use useEffect in Next.JS."
+              slug="using-react-useeffect"
+            />
+
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
+
+            <Heading letterSpacing="tight" mt={8} mb={4} size="lg" fontWeight={700} as="h2">
               Top Blog Posts
             </Heading>
 

@@ -35,7 +35,8 @@ export default function Blog({ posts }) {
                 Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
         )
         .filter((frontMatter) =>
-            frontMatter.title.toLowerCase().includes(searchValue.toLowerCase())
+            frontMatter.title.toLowerCase().includes(searchValue.toLowerCase()) ||
+            frontMatter.summary.toLowerCase().includes(searchValue.toLowerCase())
         )
 
     return (
@@ -67,18 +68,14 @@ export default function Blog({ posts }) {
                         px={4}
                         minH="100vh"
                     >
-                        <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
-                            Blog
+                        <Heading letterSpacing="tight" as="h1" size="2xl" mb={6}>
+                            Blog ({posts.length} posts)
                         </Heading>
-                        <Text color={secondaryTextColor[colorMode]} mb={4}>
-                            {`I have been writing articles about programming since 2019. In total I have written ${posts.length} articles - all of which can be found on this page.`}
-                        </Text>
-
                         <InputGroup mb={4} mr={4} w="100%">
                             <Input
-                                aria-label="Search by title"
+                                aria-label="Search by post title or summary"
                                 onChange={(e) => setSearchValue(e.target.value)}
-                                placeholder="Search by title"
+                                placeholder="Search by post title or summary"
                             />
                             <InputRightElement>
                                 <SearchIcon color="gray.300" />

@@ -112,22 +112,6 @@ const Statistics = () => {
                         <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
                             Statistics
                         </Heading>
-                        <Text color={colorSecondary[colorMode]}>
-                            My personal dashboard with various metrics from services I use.
-                        I use this dashboard to track my progress and growth! Stats are fetched realtime via <Link
-                                href="https://nextjs.org/docs/api-routes/introduction"
-                                isExternal
-                                color="blue.500"
-                            >
-                                serverless functions
-                        </Link>.
-                        Watch <Link
-                                href="https://youtu.be/jVc8qVq0NR8"
-                                isExternal
-                                color="blue.500"
-                            >this video</Link> to create
-                        your own dashboard.
-                    </Text>
                     </Flex>
                     <SimpleGrid columns={[1, 2, 3]} w="100%">
                         <YouTubeData />
