@@ -20,7 +20,6 @@ import ViewCounter from '../components/ViewCounter'
 import LikeCounter from '../components/LikeCounter'
 import BlogSeo from '../components/blog/BlogSeo'
 import GitHubSponsorCard from '../components/GitHubSponsorCard'
-import Flutter25 from '../components/Flutter25'
 import Comments from '../components/blog/Comments'
 
 const editUrl = (slug) =>
@@ -124,8 +123,6 @@ export default function BlogLayout({ children, frontMatter }) {
                             {'Edit on GitHub'}
                         </Link>
                     </Box>
-                    {/* <Flutter25 /> */}
-                    {/* <Subscribe /> */}
                     <GitHubSponsorCard />
                     <Comments />
                 </Stack>

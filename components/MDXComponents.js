@@ -8,16 +8,15 @@ import {
     Text,
     Divider,
     useColorMode
-} from '@chakra-ui/react';
+} from '@chakra-ui/react'
 import { jsx } from '@emotion/react'
 import NextLink from 'next/link'
-import UseEffect from '../components/blog/posts/useEffect'
 
 const CustomLink = (props) => {
     const { colorMode } = useColorMode()
     const color = {
-        light: 'blue.500',
-        dark: 'blue.500'
+        light: 'hsl(208, 99%, 44%)',
+        dark: 'hsl(208, 95%, 68%)'
     }
 
     const href = props.href
@@ -126,18 +125,12 @@ const MDXComponents = {
     ),
     br: (props) => <Box height="24px" {...props} />,
     hr: Hr,
-    // table: Table,
-    // th: THead,
-    // td: TData,
     a: CustomLink,
     p: (props) => <Text as="p" mt={0} lineHeight="tall" {...props} />,
     ul: (props) => <Box as="ul" pt={2} pl={4} ml={2} {...props} />,
     ol: (props) => <Box as="ol" pt={2} pl={4} ml={2} {...props} />,
     li: (props) => <Box as="li" pb={1} {...props} />,
-    blockquote: Quote,
-    // blog post components
-    UseEffect,
+    blockquote: Quote
 }
 
-export { CustomLink }
 export default MDXComponents
