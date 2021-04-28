@@ -21,6 +21,7 @@ import LikeCounter from '../components/LikeCounter'
 import BlogSeo from '../components/blog/BlogSeo'
 import GitHubSponsorCard from '../components/GitHubSponsorCard'
 import Comments from '../components/blog/Comments'
+import BlogAd from '../components/blog/BlogAd'
 
 const editUrl = (slug) =>
     `https://github.com/bjcarlson42/benjamincarlson.io/edit/main/pages/blog${slug}.mdx`
@@ -111,6 +112,7 @@ export default function BlogLayout({ children, frontMatter }) {
                         </Flex>
                         {frontMatter.Image != '' ? <Image src={frontMatter.image} alt={frontMatter.alt} /> : null}
                     </Flex>
+                    <BlogAd />
                     {children}
                     <Box>
                         <Link href={tweetUrl(slug)} isExternal>
