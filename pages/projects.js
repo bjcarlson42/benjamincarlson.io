@@ -70,6 +70,15 @@ const Projects = () => {
                             Featured Projects
                         </Heading>
                         <FeaturedProjectCard
+                            title="Coffeeclass"
+                            href="https://www.coffeeclass.io/"
+                            src="/images/coffee-only-transparent-bg.png"
+                            alt='Image of coffee'
+                            color={iconColor[colorMode]}
+                        >
+                            Coffeeclass is a tutorial website I started to teach programming and computer science skills in a fun and easy to learn manner.
+                        </ FeaturedProjectCard>
+                        <FeaturedProjectCard
                             title="25 Days Of Flutter"
                             href="https://flutter25.com"
                             src="/images/flutter25.png"

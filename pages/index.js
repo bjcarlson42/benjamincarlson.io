@@ -77,23 +77,76 @@ export default function Index() {
               as="h1"
               size="xl"
             >
-              Hello! I'm Benjamin Carlson, a developer and student living and working in CT.
+              Hello! I'm Benjamin Carlson, a developer, creator, and student living and working in CT.
             </Heading>
             <Text
               color={colorSecondary[colorMode]}
             >
-              I go to <Link href="https://www2.ccsu.edu/" color={linkColor[colorMode]} isExternal>CCSU</Link> where I study computer science, cybersecurity, and mathematics.
+              I go to <Link href="https://www2.ccsu.edu/" color={linkColor[colorMode]} isExternal>CCSU</Link> where I study computer science and mathematics.
             My personal website is where I showcase my projects, writing, statistics, experience, and more.
             It also serves as a sandbox to play around with new technologies!
-            Feel free to reach out via <Link href="mailto:bjcarlson42@gmail.com" color={linkColor[colorMode]}>email</Link> or any social media with any inquiries.
+            Feel free to reach out via <Link href="mailto:ben@coffeeclass.io" color={linkColor[colorMode]}>email</Link> or any social media with any inquiries.
             </Text>
+
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
+
+            <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">
+              Featured Projects
+            </Heading>
+            <FeaturedProjectCard
+              title="Coffeeclass"
+              href="https://www.coffeeclass.io/"
+              src="/images/coffee-only-transparent-bg.png"
+              alt='Image of coffee'
+              color={iconColor[colorMode]}
+            >
+              Coffeeclass is a tutorial website I started to teach programming and computer science skills in a fun and easy to learn manner.
+            </ FeaturedProjectCard>
+            <FeaturedProjectCard
+              title="25 Days Of Flutter"
+              href="https://flutter25.com"
+              src="/images/flutter25.png"
+              alt='Flutter 25 logo'
+              color={iconColor[colorMode]}
+            >
+              25 Days Of Flutter is a 25 day tutorial series designed to take you from a Flutter beginner to coding a complete app using various modern technologies.
+            </ FeaturedProjectCard>
+            <FeaturedProjectCard
+              title="Word Of The Day App"
+              href="https://github.com/bjcarlson42/wotd"
+              src="/images/wotd.png"
+              alt='Word Of The Day logo'
+              color={iconColor[colorMode]}
+            >
+              Word of the day app built with <Code>Dart</Code>, <Code>Flutter</Code>, and <Code>Wordnik API</Code>. Video tutorial posted on YouTube.
+            </ FeaturedProjectCard>
+            <FeaturedProjectCard
+              title="Personal Website"
+              href="https://github.com/bjcarlson42/benjamincarlson.io"
+              src="/images/logo.png"
+              alt='Personal website logo'
+              color={iconColor[colorMode]}
+            >
+              My personal portfolio website you are on now. Built with <Code>Next.js</Code>, <Code>chakra-ui</Code>, <Code>mdx</Code> pages, and serverless functions for realtime data.
+            </FeaturedProjectCard>
+            <Flex justify="center" width="100%">
+              <NextLink href="/projects" passHref>
+                <Link _hover="none" mt={8}>
+                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all projects">
+                    View All Projects
+                </Button>
+                </Link>
+              </NextLink>
+            </Flex>
+
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
 
             <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">
               Experience
             </Heading>
             <ExperienceBox
               name="The Law Forum LLC"
-              years="Summer 2019, 2020, Fall 2020, Spring 2021"
+              years="Summer 2019, 2020, 2021, Fall 2020, Spring 2021"
               pos="C# Software Developer"
               badge_1='Part Time'
               badge_2='Internship'
@@ -145,9 +198,9 @@ export default function Index() {
               slug="connect-flutter-to-firebase"
             />
             <BlogPost
-              title="Using JavaScript To Scramble A Rubik’s Cube: An Improved Algorithm"
-              summary="I am making a web app that required me to make a rubiks cube scramble. I will show you how to implement this algorithm in JavaScript."
-              slug="using-javascript-to-scramble-a-rubiks-cube-2"
+              title="UseEffect In Next.JS - React Hooks"
+              summary="Learn what useEffect is learn how to use useEffect in Next.JS."
+              slug="using-react-useeffect"
             />
 
             <Flex justify="center" width="100%">
@@ -162,48 +215,6 @@ export default function Index() {
 
             <Divider mb={12} mt={16} w='90%' alignSelf="center" />
 
-            <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">
-              Featured Projects
-            </Heading>
-            <FeaturedProjectCard
-              title="25 Days Of Flutter"
-              href="https://flutter25.com"
-              src="/images/flutter25.png"
-              alt='Flutter 25 logo'
-              color={iconColor[colorMode]}
-            >
-              25 Days Of Flutter is a 25 day tutorial series designed to take you from a Flutter beginner to coding a complete app using various modern technologies.
-            </ FeaturedProjectCard>
-            <FeaturedProjectCard
-              title="Word Of The Day App"
-              href="https://github.com/bjcarlson42/wotd"
-              src="/images/wotd.png"
-              alt='Word Of The Day logo'
-              color={iconColor[colorMode]}
-            >
-              Word of the day app built with <Code>Dart</Code>, <Code>Flutter</Code>, and <Code>Wordnik API</Code>. Video tutorial posted on YouTube.
-            </ FeaturedProjectCard>
-            <FeaturedProjectCard
-              title="Personal Website"
-              href="https://github.com/bjcarlson42/benjamincarlson.io"
-              src="/images/logo.png"
-              alt='Personal website logo'
-              color={iconColor[colorMode]}
-            >
-              My personal portfolio website you are on now. Built with <Code>Next.js</Code>, <Code>chakra-ui</Code>, <Code>mdx</Code> pages, and serverless functions for realtime data.
-            </FeaturedProjectCard>
-            <Flex justify="center" width="100%">
-              <NextLink href="/projects" passHref>
-                <Link _hover="none" mt={8}>
-                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all projects">
-                    View All Projects
-                </Button>
-                </Link>
-              </NextLink>
-            </Flex>
-
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
-
             <Flex
               justify="start"
               flexDirection="column"
@@ -212,9 +223,10 @@ export default function Index() {
               <TechStack />
             </Flex>
 
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" display={['none', 'flex', 'flex']}/>
+            <Divider mb={12} mt={16} w='90%' alignSelf="center" display={['none', 'flex', 'flex']} />
 
-            <Text mt={8}>Looks like you've made it to the end of this page... feel free to <Link href="https://youtube.com/benjamincarlson" isExternal color={linkColor[colorMode]}>check out my YouTube</Link> where
+            <Text mt={8}>Looks like you've made it to the end of this page... feel free to <Link href="https://youtube.com/benjamincarlson" isExternal color={linkColor[colorMode]}>check out my YouTube channel</Link> or
+            visit <Link href="https://www.coffeeclass.io/" isExternal color={linkColor[colorMode]}>Coffeeclass</Link> where
             you can find even more programming content.
             </Text>
 

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     Flex,
     Link,
@@ -8,6 +8,7 @@ import {
     useColorMode,
     Image
 } from '@chakra-ui/react'
+import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 const FeaturedProjectCard = ({ title, href, children, src, alt }) => {
     const { colorMode } = useColorMode()
@@ -23,7 +24,7 @@ const FeaturedProjectCard = ({ title, href, children, src, alt }) => {
         light: '0px 8px 26px rgba(0, 0, 0, 0.1)',
         dark: '0px 8px 26px rgba(0, 0, 0, 0.9)'
     }
-
+    const [opacity, setOpacity] = useState(0)
     return (
         <Link
             href={href}
@@ -34,6 +35,8 @@ const FeaturedProjectCard = ({ title, href, children, src, alt }) => {
                 textDecoration: 'none'
             }}
             mt={4}
+            onMouseOver={() => setOpacity(1)}
+            onMouseLeave={() => setOpacity(0)}
         >
             <Flex
                 align="center"
@@ -50,14 +53,17 @@ const FeaturedProjectCard = ({ title, href, children, src, alt }) => {
                     mr={4}
                 ></Image>
                 <Stack>
-                    <Heading
-                        as="h4"
-                        size="md"
-                        fontWeight="bold"
-                        mb={2}
-                    >
-                        {title}
-                    </Heading>
+                    <Flex justify="space-between">
+                        <Heading
+                            as="h4"
+                            size="md"
+                            fontWeight="bold"
+                            mb={2}
+                        >
+                            {title}
+                        </Heading>
+                        <ExternalLinkIcon opacity={opacity} fontSize="2xl" />
+                    </Flex>
                     <Text color={colorSecondary[colorMode]}>{children}</Text>
                 </Stack>
             </Flex>

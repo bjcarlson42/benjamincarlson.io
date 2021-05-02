@@ -30,7 +30,12 @@ const Todo = () => {
         dark: 'gray.600'
     }
 
-    const [todos, setTodos] = useState(['Learn Final Cut Pro X', 'Advanced Python', 'Security'])
+    const [todos, setTodos] = useState([
+        'Improve Final Cut Pro skills 🎥',
+        'Finish my degree 🎓',
+        'Grow my YouTube channel 📺',
+        'Grow Coffeeclass website 💻'
+    ])
     const [todo, setTodo] = useState('')
     const removeTodo = todo => {
         setTodos(todos.filter(t => t !== todo))
@@ -39,11 +44,11 @@ const Todo = () => {
     return (
         <Stack spacing={4} w="100%">
             <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">TODO List</Heading>
-            <Text>Here is a list of things I plan to learn on my own time over the next 6 months.</Text>
+            <Text>Here is a list of things I plan to accomplish over the next year.</Text>
             <InputGroup size="md" mt={4} borderColor="gray.500" borderColor={borderColor[colorMode]}>
                 <Input
                     aria-label="Eenter a TODO!"
-                    placeholder="Learn Python"
+                    placeholder="Improve Python skills"
                     value={todo}
                     onChange={e => setTodo(e.target.value)}
                 />
