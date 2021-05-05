@@ -22,6 +22,7 @@ import BlogSeo from '../components/blog/BlogSeo'
 import GitHubSponsorCard from '../components/GitHubSponsorCard'
 import Comments from '../components/blog/Comments'
 import BlogAd from '../components/blog/BlogAd'
+import FeaturedProjectCard from '../components/FeaturedProjectCard'
 
 const editUrl = (slug) =>
     `https://github.com/bjcarlson42/benjamincarlson.io/edit/main/pages/blog${slug}.mdx`
@@ -33,6 +34,10 @@ export default function BlogLayout({ children, frontMatter }) {
     const textColor = {
         light: 'gray.700',
         dark: 'gray.400'
+    }
+    const iconColor = {
+        light: 'gray.600',
+        dark: 'gray.300'
     }
     const router = useRouter();
     const slug = router.asPath.replace('/blog', '')
@@ -46,7 +51,6 @@ export default function BlogLayout({ children, frontMatter }) {
         let scrollPercent = scrollTop / (docHeight - winHeight);
         let scrollPercentRounded = Math.round(scrollPercent * 100);
         setWidth(scrollPercentRounded)
-        console.log(scrollPercentRounded)
     }
 
     useEffect(() => {
@@ -125,6 +129,15 @@ export default function BlogLayout({ children, frontMatter }) {
                             {'Edit on GitHub'}
                         </Link>
                     </Box>
+                    <FeaturedProjectCard
+                        title="Coffeeclass"
+                        href="https://www.coffeeclass.io/"
+                        src="/images/coffee-only-transparent-bg.png"
+                        alt='Image of coffee'
+                        color={iconColor[colorMode]}
+                    >
+                        Coffeeclass is a tutorial website I started to teach programming and computer science skills in a fun and easy to learn manner.
+                    </ FeaturedProjectCard>
                     <GitHubSponsorCard />
                     <Comments />
                 </Stack>
