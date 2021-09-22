@@ -10,13 +10,15 @@ import {
     SimpleGrid
 } from '@chakra-ui/react'
 import GhPolyglot from 'gh-polyglot'
-
 import Container from '../components/Container'
 import YouTubeData from '../components/YouTubeData'
 import GitHubData from '../components/GitHubData'
 import StravaData from '../components/StravaData'
 import Repos from '../components/statistics/Repos'
 import Charts from '../components/statistics/Charts'
+
+import { useRouter } from 'next/router'
+import useTranslation from 'next-translate/useTranslation'
 
 const url = 'https://benjamincarlson.io/statistics'
 const title = 'Statistics – Benjamin Carlson'
@@ -80,7 +82,8 @@ const Statistics = () => {
         getRepoData();
 
     }, []);
-
+    const { t } = useTranslation()
+    const { locale } = useRouter()
     return (
         <>
             <NextSeo
@@ -110,7 +113,7 @@ const Statistics = () => {
                         maxWidth="700px"
                     >
                         <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
-                            Statistics
+                            {t('common:statistics')}
                         </Heading>
                     </Flex>
                     <SimpleGrid columns={[1, 2, 3]} w="100%">
