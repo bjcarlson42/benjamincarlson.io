@@ -10,7 +10,6 @@ import NextLink from 'next/link'
 import { useRouter } from 'next/router'
 
 import DarkModeSwitch from '../components/DarkModeSwitch'
-import LanguageSwitch from '../components/LanguageSwitch'
 import useTranslation from 'next-translate/useTranslation'
 
 const StickyNav = styled(Flex)`
@@ -23,7 +22,14 @@ const StickyNav = styled(Flex)`
 
 const Navigation = () => {
     const { colorMode } = useColorMode()
+    const { t } = useTranslation()
     const router = useRouter()
+    const { locale, locales, defaultLocale } = router
+  
+    const changeLanguage = (e) => {
+      const locale = e.target.value
+      router.push(router.asPath, router.asPath, { locale })
+    }
 
     const bgColor = {
         light: '#fff',
@@ -35,8 +41,7 @@ const Navigation = () => {
         dark: 'gray.700',
     }
 
-    const { t } = useTranslation()
-    const { locale } = useRouter()
+
 
     return (
         <StickyNav
@@ -56,7 +61,18 @@ const Navigation = () => {
             display={['none', 'flex', 'flex']}
         >
             <DarkModeSwitch />
-            <LanguageSwitch />
+            <select
+              onChange={changeLanguage}
+              defaultValue={locale}
+              style={{ textAlignLast: 'center' }}
+              className="text-gray-900 dark:text-gray-100 text-shadow-sm text-sm bg-transparent tracking-wide"
+            >
+              {locales.map((e) => (
+                <option value={e} key={e}>
+                  {e}
+                </option>
+              ))}
+            </select>
             <Box>
                 <NextLink href="/statistics" passHref>
                     <Button
