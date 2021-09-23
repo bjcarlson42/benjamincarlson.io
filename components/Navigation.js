@@ -73,6 +73,7 @@ const Navigation = () => {
                 </option>
               ))}
             </select>
+            
             <Box>
                 <NextLink href="/statistics" passHref>
                     <Button
