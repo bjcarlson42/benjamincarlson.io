@@ -20,7 +20,6 @@ import { ArrowForwardIcon } from '@chakra-ui/icons'
 import BlogPost from '../components/blog/BlogPost'
 import Todo from '../components/Todo'
 import TechStack from '../components/TechStack'
-import Subscribe from '../components/Subscribe'
 
 const url = 'https://benjamincarlson.io/'
 const title = 'Home – Benjamin Carlson'
@@ -216,11 +215,15 @@ export default function Index() {
 
             <Divider mb={12} mt={16} w='90%' alignSelf="center" />
 
-            <TechStack />
+            <Flex
+              justify="start"
+              flexDirection="column"
+              display={['none', 'flex', 'flex']}
+            >
+              <TechStack />
+            </Flex>
 
             <Divider mb={12} mt={16} w='90%' alignSelf="center" display={['none', 'flex', 'flex']} />
-
-            <Subscribe />
 
             <Text mt={8}>Looks like you've made it to the end of this page... feel free to <Link href="https://youtube.com/benjamincarlson" isExternal color={linkColor[colorMode]}>check out my YouTube channel</Link> or
             visit <Link href="https://www.coffeeclass.io/" isExternal color={linkColor[colorMode]}>Coffeeclass</Link> where

@@ -1,0 +1,51 @@
+---
+title: 'UseEffect In Next.JS - React Hooks'
+publishedAt: '2021-03-14'
+summary: "Learn what useEffect is learn how to use useEffect in Next.JS."
+---
+
+## Introduction
+
+React hooks allow you to perform side effects in function components. In this post, we will take a look at ```useEffect``` and give examples
+of how to use in in [next.js](https://nextjs.org/).
+
+## Using useEffect In Next.JS
+
+Let's take a look at an example. We will use ```useEffect``` to add an event listener
+to handle when a user scrolls. We will then log to the console the scrollY value. This is how this website dynamically adds
+the css to the nav bar on scroll!
+
+First, we will import ```useEffect``` from react.
+
+```javascript
+import React, { useState, useEffect } from 'react'
+```
+
+Next, call the method:
+
+```javascript
+useEffect(() => {
+        
+    })
+```
+
+We can add anything we want in here. Let's add our event listeners:
+
+```javascript
+useEffect(() => {
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    })
+```
+
+Finally, create the handle scroll method and log the scrollY value to the console:
+
+```javascript
+const handleScroll = () => {
+        console.log(scrollY)
+    }
+```
+
+And that's it! Check out my [YouTube channel](https://youtube.com/benjamincarlson) for more coding tutorials!
