@@ -1,7 +1,6 @@
 import React from 'react'
 import useSWR from 'swr'
-import fetcher from '../lib/fetcher'
-
+import fetcher from '../scripts/fetcher'
 import {
     CircularProgress,
     useColorMode,
@@ -19,7 +18,7 @@ const Gear = ({ gear }) => {
     }
 
     const colorSecondary = {
-        light: 'gray.700',
+        light: 'gray.600',
         dark: 'gray.400'
     }
     return (

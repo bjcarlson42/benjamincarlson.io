@@ -1,5 +1,6 @@
-export default async (req, res) => {
+// https://docs.github.com/en/rest/reference/repos
 
+export default async (req, res) => {
     const headers = {
         "Authorization": "Token " + process.env.GITHUB_KEY
     }
@@ -10,7 +11,15 @@ export default async (req, res) => {
     const projectsList = []
 
     json.forEach(p => {
-        projectsList.push({ "name": p.name, "stars": p.stargazers_count, "url": p.html_url, "description": p.description, "language": p.language })
+        projectsList.push({
+            "name": p.name,
+            "stars": p.stargazers_count,
+            "url": p.html_url,
+            "description": p.description,
+            "language": p.language,
+            "stargazers_url": p.stargazers_url,
+            "homepage": p.homepage,
+        })
     })
 
     return res.status(200).json({

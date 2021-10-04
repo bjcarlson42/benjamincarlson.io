@@ -12,7 +12,7 @@ const GitHubSponsorCard = () => {
     const { colorMode } = useColorMode()
 
     const colorSecondary = {
-        light: 'gray.700',
+        light: 'gray.600',
         dark: 'gray.400'
     }
     return (
@@ -37,10 +37,10 @@ const GitHubSponsorCard = () => {
                     >
                         <Heading as="h3" size="md">
                             Sponsor Benjamin Carlson on GitHub Sponsors
-                    </Heading>
+                        </Heading>
                         <Text color={colorSecondary[colorMode]}>
-                            Hi 👋 I'm Benjamin Carlson, a college student studying computer science. I post weekly tutorial videos on my YouTube channel and build cool open source projects!
-                    </Text>
+                            Hi 👋 I'm Benjamin Carlson, a senior college student studying computer science. I post weekly tutorial videos on my YouTube channel and build cool open source projects!
+                        </Text>
                     </Flex>
                     <Flex mt={[2, 0, 0]}>
                         <iframe src="https://github.com/sponsors/bjcarlson42/button" title="Sponsor bjcarlson42" height="35" width="116" style={{ border: '0' }}></iframe>

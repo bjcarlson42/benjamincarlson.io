@@ -6,18 +6,16 @@ import {
     useColorMode,
     StatGroup,
     Stat,
-    StatHelpText,
     StatLabel,
     StatNumber,
-    StatArrow
 } from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 
-export default function StatBox({ title, desc, url, percent, inc_dec }) {
+export default function StatBox({ title, desc, url }) {
     const { colorMode } = useColorMode()
     const borderColor = {
-        light: '#CBD5E0', // gray.300
-        dark: '#4A5568' // gray.600
+        light: '#CBD5E0',
+        dark: '#4A5568',
     }
     const [opacity, setOpacity] = useState(0)
     
@@ -42,10 +40,6 @@ export default function StatBox({ title, desc, url, percent, inc_dec }) {
                             <ExternalLinkIcon opacity={opacity} />
                         </Flex>
                         <StatNumber>{title}</StatNumber>
-                        {/* <StatHelpText>
-                            <StatArrow type={inc_dec} />
-                            {percent}
-                        </StatHelpText> */}
                     </Stat>
                 </StatGroup>
             </Box>

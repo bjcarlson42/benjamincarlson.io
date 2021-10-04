@@ -10,11 +10,10 @@ import {
     Link,
     Box,
     Image,
-    Icon
+    Icon,
 } from '@chakra-ui/react'
 import { TwitterIcon, GitHubIcon } from '../components/CustomIcons'
 import { useRouter } from 'next/router'
-
 import Container from '../components/Container'
 import ViewCounter from '../components/ViewCounter'
 import LikeCounter from '../components/LikeCounter'
@@ -22,7 +21,6 @@ import BlogSeo from '../components/blog/BlogSeo'
 import GitHubSponsorCard from '../components/GitHubSponsorCard'
 import Comments from '../components/blog/Comments'
 import BlogAd from '../components/blog/BlogAd'
-import FeaturedProjectCard from '../components/FeaturedProjectCard'
 
 const editUrl = (slug) =>
     `https://github.com/bjcarlson42/benjamincarlson.io/edit/main/pages/blog${slug}.mdx`
@@ -39,7 +37,7 @@ export default function BlogLayout({ children, frontMatter }) {
         light: 'gray.600',
         dark: 'gray.300'
     }
-    const router = useRouter();
+    const router = useRouter()
     const slug = router.asPath.replace('/blog', '')
 
 
@@ -62,7 +60,7 @@ export default function BlogLayout({ children, frontMatter }) {
 
     return (
         <>
-            <Box h={1} as="div" bgGradient="linear(to-r, green.200, pink.500)" position="sticky" top={0} zIndex={100} w={`${width}%`}></Box>
+            <Box h={1} as="div" bgGradient="linear(to-r, blue.200, gray.500)" position="sticky" top={0} zIndex={100} w={`${width}%`} transition="width .5s ease-in-out"></Box>
             <Container>
                 <BlogSeo url={`https://benjamincarlson.io/blog${slug}`} {...frontMatter} />
                 <Stack
@@ -82,7 +80,7 @@ export default function BlogLayout({ children, frontMatter }) {
                         maxWidth="700px"
                         w="100%"
                     >
-                        <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
+                        <Heading letterSpacing="tight" mb={2} mt={4} as="h1" size="2xl">
                             {frontMatter.title}
                         </Heading>
                         <Flex
@@ -95,7 +93,7 @@ export default function BlogLayout({ children, frontMatter }) {
                         >
                             <Flex align="center">
                                 <Avatar
-                                    size="xs"
+                                    size="sm"
                                     name="Benjamin Carlson"
                                     src="../images/portrait.jpeg"
                                     mr={2}
@@ -114,9 +112,9 @@ export default function BlogLayout({ children, frontMatter }) {
                             <LikeCounter id={slug} />
                         </Text>
                         </Flex>
-                        {frontMatter.Image != '' ? <Image src={frontMatter.image} alt={frontMatter.alt} /> : null}
+                        {frontMatter.Image != '' ? <Image src={frontMatter.image} alt={frontMatter.alt} borderRadius={3} /> : null}
                     </Flex>
-                    <BlogAd />
+                    {/* <BlogAd /> */}
                     {children}
                     <Box>
                         <Link href={tweetUrl(slug)} isExternal>
@@ -129,15 +127,6 @@ export default function BlogLayout({ children, frontMatter }) {
                             {'Edit on GitHub'}
                         </Link>
                     </Box>
-                    <FeaturedProjectCard
-                        title="Coffeeclass"
-                        href="https://www.coffeeclass.io/"
-                        src="/images/coffee-only-transparent-bg.png"
-                        alt='Image of coffee'
-                        color={iconColor[colorMode]}
-                    >
-                        Coffeeclass is a tutorial website I started to teach programming and computer science skills in a fun and easy to learn manner.
-                    </ FeaturedProjectCard>
                     <GitHubSponsorCard />
                     <Comments />
                 </Stack>

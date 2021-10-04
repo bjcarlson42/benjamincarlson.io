@@ -1,4 +1,4 @@
-import db from '../../lib/db-admin'
+import db from '../../scripts/db-admin'
 
 const incrementLikes = async (req, res) => {
     if (!req.query.id) {
@@ -9,7 +9,7 @@ const incrementLikes = async (req, res) => {
 
     const ref = db.ref('likes').child(req.query.id)
     const { snapshot } = await ref.transaction((currentLikes) => {
-
+        // handle first like
         if (currentLikes === null) {
             return 1
         }

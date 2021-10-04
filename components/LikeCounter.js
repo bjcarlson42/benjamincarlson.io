@@ -7,7 +7,7 @@ import {
 import format from 'comma-number'
 import { BiLike } from "react-icons/bi"
 
-import loadDb from '../lib/db'
+import loadDb from '../scripts/db'
 
 const LikeCounter = ({ id }) => {
     const [likes, setLikes] = useState('')

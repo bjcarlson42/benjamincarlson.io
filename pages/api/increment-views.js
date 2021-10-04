@@ -1,4 +1,4 @@
-import db from '../../lib/db-admin'
+import db from '../../scripts/db-admin'
 
 const incrementViews = async (req, res) => {
     if (!req.query.id) {
@@ -9,6 +9,7 @@ const incrementViews = async (req, res) => {
 
     const ref = db.ref('views').child(req.query.id)
     const { snapshot } = await ref.transaction((currentViews) => {
+        // handle first view
         if (currentViews === null) {
             return 1
         }

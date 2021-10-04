@@ -6,8 +6,7 @@ import { DefaultSeo } from 'next-seo'
 import { prismLightTheme, prismDarkTheme } from '../styles/prism'
 import MDXComponents from '../components/MDXComponents'
 import SEO from '../next-seo.config'
-import { ChakraProvider } from '@chakra-ui/react'
-import { Chakra } from "../src/Chakra"
+import { Chakra } from "../scripts/chakra"
 
 const GlobalStyle = ({ children }) => {
   const { colorMode } = useColorMode()

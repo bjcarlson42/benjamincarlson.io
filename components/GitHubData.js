@@ -1,8 +1,7 @@
 import React from 'react'
 import useSWR from 'swr'
-import fetcher from '../lib/fetcher'
+import fetcher from '../scripts/fetcher'
 import format from 'comma-number'
-
 import StatBox from './StatBox'
 
 export const GitHubData = () => {

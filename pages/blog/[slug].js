@@ -1,31 +1,80 @@
-import hydrate from 'next-mdx-remote/hydrate'
-import { getFiles, getFileBySlug } from '../../lib/mdx'
+import fs from 'fs'
+import matter from 'gray-matter'
+import { serialize } from 'next-mdx-remote/serialize'
+import { MDXRemote } from 'next-mdx-remote'
+import path from 'path'
 import BlogLayout from '../../layouts/blog'
+import { blogPostsFilePaths, BLOG_POSTS_PATH } from '../../scripts/mdx'
 import MDXComponents from '../../components/MDXComponents'
+import mdxPrism from 'mdx-prism'
+import readingTime from 'reading-time'
+import {
+    Text,
+    Link,
+    Flex,
+    useColorMode,
+    Avatar,
+    Button,
+    Badge,
+    Divider,
+    useToast,
+    Heading,
+} from '@chakra-ui/react'
+import { motion } from "framer-motion"
 
-export default function Blog({ mdxSource, frontMatter }) {
-    const content = hydrate(mdxSource, {
-        components: MDXComponents
-    })
+export default function BlogPost({ source, frontMatter }) {
+    // const { title, date, description, tags, image } = frontMatter
 
-    return <BlogLayout frontMatter={frontMatter}>{content}</BlogLayout>
+    return (
+        <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: .7, delay: .4 }}
+        >
+            <BlogLayout frontMatter={frontMatter}>
+                <MDXRemote {...source} components={MDXComponents} />
+            </BlogLayout>
+        </motion.div>
+    )
 }
 
-export async function getStaticPaths() {
-    const posts = await getFiles('blog')
+export const getStaticProps = async ({ params }) => {
+    const blogPath = path.join(BLOG_POSTS_PATH, `${params.slug}.mdx`)
+    const source = fs.readFileSync(blogPath)
+    const { content, data } = matter(source)
+
+    const mdxSource = await serialize(content, {
+        MDXComponents,
+        mdxOptions: {
+            remarkPlugins: [
+                require('remark-code-titles'),
+                require('remark-autolink-headings')
+            ],
+            rehypePlugins: [mdxPrism],
+        },
+        scope: data,
+    })
 
     return {
-        paths: posts.map((p) => ({
-            params: {
-                slug: p.replace(/\.mdx/, '')
-            }
-        })),
-        fallback: false
+        props: {
+            source: mdxSource,
+            frontMatter: {
+                readingTime: readingTime(content),
+                ...data
+            },
+        },
     }
 }
 
-export async function getStaticProps({ params }) {
-    const post = await getFileBySlug('blog', params.slug);
+export const getStaticPaths = async () => {
+    const paths = blogPostsFilePaths
+        // Remove file extensions for page paths
+        .map((path) => path.replace(/\.mdx?$/, ''))
+        // Map the path into the static paths object required by Next.js
+        .map((slug) => ({ params: { slug } }))
 
-    return { props: post }
+    return {
+        paths,
+        fallback: false,
+    }
 }

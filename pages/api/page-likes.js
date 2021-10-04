@@ -1,4 +1,4 @@
-import db from '../../lib/db-admin'
+import db from '../../scripts/db-admin'
 
 export default (req, res) => {
     if (!req.query.id) {
@@ -7,10 +7,6 @@ export default (req, res) => {
             const allLikes = Object.values(likes).reduce(
                 (total, value) => total + value
             )
-
-            // return res.status(200).json({
-            //     total: allLikes
-            // })
         })
     }
 
