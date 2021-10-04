@@ -5,7 +5,6 @@ import {
     Heading,
     Text,
     Flex,
-    Stack,
     Link,
     Box,
     Image,
@@ -14,6 +13,7 @@ import {
     ButtonGroup
 } from '@chakra-ui/react'
 import { FiArrowRight } from "react-icons/fi"
+import { motion } from "framer-motion"
 
 import Container from '../components/Container'
 import GearList from '../components/GearList'
@@ -26,7 +26,7 @@ const Gear = () => {
     const { colorMode } = useColorMode()
 
     const colorSecondary = {
-        light: 'gray.700',
+        light: 'gray.600',
         dark: 'gray.400'
     }
 
@@ -43,22 +43,17 @@ const Gear = () => {
                 }}
             />
             <Container>
-                <Stack
-                    as="main"
-                    spacing={8}
-                    justifyContent="center"
-                    alignItems="flex-start"
-                    m="0 auto 4rem auto"
-                    maxWidth="700px"
+                <Flex
+                    flexDirection="column"
+                    maxWidth="1000px"
+                    alignSelf={[null, "center"]}
                 >
-                    <Flex
-                        flexDirection="column"
-                        justifyContent="flex-start"
-                        alignItems="flex-start"
-                        maxWidth="700px"
-                        px={4}
+                    <motion.div
+                        initial={{ y: -20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: .7, delay: .4 }}
                     >
-                        <Heading letterSpacing="tight" mb={4} as="h1" size="2xl">
+                        <Heading letterSpacing="tight" my={4} as="h1" size="2xl">
                             Gear
                         </Heading>
                         <Text color={colorSecondary[colorMode]} mb={2}>
@@ -66,8 +61,8 @@ const Gear = () => {
                             If you purchase any items through the links below I may earn a small commission.
                         </Text>
                         <GearList />
-                    </Flex>
-                </Stack>
+                    </motion.div>
+                </Flex>
             </Container>
         </>
     )

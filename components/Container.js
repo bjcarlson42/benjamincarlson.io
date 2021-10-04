@@ -1,41 +1,34 @@
-import React from 'react'
-import { useColorMode, Flex, Text, Link, IconButton, SimpleGrid, Box } from '@chakra-ui/react'
-import { FiGithub, FiTwitter, FiLinkedin, FiYoutube, FiMail } from "react-icons/fi"
-
-import { Footer } from '../components/Footer'
+import {
+  useColorModeValue,
+  Flex,
+  Box,
+} from '@chakra-ui/react'
+import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
-import MobileNavigation from '../components/MobileNavigation'
-import MobileNavigationTop from '../components/MobileNavigationTop'
-
+import Hero from './Hero'
+import { useRouter } from 'next/router'
 
 const Container = ({ children }) => {
-  const { colorMode } = useColorMode()
-  const bgColor = {
-    light: 'white',
-    dark: '#15161a'
-  }
-  const color = {
-    light: 'black',
-    dark: 'white'
-  }
-
+  const router = useRouter()
   return (
     <>
+      <Box h={8} bgColor={useColorModeValue("rgb(248, 250, 252)", "gray.900")} />
       <Navigation />
-      <MobileNavigationTop page="Home" />
+      <Box h={8} bgColor={useColorModeValue("rgb(248, 250, 252)", "gray.900")} />
       <Flex
         as="main"
         justifyContent="center"
         flexDirection="column"
-        bg={bgColor[colorMode]}
-        color={color[colorMode]}
-        px={[0, 4, 4]}
-        mt={0, 8, 8}
+        bg={useColorModeValue("#ffffff", "#15161a")}
+        color={useColorModeValue("#000000", "#ffffff")}
       >
-        {children}
+        {/* hero outside main Flex to avoid px */}
+        {router.pathname == '/' && <Hero />}
+        <Flex px={4} flexDir="column" minH="90vh">
+          {children}
+        </Flex>
         <Footer />
       </Flex>
-      <MobileNavigation />
     </>
   )
 }

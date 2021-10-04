@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react'
 import format from 'comma-number'
-
-import loadDb from '../lib/db'
+import loadDb from '../scripts/db'
 
 const ViewCounter = ({ id }) => {
     const [views, setViews] = useState('')

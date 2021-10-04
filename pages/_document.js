@@ -1,5 +1,5 @@
 import NextDocument, { Html, Head, Main, NextScript } from 'next/document'
-import { GA_TRACKING_ID } from '../lib/gtag'
+import { GA_TRACKING_ID } from '../scripts/gtag'
 import GoogleFonts from 'next-google-fonts'
 import { ColorModeScript } from "@chakra-ui/react"
 import theme from '../styles/theme'

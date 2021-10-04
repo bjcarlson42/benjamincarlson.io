@@ -3,16 +3,13 @@ import { NextSeo } from 'next-seo'
 import {
     Link,
     Text,
-    Stack,
     Flex,
     Heading,
     useColorMode,
-    Code
 } from '@chakra-ui/react'
-
+import { motion } from "framer-motion"
 import Container from '../components/Container'
 import ProjectListFull from '../components/ProjectListFull'
-import FeaturedProjectCard from '../components/FeaturedProjectCard'
 import GitHubSponsorCard from '../components/GitHubSponsorCard'
 
 const url = 'https://benjamincarlson.io/projects'
@@ -23,7 +20,7 @@ const Projects = () => {
     const { colorMode } = useColorMode()
 
     const colorSecondary = {
-        light: 'gray.700',
+        light: 'gray.600',
         dark: 'gray.400'
     }
 
@@ -45,73 +42,25 @@ const Projects = () => {
                 }}
             />
             <Container>
-                <Stack
-                    as="main"
-                    spacing={8}
-                    justifyContent="center"
-                    alignItems="flex-start"
-                    m="0 auto 4rem auto"
-                    maxWidth="700px"
+                <Flex
+                    flexDirection="column"
+                    maxWidth="1000px"
+                    alignSelf={[null, "center"]}
                 >
-                    <Flex
-                        flexDirection="column"
-                        justifyContent="flex-start"
-                        alignItems="flex-start"
-                        maxWidth="700px"
-                        px={4}
+                    <motion.div
+                        initial={{ y: -20, opacity: 0 }}
+                        animate={{ y: 0, opacity: 1 }}
+                        transition={{ duration: .7, delay: .4 }}
                     >
-                        <Heading letterSpacing="tight" mb={2} as="h1" size="2xl">
+                        <Heading letterSpacing="tight" my={4} as="h1" size="2xl">
                             Projects
                         </Heading>
-                        <Text color={colorSecondary[colorMode]}>Between school, work, youtube, and individual curiosity, I have worked on many projects over the years. Below you will find
-                        all of them. Clicking on the project card will bring you to the GitHub repo. If you enjoy or use any of these projects, please <Link href="https://github.com/sponsors/bjcarlson42" isExternal color="blue.500">consider sponsoring me</Link> on GitHub!
+                        <Text color={colorSecondary[colorMode]}>Between school, work, youtube, and individual curiosity, I have worked on many projects over the years. If you enjoy or use any of these projects, please consider <Link href="https://github.com/sponsors/bjcarlson42" isExternal color="blue.500">sponsoring me</Link> on GitHub!
                         </Text>
-                        <Heading letterSpacing="tight" as="h1" mt={4} size="xl" fontWeight={700}>
-                            Featured Projects
-                        </Heading>
-                        <FeaturedProjectCard
-                            title="Coffeeclass"
-                            href="https://www.coffeeclass.io/"
-                            src="/images/coffee-only-transparent-bg.png"
-                            alt='Image of coffee'
-                            color={iconColor[colorMode]}
-                        >
-                            Coffeeclass is a tutorial website I started to teach programming and computer science skills in a fun and easy to learn manner.
-                        </ FeaturedProjectCard>
-                        <FeaturedProjectCard
-                            title="25 Days Of Flutter"
-                            href="https://flutter25.com"
-                            src="/images/flutter25.png"
-                            alt='Flutter 25 logo'
-                            color={iconColor[colorMode]}
-                        >
-                            25 Days Of Flutter is a 25 day tutorial series designed to take you from a Flutter beginner to coding a complete app using various modern technologies.
-                        </ FeaturedProjectCard>
-                        <FeaturedProjectCard
-                            title="Word Of The Day App"
-                            href="https://github.com/bjcarlson42/wotd"
-                            src="/images/wotd.png"
-                            alt='Word Of The Day logo'
-                            color={iconColor[colorMode]}
-                        >
-                            Word of the day app built with <Code>Dart</Code>, <Code>Flutter</Code>, and <Code>Wordnik API</Code>. Video tutorial posted on YouTube.
-                        </ FeaturedProjectCard>
-                        <FeaturedProjectCard
-                            title="Personal Website"
-                            href="https://github.com/bjcarlson42/benjamincarlson.io"
-                            src="/images/logo.png"
-                            alt='Personal website logo'
-                            color={iconColor[colorMode]}
-                        >
-                            My personal portfolio website you are on now. Built with <Code>Next.js</Code>, <Code>chakra-ui</Code>, <Code>mdx</Code> pages, and serverless functions for realtime data.
-                        </FeaturedProjectCard>
-                        <Heading letterSpacing="tight" as="h2" mb={2} mt={4} size="xl" fontWeight={700}>
-                            All Projects
-                        </Heading>
-                        <ProjectListFull />
                         <GitHubSponsorCard />
-                    </Flex>
-                </Stack>
+                        <ProjectListFull />
+                    </motion.div>
+                </Flex>
             </Container>
         </>
     )

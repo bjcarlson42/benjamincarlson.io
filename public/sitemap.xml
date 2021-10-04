@@ -9,10 +9,6 @@
   </url>
 
   <url>
-    <loc>https://benjamincarlson.io/hello</loc>
-  </url>
-
-  <url>
     <loc>https://benjamincarlson.io</loc>
   </url>
 
@@ -22,55 +18,5 @@
 
   <url>
     <loc>https://benjamincarlson.io/statistics</loc>
-  </url>
-
-  <url>
-    <loc>https://benjamincarlson.io/videos</loc>
-  </url>
-
-  <url>
-    <loc>https://benjamincarlson.io/blog/connect-flutter-to-firebase</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://benjamincarlson.io/blog/create-a-cross-platform-app-with-flutter</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://benjamincarlson.io/blog/python-automation-with-selenium</loc>
-  </url>
-
-  <url>
-    <loc>https://benjamincarlson.io/blog/react-native-starter</loc>
-  </url>
-
-  <url>
-    <loc>https://benjamincarlson.io/blog/tik-tok-coding-idea</loc>
-  </url>
-
-  <url>
-    <loc
-      >https://benjamincarlson.io/blog/using-javascript-to-scramble-a-rubiks-cube-1</loc
-    >
-  </url>
-
-  <url>
-    <loc
-      >https://benjamincarlson.io/blog/using-javascript-to-scramble-a-rubiks-cube-2</loc
-    >
-  </url>
-
-  <url>
-    <loc>https://benjamincarlson.io/blog/using-react-useeffect</loc>
-  </url>
-
-  <url>
-    <loc>https://benjamincarlson.io/videos/1</loc>
-  </url>
-
-  <url>
-    <loc>https://benjamincarlson.io/videos/2</loc>
   </url>
 </urlset>

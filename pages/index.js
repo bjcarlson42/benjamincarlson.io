@@ -1,26 +1,27 @@
-import React from 'react'
 import { NextSeo } from 'next-seo'
-import NextLink from 'next/link'
 import {
   useColorMode,
   Heading,
   Text,
   Flex,
-  Stack,
   Link,
-  Code,
-  Button,
-  Divider
+  useColorModeValue,
+  Box,
+  SimpleGrid,
+  Icon,
+  Divider,
 } from '@chakra-ui/react'
-
 import Container from '../components/Container'
-import ExperienceBox from '../components/ExperienceBox'
-import FeaturedProjectCard from '../components/FeaturedProjectCard'
-import { ArrowForwardIcon } from '@chakra-ui/icons'
-import BlogPost from '../components/blog/BlogPost'
 import Todo from '../components/Todo'
 import TechStack from '../components/TechStack'
-import Subscribe from '../components/Subscribe'
+import { motion } from "framer-motion"
+import ProjectCard from '../components/ProjectCard'
+import { ChevronRightIcon } from "@chakra-ui/icons"
+import { GrBlockQuote } from 'react-icons/gr'
+import { YoutubeIcon } from '../components/CustomIcons'
+import { SiMedium } from 'react-icons/si'
+import { FiCoffee } from 'react-icons/fi'
+import { BsGear } from 'react-icons/bs'
 
 const url = 'https://benjamincarlson.io/'
 const title = 'Home – Benjamin Carlson'
@@ -30,7 +31,7 @@ export default function Index() {
   const { colorMode } = useColorMode()
 
   const colorSecondary = {
-    light: 'gray.700',
+    light: 'gray.600',
     dark: 'gray.400'
   }
 
@@ -57,178 +58,131 @@ export default function Index() {
         }}
       />
       <Container>
-        <Stack
-          as="main"
-          spacing={8}
-          justifyContent="center"
-          alignItems="flex-start"
-          m="0 auto 4rem auto"
-          maxWidth="700px"
-          px={4}
+        <Flex
+          flexDirection="column"
+          maxWidth="1000px"
+          alignSelf={[null, "center"]}
         >
-          <Flex
-            flexDirection="column"
-            justifyContent="flex-start"
-            alignItems="flex-start"
-            maxWidth="700px"
+          {/* hero is defined inside of components/Container.js which allows it to have a different bg color without applying p to a bunch of tags */}
+          <motion.div
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: .7, delay: 2 }}
           >
-            <Heading
-              letterSpacing="tight"
-              mb={4}
-              as="h1"
-              size="xl"
-            >
-              Hello! I'm Benjamin Carlson, a developer, creator, and student living and working in CT.
-            </Heading>
-            <Text
-              color={colorSecondary[colorMode]}
-            >
-              I go to <Link href="https://www2.ccsu.edu/" color={linkColor[colorMode]} isExternal>CCSU</Link> where I study computer science and mathematics.
-            My personal website is where I showcase my projects, writing, statistics, experience, and more.
-            It also serves as a sandbox to play around with new technologies!
-            Feel free to reach out via <Link href="mailto:ben@coffeeclass.io" color={linkColor[colorMode]}>email</Link> or any social media with any inquiries.
-            </Text>
+            <Box as="section" mt={10} mb={20}>
+              <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2" mb={4}>About Me</Heading>
+              <Text color={colorSecondary[colorMode]}>Hi everyone 👋, I'm Benjamin Carlson. I go to <Link color="blue.500" href="https://www2.ccsu.edu/" isExternal>Central Connect State University</Link> where I study computer science and mathematics. My personal website is where I showcase my projects, writing, statistics, experience, and more. It also serves as a sandbox to play around with new technologies, as seen by the <Link href="https://github.com/bjcarlson42/benjamincarlson.io#overview" color={linkColor[colorMode]} isExternal>evolution</Link> of this website! Feel free to reach out via email or any social media.</Text>
+            </Box>
 
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
+            <Box as="section" mt={10} mb={20}>
+              <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2" mb={4}>Featured Projects 👨‍💻</Heading>
+              <SimpleGrid minChildWidth="300px" spacing="40px">
+                <ProjectCard
+                  title="coffeeclass.io"
+                  description="coffeeclass.io is a tutorial website I started to teach programming and computer science skills in a fun and easy to learn manner."
+                  repoHref="https://github.com/carlson-technologies/coffeeclass.io"
+                  demoHref="https://www.coffeeclass.io?utm_source=website&utm_campaign=benjamincarlson.io"
+                  languageColor="#f1e05a"
+                  language="JavaScript"
+                />
+                <ProjectCard
+                  title="benjamincarlson.io"
+                  description="This website is a personal website I built to showcase my projects and experience."
+                  repoHref="https://github.com/bjcarlson42/benjamincarlson.io"
+                  demoHref="https://benjamincarlson.io"
+                  languageColor="#f1e05a"
+                  language="JavaScript"
+                />
+                <ProjectCard
+                  title="Word Of The Day App"
+                  description="A word of the day app built using Google's Flutter - a cross platform mobile app framework. View current and past words and save your favorites!"
+                  repoHref="https://github.com/bjcarlson42/wotd"
+                  youtubeId="https://youtu.be/17wMTF_bnnc"
+                  languageColor="#00B4AB"
+                  language="Dart"
+                />
+              </SimpleGrid>
+            </Box>
 
-            <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">
-              Featured Projects
-            </Heading>
-            <FeaturedProjectCard
-              title="Coffeeclass"
-              href="https://www.coffeeclass.io/"
-              src="/images/coffee-only-transparent-bg.png"
-              alt='Image of coffee'
-              color={iconColor[colorMode]}
-            >
-              Coffeeclass is a tutorial website I started to teach programming and computer science skills in a fun and easy to learn manner.
-            </ FeaturedProjectCard>
-            <FeaturedProjectCard
-              title="25 Days Of Flutter"
-              href="https://flutter25.com"
-              src="/images/flutter25.png"
-              alt='Flutter 25 logo'
-              color={iconColor[colorMode]}
-            >
-              25 Days Of Flutter is a 25 day tutorial series designed to take you from a Flutter beginner to coding a complete app using various modern technologies.
-            </ FeaturedProjectCard>
-            <FeaturedProjectCard
-              title="Word Of The Day App"
-              href="https://github.com/bjcarlson42/wotd"
-              src="/images/wotd.png"
-              alt='Word Of The Day logo'
-              color={iconColor[colorMode]}
-            >
-              Word of the day app built with <Code>Dart</Code>, <Code>Flutter</Code>, and <Code>Wordnik API</Code>. Video tutorial posted on YouTube.
-            </ FeaturedProjectCard>
-            <FeaturedProjectCard
-              title="Personal Website"
-              href="https://github.com/bjcarlson42/benjamincarlson.io"
-              src="/images/logo.png"
-              alt='Personal website logo'
-              color={iconColor[colorMode]}
-            >
-              My personal portfolio website you are on now. Built with <Code>Next.js</Code>, <Code>chakra-ui</Code>, <Code>mdx</Code> pages, and serverless functions for realtime data.
-            </FeaturedProjectCard>
-            <Flex justify="center" width="100%">
-              <NextLink href="/projects" passHref>
-                <Link _hover="none" mt={8}>
-                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all projects">
-                    View All Projects
-                </Button>
-                </Link>
-              </NextLink>
-            </Flex>
+            <Box as="section" mt={10} mb={20}>
+              <Heading letterSpacing="tight" mt={8} mb={4} size="lg" fontWeight={700} as="h2">Publications 📚</Heading>
+              <Text color={colorSecondary[colorMode]}>I began writing about programming back in 2019 on my first blog that is no longer alive. Since then I have expanded to different media outlets and covered a variety of topics from programming, to productivity, to business.</Text>
+              {/* <Flex align="center" mt={4}> */}
+              <SimpleGrid minChildWidth="200px" spacing="20px" my={10}>
+                <Flex flexDir="column">
+                  <Icon as={YoutubeIcon} color="red.500" fontSize="2xl" mb={1} />
+                  <Heading as="h3" size="md" fontWeight={400} mb={2} letterSpacing="tight">YouTube</Heading>
+                  <Text>I started uploading YouTube videos in 2020 when the pandemic started. I mostly upload programming tutorial videos but I also upload developer vlogs and informational videos. I have uploaded (almost) weekly since then and have grown my channel to an audience of over 3.4k subscribers and 350k views!</Text>
+                </Flex>
+                <Flex flexDir="column">
+                  <Icon as={SiMedium} fontSize="2xl" mb={1} />
+                  <Heading as="h3" size="md" fontWeight={400} mb={2} letterSpacing="tight">Medium</Heading>
+                  <Text>Medium was the first publication I started. I wrote my first article in <Link color="blue.500" href="https://levelup.gitconnected.com/using-javascript-to-scramble-a-rubiks-cube-306f52908f18" isExternal>March 2020</Link>, and since then I have written about a dozen more articles. Nowadays I write less for Medium and more for coffeeclass.io.</Text>
+                </Flex>
+                <Flex flexDir="column">
+                  <Icon as={FiCoffee} color="yellow.500" fontSize="2xl" mb={1} />
+                  <Heading as="h3" size="md" fontWeight={400} mb={2} letterSpacing="tight">coffeeclass.io</Heading>
+                  <Text>Because I enjoyed uploading YouTube videos about programming and writing about programming on Medium, I decided to start my own programming tutorial website, coffeeclass.io. If you are interested in writing about code, see our <Link color="blue.500" href="https://www.coffeeclass.io/contribute/getting-started" isExternal>getting started</Link> page.</Text>
+                </Flex>
+                <Flex flexDir="column">
+                  <Icon as={BsGear} color="gray.500" fontSize="2xl" mb={1} />
+                  <Heading as="h3" size="md" fontWeight={400} mb={2} letterSpacing="tight">engineering.coffeeclass.io</Heading>
+                  <Text>The behind the scenes look at coffeeclass.io. On this site I write about the development of coffeeclass.io. Everything from the current tech stack, future plans, growing pains, and more.</Text>
+                </Flex>
+              </SimpleGrid>
+              {/* </Flex> */}
+              <Flex
+                mb={4}
+                bgColor={useColorModeValue("gray.100", "gray.900")}
+                p={[5, 20, 50]}
+                borderRadius={3}
+                as="blockquote"
+                borderLeft="10px solid"
+                borderLeftColor={useColorModeValue("blue.400", "blue.700")}
+              >
+                <Icon as={GrBlockQuote} fontSize={40} color={colorSecondary[colorMode]} mr={4} />
+                <Flex flexDir="column">
+                  <Text fontSize="xl" fontStyle="italic" color={colorSecondary[colorMode]}>If You Can Think and Speak and Write, You Are Absolutely Deadly.</Text>
+                  <Text fontSize="xl" fontWeight="bold" mt={2}>Jordan B. Peterson</Text>
+                </Flex>
+              </Flex>
+            </Box>
 
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
-
-            <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2">
-              Experience
-            </Heading>
-            <ExperienceBox
-              name="The Law Forum LLC"
-              years="Summer 2019, 2020, 2021, Fall 2020, Spring 2021"
-              pos="C# Software Developer"
-              badge_1='Part Time'
-              badge_2='Internship'
-            >
-              At the Law Forum, I use in ASP .NET, C#, HTML/CSS, JavaScript, and SQL to create and update internal websites for
-              both The Law Forum and clients. I have completed 2 summer internships and over 6 months of part time work both
-              in the office and remote.
-            </ExperienceBox>
-            <ExperienceBox
-              name="Middletown, CT City Hall"
-              years="Summer 2018"
-              pos="I.T. Department"
-              badge_1="Internship"
-            >
-              The summer after graduating from high school, I had the opportunity to work with my city halls' I.T. department. I didn't
-              do any coding but I had a hands on look at the I.T. field and worked on a number of hardware related tasks.
-            </ExperienceBox>
-
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
+            {/* <Box as="section" mt={10} mb={20}>
+              <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2" mb={4}>Experience 👨‍💼</Heading>
+              <Flex align="center" overflowX="auto">
+                <Text>Experience 1</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 2</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 3</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 4</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 5</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 1</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 2</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 3</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 4</Text>
+                <Icon mx={4} as={ChevronRightIcon} />
+                <Text>Experience 5</Text>
+              </Flex>
+            </Box> */}
 
             <Todo />
-
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
-
-            <Heading letterSpacing="tight" mt={8} mb={4} size="lg" fontWeight={700} as="h2">
-              Latest Blog Post
-            </Heading>
-
-            <BlogPost
-              title="UseEffect In Next.JS - React Hooks"
-              summary="Learn what useEffect is learn how to use useEffect in Next.JS."
-              slug="using-react-useeffect"
-            />
-
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
-
-            <Heading letterSpacing="tight" mt={8} mb={4} size="lg" fontWeight={700} as="h2">
-              Top Blog Posts
-            </Heading>
-
-            <BlogPost
-              title="How Tik Tok Gave Me The Perfect Coding Side Project"
-              summary="I got an idea for a weekend coding project from Tik Tok."
-              slug="tik-tok-coding-idea"
-            />
-            <BlogPost
-              title="Add A Firebase Backend To Your Flutter App Fast!"
-              summary="Learn how to integrate Google's Firebase into your Flutter App."
-              slug="connect-flutter-to-firebase"
-            />
-            <BlogPost
-              title="UseEffect In Next.JS - React Hooks"
-              summary="Learn what useEffect is learn how to use useEffect in Next.JS."
-              slug="using-react-useeffect"
-            />
-
-            <Flex justify="center" width="100%">
-              <NextLink href="/blog" passHref>
-                <Link _hover="none">
-                  <Button rightIcon={<ArrowForwardIcon />} colorScheme="gray" variant="outline" aria-label="view all posts">
-                    View All Posts
-                  </Button>
-                </Link>
-              </NextLink>
-            </Flex>
-
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" />
-
             <TechStack />
 
-            <Divider mb={12} mt={16} w='90%' alignSelf="center" display={['none', 'flex', 'flex']} />
-
-            <Subscribe />
-
-            <Text mt={8}>Looks like you've made it to the end of this page... feel free to <Link href="https://youtube.com/benjamincarlson" isExternal color={linkColor[colorMode]}>check out my YouTube channel</Link> or
-            visit <Link href="https://www.coffeeclass.io/" isExternal color={linkColor[colorMode]}>Coffeeclass</Link> where
-            you can find even more programming content.
+            <Text mt={10}>Looks like you've made it to the end of this page... feel free to <Link href="https://youtube.com/benjamincarlson" isExternal color={linkColor[colorMode]}>check out my YouTube channel</Link> or
+              visit <Link href="https://www.coffeeclass.io/?utm_source=website&utm_campaign=benjamincarlson.io" isExternal color={linkColor[colorMode]}>coffeeclass.io</Link> where
+              you can find even more programming content.
             </Text>
+          </motion.div>
 
-          </Flex>
-        </Stack>
+        </Flex>
       </Container>
     </>
   )
