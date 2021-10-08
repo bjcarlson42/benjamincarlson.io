@@ -76,6 +76,8 @@ Navigate to [http://localhost:3000](http://localhost:3000).
 - Realtime Statistics via SWR and Nex.js API routes
 - Responsive Design
 - Blog
+- Google Analytics
+- Google AdSense
 
 ## Tech Stack
 
