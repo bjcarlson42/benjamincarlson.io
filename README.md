@@ -1,7 +1,7 @@
 <div align="center">
   <h1>benjamincarlson.io</h1>
-  <img src="public/home_screen_light.png" height="250px"></img>
-  <img src="public/home_screen_dark.png" height="250x"></img>
+  <img src="public/home_screen_light.png" height="200px"></img>
+  <img src="public/home_screen_dark.png" height="200x"></img>
 </div>
 
 ## Overview
