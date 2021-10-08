@@ -71,7 +71,7 @@ export default function Index() {
           >
             <Box as="section" mt={10} mb={20}>
               <Heading letterSpacing="tight" mt={8} size="lg" fontWeight={700} as="h2" mb={4}>About Me</Heading>
-              <Text color={colorSecondary[colorMode]}>Hi everyone 👋, I'm Benjamin Carlson. I go to <Link color="blue.500" href="https://www2.ccsu.edu/" isExternal>Central Connect State University</Link> where I study computer science and mathematics. My personal website is where I showcase my projects, writing, statistics, experience, and more. It also serves as a sandbox to play around with new technologies, as seen by the <Link href="https://github.com/bjcarlson42/benjamincarlson.io#overview" color={linkColor[colorMode]} isExternal>evolution</Link> of this website! Feel free to reach out via email or any social media.</Text>
+              <Text color={colorSecondary[colorMode]}>Hi everyone 👋, I'm Benjamin Carlson. I go to <Link color="blue.500" href="https://www2.ccsu.edu/" isExternal>Central Connecticut State University</Link> where I study computer science and mathematics. My personal website is where I showcase my projects, writing, statistics, experience, and more. It also serves as a sandbox to play around with new technologies, as seen by the <Link href="https://github.com/bjcarlson42/benjamincarlson.io#overview" color={linkColor[colorMode]} isExternal>evolution</Link> of this website! Feel free to reach out via email or any social media.</Text>
             </Box>
 
             <Box as="section" mt={10} mb={20}>
