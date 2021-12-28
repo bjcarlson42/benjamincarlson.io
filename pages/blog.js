@@ -29,10 +29,10 @@ export default function Blog({ posts }) {
             (a, b) =>
                 Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
         )
-    // .filter((frontMatter) =>
-    //     frontMatter?.title?.toLowerCase()?.includes(searchValue?.toLowerCase()) ||
-    //     frontMatter?.summary?.toLowerCase()?.includes(searchValue?.toLowerCase())
-    // )
+        .filter((frontMatter) =>
+            frontMatter.data?.title?.toLowerCase()?.includes(searchValue.toLowerCase()) ||
+            frontMatter.data?.summary?.toLowerCase()?.includes(searchValue.toLowerCase())
+        )
 
     return (
         <>
