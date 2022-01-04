@@ -85,6 +85,7 @@ Navigate to [http://localhost:3000](http://localhost:3000).
 - CSS Framework: [Chakra UI](https://chakra-ui.com/)
 - Blog Code Syntax: [Prism.js](https://prismjs.com/)
 - Blog: [next-mdx-remote](https://github.com/hashicorp/next-mdx-remote)
+- Database(Blog post view and like count): [Firebase](https://firebase.google.com)
 - Deployment: [Vercel](https://vercel.com/)
 
 ## Contributing
