@@ -6,7 +6,9 @@ import {
     Stack,
     Input,
     InputGroup,
-    InputRightElement
+    InputRightElement,
+    Link,
+    Text,
 } from '@chakra-ui/react'
 import fs from 'fs'
 import matter from 'gray-matter'
@@ -29,10 +31,10 @@ export default function Blog({ posts }) {
             (a, b) =>
                 Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt))
         )
-    // .filter((frontMatter) =>
-    //     frontMatter?.title?.toLowerCase()?.includes(searchValue?.toLowerCase()) ||
-    //     frontMatter?.summary?.toLowerCase()?.includes(searchValue?.toLowerCase())
-    // )
+        .filter((frontMatter) =>
+            frontMatter.data?.title?.toLowerCase()?.includes(searchValue.toLowerCase()) ||
+            frontMatter.data?.summary?.toLowerCase()?.includes(searchValue.toLowerCase())
+        )
 
     return (
         <>
@@ -71,6 +73,7 @@ export default function Blog({ posts }) {
                             <Heading letterSpacing="tight" as="h1" size="2xl" my={4}>
                                 Blog ({posts.length} posts)
                             </Heading>
+                            <Text mb={2}>I now write for <Link isExternal href="https://www.coffeeclass.io/articles" color="blue.500">coffeeclass.io</Link>. Visit that site to view all my tutorials!</Text>
                             <InputGroup mb={4} mr={4} w="100%">
                                 <Input
                                     aria-label="Search by post title or summary"

@@ -68,6 +68,7 @@ export default function Hero() {
                                     size="md"
                                     rightIcon={<YoutubeIcon fontSize="xl" />}
                                     boxShadow={useColorModeValue("0px 8px 26px rgba(0, 0, 0, 0.2)", "0px 8px 26px rgba(0, 0, 0, 0.7)")}
+                                    _hover={{ transform: "translateY(-2px)", opacity: .85, bgColor: useColorModeValue("red.400", "red.500") }}
                                 >
                                     Visit my YouTube
                                 </Button>
@@ -80,6 +81,7 @@ export default function Hero() {
                                     size="md"
                                     rightIcon={<GitHubIcon fontSize="xl" />}
                                     boxShadow={useColorModeValue("0px 8px 26px rgba(0, 0, 0, 0.2)", "0px 8px 26px rgba(0, 0, 0, 0.7)")}
+                                    _hover={{ transform: "translateY(-2px)", bgColor: useColorModeValue("gray.100", "gray.800") }}
                                 >
                                     Sponsor me on GitHub
                                 </Button>
@@ -94,7 +96,7 @@ export default function Hero() {
                         transition={{ duration: .7, delay: 1.6 }}
                     >
                         <AspectRatio ratio={16 / 9}>
-                            <iframe src="https://www.youtube.com/embed/Cn0OKuG2mzM" alt="Featured YouTube video" allowFullScreen={true} style={{ borderRadius: 10 }} />
+                            <iframe src="https://www.youtube.com/embed/uNKBWrkMO_Q" alt="Featured YouTube video" allowFullScreen={true} style={{ borderRadius: 10 }} />
                         </AspectRatio>
                     </motion.div>
                 </Box>
