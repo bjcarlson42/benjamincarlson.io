@@ -10,6 +10,10 @@ export default class MyDocument extends NextDocument {
             <Html lang="en">
                 <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" />
                 <Head>
+                    {/* BurnerPage*/}
+                    {/* eslint-disable-next-line @next/next/no-sync-scripts*/}
+                    <script src="https://admin.burner.page/js/tm_2LkDIAb5vvKmaaazKOwyvhXU1mN"></script>
+
                     {/* Google Adsense */}
                     <script data-ad-client="ca-pub-8586017200531248" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
                     {/* Global Site Tag (gtag.js) - Google Analytics */}
